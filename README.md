@@ -2,9 +2,7 @@ oddly-front
 ===========
 
 
-### Requirements
-
-Before cloning this project, you need to install a few things :
+### How to run project
 
 **1. Download NodeJS / NPM :** http://nodejs.org/
 
