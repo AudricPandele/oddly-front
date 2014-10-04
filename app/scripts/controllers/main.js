@@ -7,8 +7,14 @@
  * # MainCtrl
  * Controller of the oddlyFrontApp
  */
-angular.module('oddlyFrontApp')
-  .controller('MainCtrl', function ($scope, $http, SERVER) {
+angular.module('oddlyFrontApp').constant("SERVER", {
+	"dev" : {
+		"url": "localhost:8000",
+	},
+	"prod" : {
+		"url" : "api.oddly.fr",
+	}
+}).controller('MainCtrl', function ($scope, $http, SERVER) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

@@ -31,11 +31,4 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  }).constant("SERVER", {
-	"dev" : {
-		"url": "localhost:8000",
-	},
-	"prod" : {
-		"url" : "api.oddly.fr",
-	}
-});
+  })
