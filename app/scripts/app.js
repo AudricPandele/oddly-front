@@ -18,6 +18,7 @@ angular
     'ngTouch'
   ])
   .config(function ($routeProvider) {
+    
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -30,4 +31,11 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }).constant("SERVER", {
+	"dev" : {
+		"url": "localhost:8000",
+	},
+	"prod" : {
+		"url" : "api.oddly.fr",
+	}
+});

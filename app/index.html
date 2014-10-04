@@ -8,35 +8,45 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="oddlyFrontApp">
+  <body ng-app="oddlyFrontApp" ng-controller="GalleryCtrl" style="background-image: url({{ background_image }})">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+	<section>
+	  <img src="images/oddly.png" alt="Oddly logotype" width="70"/>
+	  <div id="progress"></div>
+
+	  <form name="subscribeForm" ng-controller="MainCtrl">
+	    <input type="email" required required ng-model="user.mail">
+	    <button ng-click="subscribe(user)">Valider</button>
+	    <h3 ng-show="success">{{ messages.success }}</h3>
+	  </form>
+	</section>
 
     <!-- Add your site or application content here -->
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">oddlyFront</h3>
-      </div>
+    <!-- <div class="container"> -->
+    <!--   <div class="header"> -->
+    <!--     <ul class="nav nav-pills pull-right"> -->
+    <!--       <li class="active"><a ng-href="#">Home</a></li> -->
+    <!--       <li><a ng-href="#/about">About</a></li> -->
+    <!--       <li><a ng-href="#">Contact</a></li> -->
+    <!--     </ul> -->
+    <!--     <h3 class="text-muted">oddlyFront</h3> -->
+    <!--   </div> -->
 
-      <div ng-view=""></div>
+    <!--   <div ng-view=""></div> -->
 
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
+    <!--   <div class="footer"> -->
+    <!--     <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p> -->
+    <!--   </div> -->
+    <!-- </div> -->
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
