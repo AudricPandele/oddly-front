@@ -8,7 +8,7 @@
  * Controller of the oddlyFrontApp
  */
 angular.module('oddlyFrontApp')
-  .controller('MainCtrl', function ($scope, $http) {
+  .controller('MainCtrl', function ($scope, $http, SERVER) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
