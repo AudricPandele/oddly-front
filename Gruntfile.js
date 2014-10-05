@@ -32,16 +32,28 @@ module.exports = function (grunt) {
         options: {
           compress: true,
           yuicompress: true,
-          optimization: 2
+          optimization: 2,
+         
         },
         files: {
           // target.css file: source.less file
           "<%= yeoman.app %>/styles/css/main.css": "<%= yeoman.app %>/styles/less/main.less",
           "<%= yeoman.app %>/styles/css/_landing.css": "<%= yeoman.app %>/styles/less/landing.less"
+       }
+      },
+        dist: {
+          options: {
+              compress: true,
+              yuicompress: true,
+              optimization: 2
+          },
+            files: {                
+                "<%= yeoman.dist %>/styles/css/main.css": "<%= yeoman.app %>/styles/less/main.less",
+                "<%= yeoman.dist %>/styles/css/_landing.css": "<%= yeoman.app %>/styles/less/landing.less"
+            }
         }
-      }
     },
-
+      
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       bower: {
@@ -415,7 +427,8 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'less',  
   ]);
 
   grunt.registerTask('default', [
