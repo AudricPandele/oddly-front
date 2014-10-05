@@ -18,6 +18,10 @@ angular
 		'ngTouch',
 		'routeStyles'
 	])
+	.constant("SERVER", {
+		dev : { url: "localhost:8000" },
+		prod : { url : "api.oddly.fr" }
+	})
 	.config(['$routeProvider', function($routeProvider) {
 
 		$routeProvider
