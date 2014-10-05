@@ -13,36 +13,41 @@ body{
 }
 
 .landing-wrapper{
-	width:370px;
-	height:225px;
+	width:700px;
+	height:450px;
 	.absolute-center;
 
 
 	h1{
 		text-indent:-9999px;
-		width:59px;
-		height:83px;
-		margin:0 auto 39px;
+		width:118px;
+		height:166px;
+		margin:0 auto 78px;
 		.full-width-background("/images/landing/logo.png");
 	}
 
 	form{
+		margin-bottom:50px;
+
 		input[type="email"]{
-			width:267px;
+			width:517px;
 			margin:0;
+			font-size:20px;
 			.ui-leftside-input;
 		}
 
 		button{
 			margin:0;
+			font-size:20px;
 			.ui-green-button;
 		}
 	}
 
 	h2{
+		text-align:center;
 		color:@defaultTextColor;
-		font-size:@defaultTextSize;
 		font-weight:400;
-		.text-shadow(0 2px 0 rgba(0,0,0,0.28));
+		font-size:20px;
+		.text-shadow(0 3px 0 rgba(0,0,0,0.28));
 	}
 }
