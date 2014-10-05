@@ -1,0 +1,48 @@
+/**
+ * LandingView less file
+ */
+@import "main";
+
+body, html{ height:100%; min-height:100%; }
+
+body{
+	font-family:"Roboto Slab", serif;
+	font-size:12px;
+	position:relative;
+	.full-width-background("/images/landing/wonderful-girl-watching-sunrise.jpg");
+}
+
+.landing-wrapper{
+	width:370px;
+	height:225px;
+	.absolute-center;
+
+
+	h1{
+		text-indent:-9999px;
+		width:59px;
+		height:83px;
+		margin:0 auto 39px;
+		.full-width-background("/images/landing/logo.png");
+	}
+
+	form{
+		input[type="email"]{
+			width:267px;
+			margin:0;
+			.ui-leftside-input;
+		}
+
+		button{
+			margin:0;
+			.ui-green-button;
+		}
+	}
+
+	h2{
+		color:@defaultTextColor;
+		font-size:@defaultTextSize;
+		font-weight:400;
+		.text-shadow(0 2px 0 rgba(0,0,0,0.28));
+	}
+}

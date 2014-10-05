@@ -1,4 +1,118 @@
 /**
  * Oddly main less file
  * Put all your vars & funcs in here bitches
+ *
+ * Summary :
+ *
+ * 1. Vars
+ * 2. Mixins
+ * 3. UI
+ *  3.1. Buttons
+ *  3.2. Inputs
  */
+
+
+	/* 1. VARS */
+	@defaultTextColor: #FFF;
+
+	@defaultTextSize: 12px;
+
+
+	/* 2. MIXINS */
+	.gradient(@start, @end){
+		background:   @start; /* Old browsers */
+		background:   -moz-linear-gradient(top,  @start 0%, @end 100%); /* FF3.6+ */
+		background:   -webkit-gradient(linear, left top, left bottom, color-stop(0%,@start), color-stop(100%,@end)); /* Chrome,Safari4+ */
+		background:   -webkit-linear-gradient(top,  @start 0%,@end 100%); /* Chrome10+,Safari5.1+ */
+		background:   -o-linear-gradient(top,  @start 0%,@end 100%); /* Opera 11.10+ */
+		background:   -ms-linear-gradient(top,  @start 0%,@end 100%); /* IE10+ */
+		background:   linear-gradient(to bottom,  @start 0%,@end 100%); /* W3C */
+		filter:	   progid:DXImageTransform.Microsoft.gradient( startColorstr='@start', endColorstr='@end',GradientType=0 ); /* IE6-9 */
+	}
+
+	.box-shadow (@args) {
+		-webkit-box-shadow: @args;
+		-moz-box-shadow: @args;
+		box-shadow: @args;
+	}
+
+	.text-shadow (@args) {
+		-webkit-text-shadow: @args;
+		-moz-text-shadow: @args;
+		text-shadow: @args;
+	}
+
+	.border-radius(@args){
+		-webkit-border-radius: @args;
+		-moz-border-radius: @args;
+		border-radius: @args;
+	}
+
+	.full-width-background(@url){
+		background-image: url(@url);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.absolute-center{
+		position:absolute;
+		top:0;
+		left:0;
+		bottom:0;
+		right:0;
+		margin:auto;
+	}
+
+
+	/* 3. UI */
+
+
+		/* 3.1. BUTTONS */
+		.ui-green-button{
+			.gradient(#45f1b2, #7bd0f8);
+			.border-radius(0 5px 5px 0);
+
+			outline:none;
+			border:none;
+			font-size:12px;
+			padding:3px 10px;
+			font-weight:normal;
+			color: @defaultTextColor;
+		}
+
+		.ui-blue-button{
+			.gradient(#00a7e1, #0cc3ff);
+			.border-radius(5px);
+			.box-shadow(0px 4px 0px 0px #008ab9);
+
+			outline:none;
+			border:none;
+			font-size:12px;
+			padding:3px 10px;
+			color: @defaultTextColor;
+		}
+
+		.ui-red-button{
+			.gradient(#e9815c, #eb847a);
+			.border-radius(5px);
+			.box-shadow(0px 4px 0px 0px #c06a4e);
+
+			outline:none;
+			border:none;
+			font-size:12px;
+			padding:3px 10px;
+			color: @defaultTextColor;
+		}
+
+
+		/* 3.2. INPUTS */
+		.ui-leftside-input{
+			outline:none;
+			border:none;
+			font-size:12px;
+			padding:3px 10px;
+			font-weight:normal;
+
+			.border-radius(5px 0 0 5px);
+		}

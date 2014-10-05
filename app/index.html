@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js">
+<html ng-app="oddlyFrontApp" class="no-js">
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -12,42 +12,17 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/css/main.css">
+    <!-- <link rel="stylesheet" href="styles/main.css"> -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
   </head>
-  <body ng-app="oddlyFrontApp" ng-controller="GalleryCtrl" style="background-image: url({{ background_image }})">
+
+  <body>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-	<section>
-	  <img src="images/oddly.png" alt="Oddly logotype" width="70"/>
-	  <div id="progress"></div>
 
-	  <form name="subscribeForm" ng-controller="MainCtrl">
-	    <input type="email" required required ng-model="user.mail">
-	    <button ng-click="subscribe(user)">Valider</button>
-	    <h3 ng-show="success">{{ messages.success }}</h3>
-	  </form>
-	</section>
-
-    <!-- Add your site or application content here -->
-    <!-- <div class="container"> -->
-    <!--   <div class="header"> -->
-    <!--     <ul class="nav nav-pills pull-right"> -->
-    <!--       <li class="active"><a ng-href="#">Home</a></li> -->
-    <!--       <li><a ng-href="#/about">About</a></li> -->
-    <!--       <li><a ng-href="#">Contact</a></li> -->
-    <!--     </ul> -->
-    <!--     <h3 class="text-muted">oddlyFront</h3> -->
-    <!--   </div> -->
-
-    <!--   <div ng-view=""></div> -->
-
-    <!--   <div class="footer"> -->
-    <!--     <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p> -->
-    <!--   </div> -->
-    <!-- </div> -->
+    <div ng-view=""></div>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -79,12 +54,14 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-route-styles/route-styles.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/landing.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <!-- endbuild -->
 </body>

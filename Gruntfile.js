@@ -36,7 +36,8 @@ module.exports = function (grunt) {
         },
         files: {
           // target.css file: source.less file
-          "<%= yeoman.app %>/styles/css/main.css": "<%= yeoman.app %>/styles/less/main.less"
+          "<%= yeoman.app %>/styles/css/main.css": "<%= yeoman.app %>/styles/less/main.less",
+          "<%= yeoman.app %>/styles/css/_landing.css": "<%= yeoman.app %>/styles/less/landing.less"
         }
       }
     },
@@ -59,8 +60,8 @@ module.exports = function (grunt) {
         tasks: ['newer:jshint:test', 'karma']
       },
       styles: {
-      files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-        tasks: ['newer:copy:styles', 'autoprefixer']
+      files: ['<%= yeoman.app %>/styles/css/*.css', '<%= yeoman.app %>/styles/less/*.less'],
+        tasks: ['newer:copy:styles', 'autoprefixer', 'less']
       },
       gruntfile: {
         files: ['Gruntfile.js']
