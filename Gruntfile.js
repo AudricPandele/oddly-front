@@ -33,7 +33,7 @@ module.exports = function (grunt) {
           compress: true,
           yuicompress: true,
           optimization: 2,
-         
+
         },
         files: {
           // target.css file: source.less file
@@ -47,13 +47,13 @@ module.exports = function (grunt) {
               yuicompress: true,
               optimization: 2
           },
-            files: {                
+            files: {
                 "<%= yeoman.dist %>/styles/css/main.css": "<%= yeoman.app %>/styles/less/main.less",
                 "<%= yeoman.dist %>/styles/css/_landing.css": "<%= yeoman.app %>/styles/less/landing.less"
             }
         }
     },
-      
+
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       bower: {
@@ -353,7 +353,13 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
-      }
+    },
+        images: {
+            expand: true,
+            cwd: '<%= yeoman.app %>/images',
+            dest: '<%= yeoman.dist %>/images',
+            src: '{,*/}*.{png,jpg,jpeg,gif}'
+        }
     },
 
     // Run some tasks in parallel to speed up the build process
@@ -366,7 +372,7 @@ module.exports = function (grunt) {
       ],
       dist: [
         'copy:styles',
-        'imagemin',
+        //'imagemin',
         'svgmin'
       ]
     },
@@ -428,7 +434,8 @@ module.exports = function (grunt) {
     'filerev',
     'usemin',
     'htmlmin',
-    'less',  
+    'less',
+    'copy:images'
   ]);
 
   grunt.registerTask('default', [
