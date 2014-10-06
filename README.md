@@ -8,8 +8,8 @@ oddly-front
 
 **2. Install Grunt CLI / Bower / Yeoman :** `npm install -g yo grunt-cli bower`
 
-**3. Install (locally) grunt-contrib-less :** `npm install grunt-contrib-less`
+**3. Install npm dependencies :** `npm install`
 
-**4. Run Bower :** `bower install`
+**4. Install bower dependencies :** `bower install`
 
 **5. Run/build :** `grunt serve` or `grunt build`
