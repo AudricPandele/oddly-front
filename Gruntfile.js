@@ -36,7 +36,7 @@ module.exports = function (grunt) {
 				},
 				files: {
 					// target.css file: source.less file
-					"<%= yeoman.app %>/styles/css/main.css": "<%= yeoman.app %>/styles/less/main.less",
+					//"<%= yeoman.app %>/styles/css/main.css": "<%= yeoman.app %>/styles/less/main.less",
 					"<%= yeoman.app %>/styles/css/_landing.css": "<%= yeoman.app %>/styles/less/landing.less",
 					"<%= yeoman.app %>/styles/css/_discover.css": "<%= yeoman.app %>/styles/less/discover.less"
 				}
@@ -49,7 +49,7 @@ module.exports = function (grunt) {
 					optimization: 2
 				},
 				files: {
-					"<%= yeoman.dist %>/styles/css/main.css": "<%= yeoman.app %>/styles/less/main.less",
+					//"<%= yeoman.dist %>/styles/css/main.css": "<%= yeoman.app %>/styles/less/main.less",
 					"<%= yeoman.dist %>/styles/css/_landing.css": "<%= yeoman.app %>/styles/less/landing.less",
 					"<%= yeoman.dist %>/styles/css/_discover.css": "<%= yeoman.app %>/styles/less/discover.less"
 				}
@@ -89,7 +89,7 @@ module.exports = function (grunt) {
 				},
 				files: [
 					'<%= yeoman.app %>/{,*/}*.html',
-					'.tmp/styles/{,*/}*.css',
+					'.tmp/styles/css/*.css',
 					'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
 				]
 			}
@@ -373,7 +373,7 @@ module.exports = function (grunt) {
 			expand: true,
 			cwd: '<%= yeoman.app %>/styles',
 			dest: '.tmp/styles/',
-			src: '{,*/}*.css'
+			src: 'css/*.css'
 		},
 
 		images: {
