@@ -37,7 +37,8 @@ module.exports = function (grunt) {
 				files: {
 					// target.css file: source.less file
 					"<%= yeoman.app %>/styles/css/main.css": "<%= yeoman.app %>/styles/less/main.less",
-					"<%= yeoman.app %>/styles/css/_landing.css": "<%= yeoman.app %>/styles/less/landing.less"
+					"<%= yeoman.app %>/styles/css/_landing.css": "<%= yeoman.app %>/styles/less/landing.less",
+					"<%= yeoman.app %>/styles/css/_discover.css": "<%= yeoman.app %>/styles/less/discover.less"
 				}
 			},
 
@@ -49,7 +50,8 @@ module.exports = function (grunt) {
 				},
 				files: {
 					"<%= yeoman.dist %>/styles/css/main.css": "<%= yeoman.app %>/styles/less/main.less",
-					"<%= yeoman.dist %>/styles/css/_landing.css": "<%= yeoman.app %>/styles/less/landing.less"
+					"<%= yeoman.dist %>/styles/css/_landing.css": "<%= yeoman.app %>/styles/less/landing.less",
+					"<%= yeoman.dist %>/styles/css/_discover.css": "<%= yeoman.app %>/styles/less/discover.less"
 				}
 			}
 		},
@@ -74,7 +76,7 @@ module.exports = function (grunt) {
 
 			styles: {
 				files: ['<%= yeoman.app %>/styles/css/*.css', '<%= yeoman.app %>/styles/less/*.less'],
-				tasks: ['newer:copy:styles', 'autoprefixer', 'less']
+				tasks: ['newer:copy:styles', 'autoprefixer', 'less:dev']
 			},
 
 			gruntfile: {
