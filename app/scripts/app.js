@@ -22,7 +22,7 @@ angular
 		dev : { url: "localhost:8000" },
 		prod : { url : "api.oddly.fr" }
 	})
-	.config(['$routeProvider', function($routeProvider) {
+	.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
 		$routeProvider
 
@@ -45,4 +45,7 @@ angular
 			.otherwise({
 				redirectTo: '/'
 			});
+
+		if(window.history && window.history.pushState)
+			$locationProvider.html5Mode(true);
 	}])
