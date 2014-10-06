@@ -31,15 +31,16 @@ angular
 				controller: 'MainCtrl'
 			})*/
 
-			.when('/about', {
-				templateUrl: 'views/about.html',
-				controller: 'AboutCtrl'
-			})
-
 			.when('/', {
 				templateUrl: 'views/landing.html',
 				controller: 'LandingCtrl',
 				css: "styles/css/_landing.css"
+			})
+
+			.when('/discover', {
+				templateUrl: 'view/discover.html',
+				controller: 'DiscoverCtrl',
+				css: "styles/css/_discover.css"
 			})
 
 			.otherwise({
