@@ -5,6 +5,8 @@
  * Summary :
  *
  * 1. Vars
+ *	1.1 Colors
+ *	1.2 Sizes
  * 2. Mixins
  * 3. UI
  *  3.1. Buttons
@@ -13,9 +15,17 @@
 
 
 	/* 1. VARS */
-	@defaultTextColor: #FFF;
 
-	@defaultTextSize: 12px;
+		/* 1.1. COLORS */
+		@defaultTextColor: 	#FFFFFF;
+
+		@uiGreen: 			#45f1b2;
+		@uiRed:				#eb847a;
+		@uiBlue:			#5bbee1;
+
+
+		/* 1.2. SIZES */
+		@defaultTextSize: 12px;
 
 
 	/* 2. MIXINS */
@@ -64,11 +74,20 @@
 		margin:auto;
 	}
 
-	.transition (@transition) {
+	.transition(@transition) {
 		-webkit-transition: @transition;
 		-moz-transition:    @transition;
 		-ms-transition:     @transition;
 		-o-transition:      @transition;
+		transition:			@transition;
+	}
+
+	.transform(@transform) {
+		-webkit-transform: 	@transform;
+		-moz-transform:		@transform;
+		-ms-transform:		@transform;
+		-o-transform:		@transform;
+		transform:			@transform;
 	}
 
 
@@ -76,22 +95,7 @@
 
 
 		/* 3.1. BUTTONS */
-		.ui-green-button{
-			.gradient(#45f1b2, #45F179);
-			.border-radius(0 5px 5px 0);
-			outline:none;
-			border:none;
-			padding:5px 20px;
-			font-weight:normal;
-			color: @defaultTextColor;
-			.transition(all .5s ease);
-
-			&:hover{
-				.gradient(#45f1b2, #7bd0f8);
-			}
-		}
-
-		.ui-blue-button{
+		.ui-button{
 			.gradient(#00a7e1, #0cc3ff);
 			.border-radius(5px);
 			.box-shadow(0px 4px 0px 0px #008ab9);
@@ -103,16 +107,60 @@
 			color: @defaultTextColor;
 		}
 
-		.ui-red-button{
-			.gradient(#e9815c, #eb847a);
-			.border-radius(5px);
-			.box-shadow(0px 4px 0px 0px #c06a4e);
 
-			outline:none;
-			border:none;
-			font-size:12px;
-			padding:3px 10px;
+		.ui-progress-button {
+			position: relative;
+			display: inline-block;
+			padding: 5px 20px;
+			outline: none;
+			border: none;
+			font-weight:normal;
+			background: @uiGreen;
 			color: @defaultTextColor;
+			font-size: @defaultTextSize;
+			overflow:hidden;
+			.border-radius(5px);
+			.transition(background 0.3s);
+
+			.content{
+				position: relative;
+				z-index:2;
+				display: block;
+				.transition(all 0.3s);
+
+				&::before, &::after  {
+					position: absolute;
+					bottom: -30px;
+					margin:auto;
+					left:0; right:0;
+					color: rgba(0,0,0,0.2);
+					opacity: 0;
+					font-family:"FontAwesome";
+					.transition(opacity 0.3s);
+				}
+
+				&::before{ content: "\f00c"; }
+				&::after{ content: "\f00d"; }
+			}
+
+			&.success{ background: @uiGreen; }
+			&.error{ background: @uiRed; }
+			&.success .content, &.error .content{ .transform(translateY(-30px)); }
+			&.success .progress, &.error .progress{ opacity:0; }
+			&.success .content::before, &.error .content::after { opacity: 1; }
+
+
+			.progress{
+				z-index:1;
+				position:absolute;
+				display:block;
+				width:0%;
+				height:200%;
+				background:rgba(0,0,0,0.1);
+				top:-50%; left:0;
+				.border-radius(0);
+				.transition(all 0.3s);
+			}
 		}
 
 
