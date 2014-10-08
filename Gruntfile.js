@@ -75,8 +75,8 @@ module.exports = function (grunt) {
 			},
 
 			styles: {
-				files: ['<%= yeoman.app %>/styles/css/*.css', '<%= yeoman.app %>/styles/less/*.less'],
-				tasks: ['newer:copy:styles', 'autoprefixer', 'less:dev']
+				files: ['<%= yeoman.app %>/styles/less/*.less'],
+				tasks: ['less:dev']
 			},
 
 			gruntfile: {
@@ -89,7 +89,7 @@ module.exports = function (grunt) {
 				},
 				files: [
 					'<%= yeoman.app %>/{,*/}*.html',
-					'.tmp/styles/css/*.css',
+					//'.tmp/styles/css/*.css',
 					'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
 				]
 			}
