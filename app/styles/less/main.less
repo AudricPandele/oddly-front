@@ -64,6 +64,13 @@
 		margin:auto;
 	}
 
+	.transition (@transition) {
+		-webkit-transition: @transition;
+		-moz-transition:    @transition;
+		-ms-transition:     @transition;
+		-o-transition:      @transition;
+	}
+
 
 	/* 3. UI */
 
@@ -77,6 +84,8 @@
 			padding:5px 20px;
 			font-weight:normal;
 			color: @defaultTextColor;
+			.transition(all .5s ease);
+
 			&:hover{
 				.gradient(#45f1b2, #7bd0f8);
 			}
