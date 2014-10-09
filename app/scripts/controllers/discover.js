@@ -2,6 +2,6 @@
 
 angular
 	.module('oddlyFrontApp')
-	.controller('DiscoverCtrl', function ($scope, $http, SERVER) {
+	.controller('DiscoverCtrl', function ($scope, $http, $translate, SERVER) {
 		
 	});

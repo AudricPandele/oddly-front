@@ -1,4 +1,9 @@
 {
     "LANDING_BUTTON" : "S'enregistrer",
-    "LANDING_SUBTITLE" : "Restez informé de l'évolution d'<strong>Oddly</strong>. Ça approche à grands pas."
+    "LANDING_SUBTITLE" : "Restez informé de l'évolution d'<strong>Oddly</strong>. Ça approche à grands pas.",
+
+    "DISCOVER_LOGIN" : "S'identifier",
+    "DISCOVER_TITLE" : "Vous allez de nouveau adorer lire.",
+    "DISCOVER_SUBTITLE" : "Une bibliothèque entière, pour seulement 4,99€ par mois.",
+    "DISCOVER_MAIN_BUTTON" : "Découvrir gratuitement pendant un mois"
 }
