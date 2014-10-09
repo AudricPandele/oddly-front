@@ -387,6 +387,13 @@ module.exports = function (grunt) {
 			cwd: '<%= yeoman.app %>/images',
 			dest: '<%= yeoman.dist %>/images',
 			src: '{,*/}*.{png,jpg,jpeg,gif,svg}'
+		},
+
+		languages: {
+			expand: true,
+			cwd: '<%= yeoman.app %>/languages',
+			dest: '<%= yeoman.dist %>/languages',
+			src: '*.json'
 		}
 	},
 
@@ -460,7 +467,8 @@ module.exports = function (grunt) {
 		'usemin',
 		'htmlmin',
 		'less:dist',
-		'copy:images'
+		'copy:images',
+		'copy:languages'
 	]);
 
 	grunt.registerTask('default', [
