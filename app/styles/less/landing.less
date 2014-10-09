@@ -13,7 +13,8 @@ body{
 }
 
 .landing-wrapper{
-	width:700px;
+	width: 100%;
+	max-width:700px;
 	height:450px;
 	.absolute-center;
 
@@ -51,4 +52,21 @@ body{
 		font-size:20px;
 		.text-shadow(0 2px 0 rgba(0,0,0,0.28));
 	}
+}
+
+@media @mobile {
+
+	.landing-wrapper {
+
+			padding: 0 20px;
+ 
+			& form input[type="email"], 
+			& form button {
+				width: 100%;
+				display: block;
+				.border-radius(5px);
+			}
+
+			& form input[type="email"] { margin-bottom: 10px; }
+	} 
 }
