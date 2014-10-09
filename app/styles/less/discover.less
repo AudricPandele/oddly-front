@@ -7,26 +7,43 @@ body, html{ height:100%; min-height:100%; }
 
 body{
 	font-family:"Roboto Slab", serif;
-	font-size:12px;
+	font-size:@defaultTextSize;
+	font-weight:@defaultTextWeight;
 	position:relative;
 	.full-width-background("/images/landing/extraordinary-cailloux.jpg");
 }
 
 
 header{
-	padding:40px 50px;
+	padding:50px 80px;
 
 	h1{
-		width:127px;
-		height:34px;
-		margin:0;
-		text-indent:-9999px;
 		float:left;
-
-		.full-width-background("/images/discover/logo.svg");
+		a{
+			display:block;
+			width:127px;
+			height:34px;
+			margin:0;
+			text-indent:-9999px;
+			.full-width-background("/images/discover/logo.svg");
+		}
 	}
 
 	button{
+		margin-top:20px;
 		float:right;
 	}
+}
+
+
+.wrapper{
+	width:860px;
+	height:200px;
+	text-align:center;
+	color:@defaultTextColor;
+	.absolute-center;
+
+	h2,h3{ .text-shadow(0 2px 0 rgba(0,0,0,0.28)); }
+	h2{ font-size:42px; }
+	h3{ font-weight:@defaultTextWeight; font-size:@defaultTextSize; }
 }

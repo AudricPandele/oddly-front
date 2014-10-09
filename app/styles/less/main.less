@@ -12,6 +12,7 @@
  * 3. UI
  *  3.1. Buttons
  *  3.2. Inputs
+ * 4. Useful class
  */
 
 
@@ -20,13 +21,22 @@
 		/* 1.1. COLORS */
 		@defaultTextColor: 	#FFFFFF;
 
-		@uiGreen: 			#45f1b2;
+		@uiGreen: 			#59e2b0;
+		@uiGreenDarker:		#4fc99d;
+		@uiGreenBrighter:	#76e2bb;
 		@uiRed:				#eb847a;
-		@uiBlue:			#5bbee1;
+		@uiRedDarker:		#c06a4e;
+		@uiRedBrighter:		#eb9a93;
+		@uiBlue:			#3498db;
+		@uiBlueDarker:		#2980b9;
+		@uiBlueBrighter:	#6aaedb;
 
 
 		/* 1.2. SIZES */
-		@defaultTextSize: 12px;
+		@defaultTextSize: 		16px;
+		@defaultTextMediumSize:	18px;
+		@defaultTextLargeSize:	20px;
+		@defaultTextWeight:		100;
 
 
 		/* 1.3 MEDIA */
@@ -108,15 +118,38 @@
 
 		/* 3.1. BUTTONS */
 		.ui-button{
-			.gradient(#00a7e1, #0cc3ff);
 			.border-radius(5px);
-			.box-shadow(0px 4px 0px 0px #008ab9);
-
+			.box-shadow(0px 4px 0px 0px @uiBlueDarker);
 			outline:none;
 			border:none;
-			font-size:12px;
-			padding:5px 15px;
+			padding:5px 20px;
+			font-size:@defaultTextSize;
 			color: @defaultTextColor;
+			background:@uiBlue;
+			.transition(all .3s ease);
+
+
+			//Sizes
+			&.ui-small{ padding:5px 20px; font-size:@defaultTextSize; }
+			&.ui-medium{ padding:8px 25px; font-size:@defaultTextMediumSize; }
+			&.ui-large{ padding:10px 30px; font-size:@defaultTextLargeSize; }
+
+
+			//Colors
+			&.ui-blue{
+				.box-shadow(0 4px 0 0 @uiBlueDarker); background:@uiBlue;
+				&:hover{ .box-shadow(0 4px 0 0 @uiBlue); background:@uiBlueBrighter; }
+			}
+
+			&.ui-red{
+				.box-shadow(0 4px 0 0 @uiRedDarker); background:@uiRed;
+				&:hover{ .box-shadow(0 4px 0 0 @uiRed); background:@uiRedBrighter; }
+			}
+
+			&.ui-green{
+				.box-shadow(0 4px 0 0 @uiGreenDarker); background:@uiGreen;
+				&:hover{ .box-shadow(0 4px 0 0 @uiGreen); background:@uiGreenBrighter; }
+			}
 		}
 
 
