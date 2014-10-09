@@ -43,7 +43,7 @@ angular
 			})
 
 			.when('/discover', {
-				templateUrl: 'view/discover.html',
+				templateUrl: 'views/discover.html',
 				controller: 'DiscoverCtrl',
 				css: "styles/css/_discover.css"
 			})
