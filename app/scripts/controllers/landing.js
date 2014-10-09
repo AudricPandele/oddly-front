@@ -29,6 +29,7 @@ angular
 				.success(function(data,status,headers,config){
 					$(".progress").width("101%");
 					$(".ui-progress-button").addClass("success");
+					$('input[type="email"]').val('');
 
 					return $scope.success = true;
 				})
