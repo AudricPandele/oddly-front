@@ -16,20 +16,25 @@ angular
 		'ngRoute',
 		'ngSanitize',
 		'ngTouch',
-		'routeStyles'
+		'routeStyles',
+		'pascalprecht.translate'
 	])
 	.constant("SERVER", {
 		dev : { url: "localhost:8000" },
 		prod : { url : "api.oddly.fr" }
 	})
-	.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+	.config(['$routeProvider', '$locationProvider','$translateProvider', function($routeProvider, $locationProvider, $translateProvider) {
 
+		//Load translations
+		$translateProvider.determinePreferredLanguage();
+		$translateProvider.useStaticFilesLoader({
+			prefix: '/languages/',
+			suffix: '.json'
+		});
+
+
+		//Load routes
 		$routeProvider
-
-			/*.when('/', {
-				templateUrl: 'views/main.html',
-				controller: 'MainCtrl'
-			})*/
 
 			.when('/', {
 				templateUrl: 'views/landing.html',

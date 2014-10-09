@@ -2,17 +2,7 @@
 
 angular
 	.module('oddlyFrontApp')
-	.controller('LandingCtrl', function ($scope, $http, SERVER) {
-
-		/**
-		 * List of messages
-		 */
-		$scope.messages = {
-			success : "Inscription réussie",
-			error : "Une erreur est survenue",
-			already_exist : "Cet email est déjà utilisé"
-		};
-
+	.controller('LandingCtrl', function ($scope, $http, $translate, SERVER) {
 
 		$scope.subscribe = function(user) {
 			$(".ui-progress-button").removeClass("error").removeClass("success");
