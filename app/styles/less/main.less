@@ -194,6 +194,27 @@
 			&.success .progress, &.error .progress{ opacity:0; }
 			&.success .content::before, &.error .content::after { opacity: 1; }
 
+			//Sizes
+			&.ui-small{ padding:5px 20px; font-size:@defaultTextSize; }
+			&.ui-medium{ padding:8px 25px; font-size:@defaultTextMediumSize; }
+			&.ui-large{ padding:10px 30px; font-size:@defaultTextLargeSize; }
+
+
+			//Colors
+			&.ui-blue{
+				background:@uiBlue;
+				&:hover{ background:@uiBlueBrighter; }
+			}
+
+			&.ui-red{
+				background:@uiRed;
+				&:hover{ background:@uiRedBrighter; }
+			}
+
+			&.ui-green{
+				background:@uiGreen;
+				&:hover{ background:@uiGreenBrighter; }
+			}
 
 			.progress{
 				z-index:1;
