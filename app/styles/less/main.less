@@ -24,12 +24,22 @@
 		@uiGreen: 			#59e2b0;
 		@uiGreenDarker:		#4fc99d;
 		@uiGreenBrighter:	#76e2bb;
+
 		@uiRed:				#eb847a;
 		@uiRedDarker:		#c06a4e;
 		@uiRedBrighter:		#eb9a93;
+
 		@uiBlue:			#3498db;
 		@uiBlueDarker:		#2980b9;
 		@uiBlueBrighter:	#6aaedb;
+
+		@uiGrey:			#bdc3c7;
+		@uiGreyDarker:		#7f8c8d;
+		@uiGreyBrighter:	#ecf0f1;
+
+		@uiBlack:			#2c3e50;
+		@uiBlackDarker:		#212f3c;
+		@uiBlackBrighter:	#34495e;
 
 
 		/* 1.2. SIZES */
@@ -231,11 +241,15 @@
 
 
 		/* 3.2. INPUTS */
-		.ui-leftside-input{
+		.ui-input{
 			outline:none;
-			border:none;
+			border:3px solid @uiGrey;
+			background:@uiGreyBrighter;
 			padding:5px 10px;
-			font-weight:normal;
+			font-weight:@defaultTextWeight;
+			font-size:@defaultTextSize;
+			color:@uiBlack;
 
-			.border-radius(5px 0 0 5px);
+			&.ui-leftside{ .border-radius(5px 0 0 5px); }
+			&.ui-rightside{ .border-radius(0 5px 5px 0); }
 		}
