@@ -48,6 +48,12 @@ angular
 				css: "styles/css/_discover.css"
 			})
 
+			.when('/signin', {
+				templateUrl: 'views/signin.html',
+				controller: 'SignInCtrl',
+				css: 'styles/css/_signin.css'
+			})
+
 			.otherwise({
 				redirectTo: '/'
 			});

@@ -4,6 +4,6 @@
 
     "DISCOVER_LOGIN" : "Sign In",
     "DISCOVER_TITLE" : "You'll love reading books again.",
-    "DISCOVER_SUBTITLE" : "A whole library, for only EUR4,99 per month.",
+    "DISCOVER_SUBTITLE" : "A whole library, for <strong>only</strong> EUR4,99 per month.",
     "DISCOVER_MAIN_BUTTON" : "Start your free month"
 }

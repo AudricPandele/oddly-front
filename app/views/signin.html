@@ -1,0 +1,39 @@
+<header class="clearfix">
+	<h1><a href="http://www.oddly.fr">Oddly</a></h1>
+</header>
+
+<div class="container">
+	<div class="col-lg-2"></div>
+	<div class="wrapper col-lg-8">
+	<div class="col-lg-6">
+		<h2>Créez votre compte</h2>
+
+		<ng-form name="register-form">
+			<p class="form-item">
+				<label for="register_username">Adresse e-mail</label>
+				<input class="ui-input" type="text" name="register_username" ng-required="true" />
+			</p>
+			<p class="form-item">
+				<label for="register_password">Choisissez un mot de passe</label>
+				<input class="ui-input" type="password" name="register_password" ng-required="true" />
+			</p>
+			<p class="form-item">
+				<label for="register_password_repead">Répétez le mot de passe</label>
+				<input class="ui-input" type="password" name="register_password_repeat" ng-required="true" />
+			</p>
+			<p class="form-item checkbox">
+				<label><input type="checkbox" name="register_cgu" value="true" /> <span>J’accepte la <a href="#">Politique de Confidentialité</a> et les
+<a href="#">Conditions Générales d’Utilisation</a> d’Oddly</span></label>
+			</p>
+			<p class="form-item">
+				<button class="ui-progress-button ui-red" ng-click="register(user)">Créer un compte</button>
+			</p>
+		</ng-form>
+	</div>
+
+	<div class="col-lg-6">
+
+	</div>
+	</div>
+	<div class="col-lg-2"></div>
+</div>
