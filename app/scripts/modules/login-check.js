@@ -13,7 +13,7 @@
 				if(current && current.$$route && current.$$route.protected){
 					console.log("protected");
 				}
-			};
+			});
 		}
 	]);
 
