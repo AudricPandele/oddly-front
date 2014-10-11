@@ -6,7 +6,7 @@
 (function(){
 
 	angular
-		.module('loginCheck', ['ngRoute','ngCookies']);
+		.module('loginCheck', ['ngRoute','ngCookies'])
 		.directive('html', ['$rootScope','$compile','$location','$cookies',
 			function($rootScope, $compile, $location, $cookies){
 				$rootScope.$on('$routeChangeStart', function (e, next, current) {
