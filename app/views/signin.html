@@ -7,23 +7,28 @@
 	<div class="wrapper col-lg-8">
 	<div class="col-lg-6 register">
 		<h2>Créez votre compte</h2>
+		
+		<div ng-if="error" class="alert alert-warning" role="alert">
+			<strong>{{ error.code }}</strong>
+			<p>{{ error.message }}</p>
+		</div>
 
 		<ng-form name="register-form">
 			<p class="form-item">
 				<label for="register_username">Adresse e-mail</label>
-				<input class="ui-input" type="text" name="register_username" ng-required="true" />
+				<input class="ui-input" type="text" name="register_username" ng-model="user.email" ng-required="true" />
 			</p>
 			<p class="form-item">
 				<label for="register_password">Choisissez un mot de passe</label>
-				<input class="ui-input" type="password" name="register_password" ng-required="true" />
+				<input class="ui-input" type="password" name="register_password" ng-model="user.password" ng-required="true" />
 			</p>
 			<p class="form-item">
 				<label for="register_password_repead">Répétez le mot de passe</label>
-				<input class="ui-input" type="password" name="register_password_repeat" ng-required="true" />
+				<input class="ui-input" type="password" name="register_password_repeat" ng-model="user.password_repeat" ng-required="true" />
 			</p>
 			<p class="form-item checkbox">
-				<label><input type="checkbox" name="register_cgu" value="true" /> <span>J’accepte la <a href="#">Politique de Confidentialité</a> et les
-<a href="#">Conditions Générales d’Utilisation</a> d’Oddly</span></label>
+				<label><input type="checkbox" name="register_cgu" ng-model="user.policy" value="true" /> <span>J’accepte la <a href="#">Politique de Confidentialité</a> et les
+				<a href="#">Conditions Générales d’Utilisation</a> d’Oddly</span></label>
 			</p>
 			<p class="form-item">
 				<button class="ui-progress-button ui-green" ng-click="register(user)">Créer un compte</button>
@@ -44,12 +49,10 @@
 				<input class="ui-input" type="password" name="password" ng-required="true" />
 			</p>
 			<p class="form-item">
-				<button class="ui-progress-button ui-green" ng-click="register(user)">S'identifier</button>
+				<button class="ui-progress-button ui-green" ng-click="login(user)">S'identifier</button>
 			</p>
 		</ng-form>
 	</div>
 	</div>
 	<div class="col-lg-2"></div>
 </div>
-
-erreerbe
