@@ -5,5 +5,17 @@
     "DISCOVER_LOGIN" : "Sign In",
     "DISCOVER_TITLE" : "You'll love reading books again.",
     "DISCOVER_SUBTITLE" : "A whole library, for <strong>only</strong> EUR4,99 per month.",
-    "DISCOVER_MAIN_BUTTON" : "Start your free month"
+    "DISCOVER_MAIN_BUTTON" : "Start your free month",
+
+    "REGISTER_TITLE" : "Sign Up",
+    "REGISTER_EMAIL" : "Email address",
+    "REGISTER_PASSWORD" : "Chose a password",
+    "REGISTER_PASSWORD_REPEAT" : "Repeat your password",
+    "REGISTER_POLICY" : "I agree with the <a href='/policy'>Privacy Policy</a> and the <a href='/terms'>Terms of Use</a> of Oddly",
+    "REGISTER_BUTTON" : "Register",
+
+    "LOGIN_TITLE" : "Sign In",
+    "LOGIN_EMAIL" : "Email",
+    "LOGIN_PASSWORD" : "Password",
+    "LOGIN_BUTTON" : "Login" 
 }

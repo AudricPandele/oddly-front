@@ -5,5 +5,17 @@
     "DISCOVER_LOGIN" : "S'identifier",
     "DISCOVER_TITLE" : "Vous allez de nouveau adorer lire.",
     "DISCOVER_SUBTITLE" : "Une bibliothèque entière, pour <strong>seulement</strong> 4,99€ par mois.",
-    "DISCOVER_MAIN_BUTTON" : "Découvrir gratuitement pendant un mois"
+    "DISCOVER_MAIN_BUTTON" : "Découvrir gratuitement pendant un mois",
+
+    "REGISTER_TITLE" : "Créez votre compte",
+    "REGISTER_EMAIL" : "Adresse e-mail",
+    "REGISTER_PASSWORD" : "Choisissez un mot de passe",
+    "REGISTER_PASSWORD_REPEAT" : "Répétez le mot de passe",
+    "REGISTER_POLICY" : "J’accepte la <a href='/policy'>Politique de Confidentialité</a> et les <a href='/terms'>Conditions Générales d’Utilisation</a> d’Oddly",
+    "REGISTER_BUTTON" : "Créer un compte",
+
+    "LOGIN_TITLE" : "S'identifier",
+    "LOGIN_EMAIL" : "E-mail",
+    "LOGIN_PASSWORD" : "Mot de passe",
+    "LOGIN_BUTTON" : "S'identifier" 
 }
