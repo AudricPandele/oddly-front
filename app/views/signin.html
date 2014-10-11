@@ -5,7 +5,7 @@
 <div class="container">
 	<div class="col-lg-2"></div>
 	<div class="wrapper col-lg-8">
-	<div class="col-lg-6">
+	<div class="col-lg-6 register">
 		<h2>Créez votre compte</h2>
 
 		<ng-form name="register-form">
@@ -26,14 +26,30 @@
 <a href="#">Conditions Générales d’Utilisation</a> d’Oddly</span></label>
 			</p>
 			<p class="form-item">
-				<button class="ui-progress-button ui-red" ng-click="register(user)">Créer un compte</button>
+				<button class="ui-progress-button ui-green" ng-click="register(user)">Créer un compte</button>
 			</p>
 		</ng-form>
 	</div>
 
-	<div class="col-lg-6">
+	<div class="col-lg-6 signin clearfix">
+		<h2>S'identifier</h2>
 
+		<ng-form name="login-form">
+			<p class="form-item">
+				<label for="username">E-mail</label>
+				<input class="ui-input" type="text" name="username" ng-required="true" />
+			</p>
+			<p class="form-item">
+				<label for="password">Mot de passe</label>
+				<input class="ui-input" type="password" name="password" ng-required="true" />
+			</p>
+			<p class="form-item">
+				<button class="ui-progress-button ui-green" ng-click="register(user)">S'identifier</button>
+			</p>
+		</ng-form>
 	</div>
 	</div>
 	<div class="col-lg-2"></div>
 </div>
+
+erreerbe
