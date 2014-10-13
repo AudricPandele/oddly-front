@@ -27,6 +27,7 @@ angular
 
 		//Load translations
 		$translateProvider.determinePreferredLanguage();
+		$translateProvider.fallbackLanguage('fr_FR');
 		$translateProvider.useStaticFilesLoader({
 			prefix: '/languages/',
 			suffix: '.json'
