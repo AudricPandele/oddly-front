@@ -17,7 +17,8 @@ angular
 		'ngSanitize',
 		'ngTouch',
 		'routeStyles',
-		'pascalprecht.translate'
+		'pascalprecht.translate',
+		'loginCheck'
 	])
 	.constant("SERVER", {
 		dev : { url: "localhost:8000" },

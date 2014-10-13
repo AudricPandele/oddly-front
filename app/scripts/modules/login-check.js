@@ -1,20 +1,18 @@
+'use strict';
+
 /**
  * Created by Udo Stephant on 11/10/2014
  * http://www.ugostephant.io / contact@ugostephant.io
  */
 
-(function(){
+angular
+	.module('loginCheck', ['ngRoute'])
+	.run(['$rootScope',function($rootScope){
 
-	angular
-		.module('loginCheck', ['ngRoute','ngCookies'])
-		.directive('html', ['$rootScope','$compile','$location','$cookies',
-			function($rootScope, $compile, $location, $cookies){
-				$rootScope.$on('$routeChangeStart', function (e, next, current) {
-					if(current && current.$$route && current.$$route.protected){
-						console.log("protected");
-					}
-				});
+		$rootScope.$on('$routeChangeStart', function (e, next, current) {
+			if(next && next.$$route && next.$$route.protected){
+				console.log("protected route")
 			}
-		]);
+		});
 
-})();
+	}]);
