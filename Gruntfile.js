@@ -37,8 +37,6 @@ module.exports = function (grunt) {
 					optimization: 2
 				},
 				files: {
-					// target.css file: source.less file
-					//"<%= yeoman.app %>/styles/css/main.css": "<%= yeoman.app %>/styles/less/main.less",
 					"<%= yeoman.app %>/styles/css/_landing.css": "<%= yeoman.app %>/styles/less/landing.less",
 					"<%= yeoman.app %>/styles/css/_discover.css": "<%= yeoman.app %>/styles/less/discover.less",
 					"<%= yeoman.app %>/styles/css/_signin.css": "<%= yeoman.app %>/styles/less/signin.less"
@@ -117,7 +115,7 @@ module.exports = function (grunt) {
 							modRewrite([
 								'!\\.html|\\.js|\\.css|\\.png|\\.svg|\\.jpg|\\.jpeg|\\.gif$ /index.html [L]'
 							]),
-							connect.static('.tmp'),
+							connect.static('app'),
 							connect().use(
 								'/bower_components',
 								connect.static('./bower_components')
