@@ -8,18 +8,26 @@
 angular
 	.module('loginCheck', ['ngRoute'])
 	.factory("CookieCheckator", ["$cookieStore", "$location", function($cookieStore, $location){
-		return function(){
+		return function(config){
+
+			if($cookieStore.get("sid", "username") && config && config.checkator){
+
+				var authdata = btoa($cookieStore.get("sid")+":"+$cookieStore.get("username"));
+				config.headers["Authentication"] = "CheckAuth "+authdata;
+				config.headers["Content-type"] = "application/json";
+			}
+
 			if(!$cookieStore.get("sid", "username"))
 				$location.path("/signin");
+
+			if(config)
+				return config;
 		}
 	}])
 	.factory("HttpInterceptor", ["$q", "CookieCheckator", function($q, CookieCheckator){
 		return {
 			request: function (config) {
-				if(config.checkator)
-					CookieCheckator();
-
-				return config || $q.when(config);
+				return CookieCheckator(config) || config || $q.when(config);
 			},
 
 			requestError: function(rejection) { return $q.reject(rejection); },
