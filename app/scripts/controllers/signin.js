@@ -23,4 +23,24 @@ angular
 			});
 		}
 
+
+		$scope.login = function(user){
+			$http({
+				method: "GET",
+				url: "http://api.oddly.fr/api/v1/login/",
+				data : user,
+				headers : {
+					"Authentication" : "BasicAuth "+btoa(user.username + ':' + user.password),
+					"Content-type" : "application/json"
+				}
+			})
+			.success(function(data){
+				console.log("logged");
+				console.log(data);
+			})
+			.error(function(e,status,header,detail){
+				console.error(e.error);
+			});
+		}
+
 	});
