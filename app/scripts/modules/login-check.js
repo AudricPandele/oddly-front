@@ -8,20 +8,18 @@
 angular
 	.module('loginCheck', ['ngRoute'])
 	.factory("CookieCheckator", ["$cookieStore", "$location", function($cookieStore, $location){
-		return function(config){
+		return function(options){
 
-			if($cookieStore.get("sid", "username") && config && config.checkator){
-
+			if(options && !options.route && options.checkator && $cookieStore.get("sid", "username")){
 				var authdata = btoa($cookieStore.get("sid")+":"+$cookieStore.get("username"));
-				config.headers["Authentication"] = "CheckAuth "+authdata;
-				config.headers["Content-type"] = "application/json";
+				options.headers["Authentication"] = "CheckAuth "+authdata;
+				options.headers["Content-type"] = "application/json";
 			}
 
-			if(!$cookieStore.get("sid", "username"))
+			if(options && options.checkator && !$cookieStore.get("sid", "username"))
 				$location.path("/signin");
 
-			if(config)
-				return config;
+			return options;
 		}
 	}])
 	.factory("HttpInterceptor", ["$q", "CookieCheckator", function($q, CookieCheckator){
@@ -45,8 +43,9 @@ angular
 
 		//Add check on route change
 		$rootScope.$on('$routeChangeStart', function (e, next, current) {
-			if(next && next.$$route && next.$$route.checkator)
-				CookieCheckator();
+			if(next && next.$$route && next.$$route.checkator){
+				CookieCheckator({ route : true, checkator : true });
+			}
 		});
 
 	}]);

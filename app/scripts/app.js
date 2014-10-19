@@ -48,7 +48,6 @@ angular
 				templateUrl: 'views/discover.html',
 				controller: 'DiscoverCtrl',
 				css: "styles/css/_discover.css",
-				protected: true
 			})
 
 			.when('/signin', {
