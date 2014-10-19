@@ -1,0 +1,38 @@
+/**
+ * StaticPage less file
+*/
+@import "main";
+
+body{
+	font-family:"Roboto Slab", serif;
+	font-size:@defaultTextSize;
+	font-weight:@defaultTextWeight;
+}
+
+header.main-header{
+	background:@uiBlue;
+
+	h1{ margin:20px 0; float:left; .header-logo(189px, 50px, "/images/discover/logo.svg"); }
+	nav.main-nav ul {
+		list-style:none;
+		margin-top:25px;
+
+		li{
+			float:left;
+			padding:6px 20px;
+			.border-radius(5px);
+
+			a{
+				color:@uiGreyBrighter;
+			}
+		}
+	}
+
+	.special-link{
+		margin-left:10px;
+		background:@uiGreyBrighter;
+		a{
+			color:@uiBlue !important;
+		}
+	}
+}
