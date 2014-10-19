@@ -22,6 +22,7 @@ angular
 	])
 	.constant("SERVER", {
 		dev : { url: "localhost:8000" },
+		pre_prod : { url : "vps106520.ovh.net/~oddly-api"},
 		prod : { url : "api.oddly.fr" }
 	})
 	.config(['$routeProvider', '$locationProvider','$translateProvider', function($routeProvider, $locationProvider, $translateProvider) {
