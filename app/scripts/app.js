@@ -39,27 +39,15 @@ angular
 		//Load routes
 		$routeProvider
 
-			.when('/', {
-				templateUrl: 'views/landing.html',
-				controller: 'LandingCtrl',
-				css: "styles/css/_landing.css"
-			})
+			//Landing
+			.when('/', { 			templateUrl: 'views/landing.html', 	controller: 'LandingCtrl', 		css: "styles/css/_landing.css" })
+			.when('/discover', { 	templateUrl: 'views/discover.html', controller: 'DiscoverCtrl', 	css: "styles/css/_discover.css" })
+			.when('/signin', { 		templateUrl: 'views/signin.html', 	controller: 'SignInCtrl', 		css: 'styles/css/_signin.css' })
 
-			.when('/discover', {
-				templateUrl: 'views/discover.html',
-				controller: 'DiscoverCtrl',
-				css: "styles/css/_discover.css",
-			})
+			//Static pages
+			.when('/about', { 		templateUrl: 'views/about.html', 	controller: 'StaticPageCtrl', 	css: 'styles/css/_static.css' })
 
-			.when('/signin', {
-				templateUrl: 'views/signin.html',
-				controller: 'SignInCtrl',
-				css: 'styles/css/_signin.css'
-			})
-
-			.otherwise({
-				redirectTo: '/'
-			});
+			.otherwise({ 			redirectTo: '/' });
 
 		if(window.history && window.history.pushState)
 			$locationProvider.html5Mode(true);
