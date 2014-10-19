@@ -39,7 +39,8 @@ module.exports = function (grunt) {
 				files: {
 					"<%= yeoman.app %>/styles/css/_landing.css": "<%= yeoman.app %>/styles/less/landing.less",
 					"<%= yeoman.app %>/styles/css/_discover.css": "<%= yeoman.app %>/styles/less/discover.less",
-					"<%= yeoman.app %>/styles/css/_signin.css": "<%= yeoman.app %>/styles/less/signin.less"
+					"<%= yeoman.app %>/styles/css/_signin.css": "<%= yeoman.app %>/styles/less/signin.less",
+					"<%= yeoman.app %>/styles/css/_static.css": "<%= yeoman.app %>/styles/less/static.less"
 				}
 			},
 
@@ -50,10 +51,10 @@ module.exports = function (grunt) {
 					optimization: 2
 				},
 				files: {
-					//"<%= yeoman.dist %>/styles/css/main.css": "<%= yeoman.app %>/styles/less/main.less",
 					"<%= yeoman.dist %>/styles/css/_landing.css": "<%= yeoman.app %>/styles/less/landing.less",
 					"<%= yeoman.dist %>/styles/css/_discover.css": "<%= yeoman.app %>/styles/less/discover.less",
-					"<%= yeoman.dist %>/styles/css/_signin.css": "<%= yeoman.app %>/styles/less/signin.less"
+					"<%= yeoman.dist %>/styles/css/_signin.css": "<%= yeoman.app %>/styles/less/signin.less",
+					"<%= yeoman.app %>/styles/css/_static.css": "<%= yeoman.app %>/styles/less/static.less"
 				}
 			}
 		},
