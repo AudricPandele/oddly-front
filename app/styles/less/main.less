@@ -29,7 +29,7 @@
 		@uiRedDarker:		#c06a4e;
 		@uiRedBrighter:		#eb9a93;
 
-		@uiBlue:			#3498db;
+		@uiBlue:			#53b3d1;
 		@uiBlueDarker:		#2980b9;
 		@uiBlueBrighter:	#6aaedb;
 
@@ -95,6 +95,14 @@
 		background-repeat: no-repeat;
 		background-size: contain;
 		background-position: center;
+	}
+
+	.header-logo(@width, @height, @image){
+		width:@width;
+		height:@height;
+		background-image:url(@image);
+		background-repeat:no-repeat;
+		text-indent:-9999px;
 	}
 
 	.absolute-center{
