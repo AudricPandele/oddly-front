@@ -18,7 +18,8 @@ angular
 		'ngTouch',
 		'routeStyles',
 		'pascalprecht.translate',
-		'loginCheck'
+		'loginCheck',
+		'ngFlatFlags'
 	])
 	.constant("SERVER", {
 		dev : { url: "localhost:8000" },
