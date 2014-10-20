@@ -7,6 +7,10 @@ body{
 	font-family:"Roboto Slab", serif;
 	font-size:@defaultTextSize;
 	font-weight:@defaultTextWeight;
+	color:@uiGrey;
+
+	a{ color:@uiBlue; .transition(all .4s ease); }
+	a:hover{ color:@uiBlueDarker; }
 }
 
 header.main-header{
@@ -34,5 +38,58 @@ header.main-header{
 		a{
 			color:@uiBlue !important;
 		}
+	}
+}
+
+footer.main-footer{
+	background:@uiAbstractGrey;
+	margin-top:100px;
+	padding:20px 0;
+	
+	a, .dropdown-toggle{
+		color:@uiGrey !important;
+	}
+
+	nav ul{
+		list-style:none;
+		-webkit-padding-start:0 !important;
+		li{
+			float:left;
+			padding:5px 20px;
+			&:first-child{ padding-left:0; }
+		}
+	}
+}
+
+.submenu{
+	margin:30px 0 0;
+
+	ul{
+		list-style:none;
+
+		h4{ float:left; margin-right:20px; }
+		li{
+			float:left;
+			padding:5px 20px;
+			margin:4px 10px 0;
+			.border-radius(5px);
+
+			a{ color:@uiGrey; }
+
+			&.active{
+				background:@uiBlue;
+
+				a{ color:@uiGreyBrighter; }
+			}
+		}
+	}
+}
+
+.container{
+	h2,h3{ margin:30px 0; }
+	h3{ color:@uiBlue; font-weight:400; }
+
+	.text-wrapper{
+		p{ margin-bottom:20px; }
 	}
 }
