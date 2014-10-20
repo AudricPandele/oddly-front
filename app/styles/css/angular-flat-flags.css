@@ -1,0 +1,13 @@
+.flat-flag{ display:inline-block; vertical-align:bottom; margin:0 5px; }
+
+.flag-16{ width:16px; height:15px; line-height:14px; background:url(../../images/flags/flags-16.png) no-repeat; }
+.flag-32{ width:32px; height:31px; line-height:30px; background:url(../../images/flags/flags-32.png) no-repeat; }
+
+
+/* fr_FR : France */
+.flag-16.flag-fr{ background-position:-74px -144px; }
+.flag-32.flag-fr{ background-position:-148px -287px; }
+
+/* en_US : United States of America */
+.flag-16.flag-us{ background-position:-273px -65px; }
+.flag-32.flag-us{ background-position:-545px -133px; }
