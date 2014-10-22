@@ -13,3 +13,5 @@ oddly-front
 **4. Install bower dependencies :** `bower install`
 
 **5. Run/build :** `grunt serve` or `grunt build`
+
+**6. If errors, clean :** `grunt clean`
