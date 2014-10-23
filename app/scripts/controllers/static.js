@@ -9,4 +9,11 @@ angular
 			return rt === $location.path();
 		};
 
+
+		//Change lang
+		$scope.setLocale = function(name, code, locale){
+			$translate.use(locale);
+			$scope.selected = { name: name, code: code };
+		};
+
 	});
