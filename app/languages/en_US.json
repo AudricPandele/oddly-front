@@ -1,21 +1,58 @@
 {
-    "LANDING_BUTTON" : "Register",
-    "LANDING_SUBTITLE" : "Register for news about <strong>Oddly</strong>. IT's comming freaky fastly.",
+	"LANDING_BUTTON": 				"Register",
+	"LANDING_SUBTITLE": 			"Register for news about <strong>Oddly</strong>. IT's comming freaky fastly.",
 
-    "DISCOVER_LOGIN" : "Sign In",
-    "DISCOVER_TITLE" : "You'll love reading books again.",
-    "DISCOVER_SUBTITLE" : "A whole library, for <strong>only</strong> EUR4,99 per month.",
-    "DISCOVER_MAIN_BUTTON" : "Start your free month",
 
-    "REGISTER_TITLE" : "Sign Up",
-    "REGISTER_EMAIL" : "Email address",
-    "REGISTER_PASSWORD" : "Chose a password",
-    "REGISTER_PASSWORD_REPEAT" : "Repeat your password",
-    "REGISTER_POLICY" : "I agree with the <a href='/policy'>Privacy Policy</a> and the <a href='/terms'>Terms of Use</a> of Oddly",
-    "REGISTER_BUTTON" : "Register",
+	"DISCOVER_LOGIN": 				"Sign In",
+	"DISCOVER_TITLE": 				"You'll love reading books again.",
+	"DISCOVER_SUBTITLE": 			"A whole library, for <strong>only</strong> EUR4,99 per month.",
+	"DISCOVER_MAIN_BUTTON": 		"Start your free month",
 
-    "LOGIN_TITLE" : "Sign In",
-    "LOGIN_EMAIL" : "Email",
-    "LOGIN_PASSWORD" : "Password",
-    "LOGIN_BUTTON" : "Login" 
+
+	"REGISTER_TITLE": 				"Sign Up",
+	"REGISTER_EMAIL": 				"Email address",
+	"REGISTER_PASSWORD": 			"Chose a password",
+	"REGISTER_PASSWORD_REPEAT": 	"Repeat your password",
+	"REGISTER_POLICY": 				"I agree with the <a href='/policy'>Privacy Policy</a> and the <a href='/terms'>Terms of Use</a> of Oddly",
+	"REGISTER_BUTTON": 				"Register",
+
+
+	"LOGIN_TITLE": 					"Sign In",
+	"LOGIN_EMAIL": 					"Email",
+	"LOGIN_PASSWORD": 				"Password",
+	"LOGIN_BUTTON": 				"Login",
+
+
+	"STATIC_HEADER_MENU_PRICING":	"Pricing",
+	"STATIC_HEADER_MENU_HELP":		"Help",
+	"STATIC_HEADER_MENU_LOGOUT":	"Logout",
+	"STATIC_HEADER_MENU_SIGNIN":	"Signin",
+	"STATIC_HEADER_MENU_PLAYER":	"Go to Player",
+
+
+	"STATIC_FOOTER_MENU_ABOUT":		"About us",
+	"STATIC_FOOTER_MENU_JOBS":		"Jobs",
+	"STATIC_FOOTER_MENU_PRESS":		"Press",
+	"STATIC_FOOTER_MENU_NEWS":		"News",
+
+
+	"STATIC_ABOUT_MENU_TITLE":		"About us",
+	"STATIC_ABOUT_MENU_US":			"Our story",
+	"STATIC_ABOUT_MENU_LEGAL":		"Legal",
+	"STATIC_ABOUT_MENU_PRIVACY":	"Privacy policy",
+	"STATIC_ABOUT_MENU_PRESS":		"Press",
+
+	"STATIC_ABOUT_WHOWEARE_TITLE":	"Who we are ?",
+	"STATIC_ABOUT_WHOWEARE_P1":		"Oddly is mainly a reader for books, comics, newspapers and magazines designed to make your life <strong>easier</strong> and give you back a taste for digital reading.",
+	"STATIC_ABOUT_WHOWEARE_P2":		"Oddly allows you to read whatever you want, whenever you want, wherever you want and above all, <strong>as many times as you want</strong>. Enough multiple book purchases, newspaper ending in the trash, start thinking about our planet, and out wallets.",
+	"STATIC_ABOUT_WHOWEARE_P3":		"And if you really don't know what to read, thanks to its suggestion system, Oddly gives you new items every day, related to things you have already read.",
+	"STATIC_ABOUT_WHOWEARE_P4":		"An entire universe is just steps away from you. subscribe and <strong>enjoy</strong>, as simply as that.",
+
+	"STATIC_ABOUT_SUPPORT_TITLE":	"Customer support",
+	"STATIC_ABOUT_SUPPORT_P1":		"To contact our customer support there are two solutions :",
+	"STATIC_ABOUT_SUPPORT_P2":		"<strong>1.</strong> Help desk : Check help desk and <a href='/help/faq'>frequently asked questions</a> remains the best way to know all the options and features of Oddly.",
+	"STATIC_ABOUT_SUPPORT_P3":		"<strong>2.</strong> Contact form : If you are unable to find any solution to your problem using help desk and want to contact Oddly Customer Support, you can send your request using the contact form.",
+
+	"STATIC_ABOUT_FINDUS_TITLE":	"Where to find us ?",
+	"STATIC_ABOUT_FINDUS_ADDRESS":	"<strong>Oddly France</strong><br />44 rue de la Faïencerie<br />33000 Bordeaux"
 }

@@ -1,21 +1,58 @@
 {
-    "LANDING_BUTTON" : "S'enregistrer",
-    "LANDING_SUBTITLE" : "Restez informé de l'évolution d'<strong>Oddly</strong>. Ça approche à grands pas.",
+	"LANDING_BUTTON":				"S'enregistrer",
+	"LANDING_SUBTITLE":				"Restez informé de l'évolution d'<strong>Oddly</strong>. Ça approche à grands pas.",
 
-    "DISCOVER_LOGIN" : "S'identifier",
-    "DISCOVER_TITLE" : "Vous allez de nouveau adorer lire.",
-    "DISCOVER_SUBTITLE" : "Une bibliothèque entière, pour <strong>seulement</strong> 4,99€ par mois.",
-    "DISCOVER_MAIN_BUTTON" : "Découvrir gratuitement pendant un mois",
 
-    "REGISTER_TITLE" : "Créez votre compte",
-    "REGISTER_EMAIL" : "Adresse e-mail",
-    "REGISTER_PASSWORD" : "Choisissez un mot de passe",
-    "REGISTER_PASSWORD_REPEAT" : "Répétez le mot de passe",
-    "REGISTER_POLICY" : "J’accepte la <a href='/policy'>Politique de Confidentialité</a> et les <a href='/terms'>Conditions Générales d’Utilisation</a> d’Oddly",
-    "REGISTER_BUTTON" : "Créer un compte",
+	"DISCOVER_LOGIN":				"S'identifier",
+	"DISCOVER_TITLE":				"Vous allez de nouveau adorer lire.",
+	"DISCOVER_SUBTITLE":			"Une bibliothèque entière, pour <strong>seulement</strong> 4,99€ par mois.",
+	"DISCOVER_MAIN_BUTTON":			"Découvrir gratuitement pendant un mois",
 
-    "LOGIN_TITLE" : "S'identifier",
-    "LOGIN_EMAIL" : "E-mail",
-    "LOGIN_PASSWORD" : "Mot de passe",
-    "LOGIN_BUTTON" : "S'identifier" 
+
+	"REGISTER_TITLE":				"Créez votre compte",
+	"REGISTER_EMAIL":				"Adresse e-mail",
+	"REGISTER_PASSWORD":			"Choisissez un mot de passe",
+	"REGISTER_PASSWORD_REPEAT":		"Répétez le mot de passe",
+	"REGISTER_POLICY":				"J’accepte la <a href='/policy'>Politique de Confidentialité</a> et les <a href='/terms'>Conditions Générales d’Utilisation</a> d’Oddly",
+	"REGISTER_BUTTON":				"Créer un compte",
+
+
+	"LOGIN_TITLE":					"S'identifier",
+	"LOGIN_EMAIL":					"E-mail",
+	"LOGIN_PASSWORD":				"Mot de passe",
+	"LOGIN_BUTTON":					"S'identifier",
+
+
+	"STATIC_HEADER_MENU_PRICING":	"Abonnement",
+	"STATIC_HEADER_MENU_HELP":		"Aide",
+	"STATIC_HEADER_MENU_LOGOUT":	"Déconnexion",
+	"STATIC_HEADER_MENU_SIGNIN":	"Connexion",
+	"STATIC_HEADER_MENU_PLAYER":	"Accéder au player",
+
+
+	"STATIC_FOOTER_MENU_ABOUT":		"A propos",
+	"STATIC_FOOTER_MENU_JOBS":		"Carrières",
+	"STATIC_FOOTER_MENU_PRESS":		"Presse",
+	"STATIC_FOOTER_MENU_NEWS":		"Actualités",
+
+
+	"STATIC_ABOUT_MENU_TITLE":		"A propos",
+	"STATIC_ABOUT_MENU_US":			"Notre histoire",
+	"STATIC_ABOUT_MENU_LEGAL":		"Mentions légales",
+	"STATIC_ABOUT_MENU_PRIVACY":	"Politique de confidentialité",
+	"STATIC_ABOUT_MENU_PRESS":		"Presse",
+
+	"STATIC_ABOUT_WHOWEARE_TITLE":	"Qui sommes-nous ?",
+	"STATIC_ABOUT_WHOWEARE_P1":		"Oddly, c’est avant tout un lecteur de livres, bandes dessinées, journaux et magazines conçu pour vous <strong>faciliter</strong> la vie et vous redonner goût pour la lecture numérique.",
+	"STATIC_ABOUT_WHOWEARE_P2":		"Oddly vous permet de lire tout ce que vous voulez, quand vous le voulez, où vous le voulez et surtout, <strong>autant de fois que vous le voulez</strong>. Fini les multiples achats de livres, fini les journaux à la poubelles, commençons à penser à notre planète, et notre portefeuille.",
+	"STATIC_ABOUT_WHOWEARE_P3":		"Et si jamais vous ne savez pas quoi lire, grace à son système de suggestions, Oddly vous proposera tous les jours de nouveaux articles en relation avec ce que vous avez déjà lu.",
+	"STATIC_ABOUT_WHOWEARE_P4":		"Un univers entier n’est plus qu’à quelques pas de vous. Abonnez-vous et <strong>profitez</strong>, tout simplement.",
+
+	"STATIC_ABOUT_SUPPORT_TITLE":	"Support client",
+	"STATIC_ABOUT_SUPPORT_P1":		"Afin de contacter notre support client, deux solutions existent :",
+	"STATIC_ABOUT_SUPPORT_P2":		"<strong>1.</strong> L’Aide : Consulter l’aide et les <a href='/help/faq'>questions les plus fréquentes</a> reste le meilleur moyen de connaître toutes les options et fonctionnalités d’Oddly.",
+	"STATIC_ABOUT_SUPPORT_P3":		"<strong>2.</strong> Le formulaire de contact : Si vous ne trouvez aucune solution à votre problème avec l’Aide et que vous souhaitez contacter le support client d’Oddly, vous pouvez envoyer votre demande grace au formulaire de contact.",
+
+	"STATIC_ABOUT_FINDUS_TITLE":	"Où nous trouver ?",
+	"STATIC_ABOUT_FINDUS_ADDRESS":	"<strong>Oddly France</strong><br />44 rue de la Faïencerie<br />33000 Bordeaux"
 }
