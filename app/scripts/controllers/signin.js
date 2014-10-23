@@ -12,7 +12,7 @@ angular
 		$scope.register = function(user){
 			$http({
 				method : "POST",
-				url: "http://"+ SERVER.dev.url +"/api/v1/register/",
+				url: "http://"+SERVER.prod.url+"/api/v1/register/",
 				data : user
 			})
 			.success(function(data){
@@ -27,7 +27,7 @@ angular
 		$scope.login = function(user){
 			$http({
 				method: "GET",
-				url: "http://api.oddly.fr/api/v1/login/",
+				url: "http://"+SERVER.prod.url+"/api/v1/login/",
 				data : user,
 				headers : {
 					"Authentication" : "BasicAuth "+btoa(user.username + ':' + user.password),
