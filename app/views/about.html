@@ -4,10 +4,10 @@
 	<nav class="submenu" role="menubar">
 		<ul class="clearfix">
 			<h4>A propos</h4>
-			<li class="active"><a href="/about">Notre histoire</a></li>
-			<li><a href="/about/legal">Mentions légales</a></li>
-			<li><a href="/about/policy">Politique de confidentialité</a></li>
-			<li><a href="/about/press">Presse</a></li>
+			<li ng-class="{ active:activeRoute('/about') }"><a href="/about">Notre histoire</a></li>
+			<li ng-class="{ active:activeRoute('/about/legal') }"><a href="/about/legal">Mentions légales</a></li>
+			<li ng-class="{ active:activeRoute('/about/policy') }"><a href="/about/policy">Politique de confidentialité</a></li>
+			<li ng-class="{ active:activeRoute('/about/press') }"><a href="/about/press">Presse</a></li>
 		</ul>
 	</nav>
 </div>
