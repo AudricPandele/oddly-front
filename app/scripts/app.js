@@ -22,9 +22,9 @@ angular
 		'ngFlatFlags'
 	])
 	.constant("SERVER", {
-		dev : { url: "localhost:8000" },
-		pre_prod : { url : "vps106520.ovh.net/~oddly-api"},
-		prod : { url : "api.oddly.fr" }
+		dev : { url: "localhost:8000/api/v1" },
+		pre_prod : { url : "api.oddly.ninja/api/v1"},
+		prod : { url : "api.oddly.fr/api/v1" }
 	})
 	.config(['$routeProvider', '$locationProvider','$translateProvider', function($routeProvider, $locationProvider, $translateProvider) {
 
@@ -50,7 +50,7 @@ angular
 
 			//App
 			.when('/app', {			templateUrl: 'views/app_fresh.html',	controller: 'GeneralAppCtrl',	css: 'styles/css/_app.css' })
-			
+
 
 			.otherwise({ 			redirectTo: '/' });
 
