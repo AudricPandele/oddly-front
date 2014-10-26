@@ -41,12 +41,16 @@ angular
 		$routeProvider
 
 			//Landing
-			.when('/', { 			templateUrl: 'views/landing.html', 	controller: 'LandingCtrl', 		css: "styles/css/_landing.css" })
-			.when('/discover', { 	templateUrl: 'views/discover.html', controller: 'DiscoverCtrl', 	css: "styles/css/_discover.css" })
-			.when('/signin', { 		templateUrl: 'views/signin.html', 	controller: 'SignInCtrl', 		css: 'styles/css/_signin.css' })
+			.when('/', { 			templateUrl: 'views/landing.html', 		controller: 'LandingCtrl', 		css: "styles/css/_landing.css" })
+			.when('/discover', { 	templateUrl: 'views/discover.html', 	controller: 'DiscoverCtrl', 	css: "styles/css/_discover.css" })
+			.when('/signin', { 		templateUrl: 'views/signin.html', 		controller: 'SignInCtrl', 		css: 'styles/css/_signin.css' })
 
 			//Static pages
-			.when('/about', { 		templateUrl: 'views/about.html', 	controller: 'StaticPageCtrl', 	css: 'styles/css/_static.css' })
+			.when('/about', { 		templateUrl: 'views/about.html', 		controller: 'StaticPageCtrl', 	css: 'styles/css/_static.css' })
+
+			//App
+			.when('/app', {			templateUrl: 'views/app_fresh.html',	controller: 'GeneralAppCtrl',	css: 'styles/css/_app.css' })
+			
 
 			.otherwise({ 			redirectTo: '/' });
 
