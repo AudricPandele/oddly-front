@@ -3,6 +3,20 @@
 angular
 	.module('oddlyFrontApp')
 	.controller('GeneralAppCtrl', function ($scope, $http, $location, $translate, SERVER) {
+		$scope.items = {
+			books:[],
+			comics:[],
+			magazines:[],
+			newspapers:[]
+		};
+
+		$http({
+			method: "GET",
+			url: "/dummy/fresh/items.json"
+		})
+		.success(function(data){
+			$scope.items = data.items;
+		});
 
 		//Check current route for active links
 		$scope.activeRoute = function(rt){
