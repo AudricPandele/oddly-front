@@ -43,12 +43,20 @@
 		@uiBlackDarker:		#212f3c;
 		@uiBlackBrighter:	#34495e;
 
+		@uiEvil:			#1b1d20;
+		@uiEvilBrighter:	#212327;
+		@uiEvilDarker:		#16171a;
+
+		@uiHeaven:			#53b3d1;
+
 
 		/* 1.2. SIZES */
+		@defaultTextSmallSize:	14px;
 		@defaultTextSize: 		16px;
 		@defaultTextMediumSize:	18px;
 		@defaultTextLargeSize:	20px;
 		@defaultTextWeight:		300;
+		@defaultIconSize:		16px;
 
 
 		/* 1.3 MEDIA */
@@ -130,6 +138,23 @@
 		-ms-transform:		@transform;
 		-o-transform:		@transform;
 		transform:			@transform;
+	}
+
+
+	.font-awesome(@icon, @size, @color){
+		display:block;
+		content:@icon;
+		font-family:"FontAwesome";
+		font-size:@size;
+		color:@color;
+	}
+
+	.text-overflow(@arg){
+		-webkit-text-overflow:	@arg;
+		-moz-text-overflow:		@arg;
+		-ms-text-overflow:		@arg;
+		-o-text-overflow:		@arg;
+		text-overflow:			@arg;
 	}
 
 
