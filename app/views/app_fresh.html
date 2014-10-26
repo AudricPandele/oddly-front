@@ -1,1 +1,14 @@
 <ng-include src="'/views/fragments/app_menu.html'"></ng-include>
+
+<div class="content">
+	<h3>Livres <a href="/app/fresh/books" class="more-button">Plus</a></h3>
+	<ul class="inline-items-list">
+		<li class="item" ng-repeat="book in items.books">
+			<a href="/app/item/{{ book._id }}">
+				<div class="thumb-wrapper"><div class="thumb" style="background-image:url(/dummy/fresh/covers/{{ book._id }}.jpg);"></div></div>
+				<p class="title">{{ book.name}}</p>
+				<p class="artist">{{ book.infos.artist }}</p>
+			</a>
+		</li>
+	</ul>
+</div>
