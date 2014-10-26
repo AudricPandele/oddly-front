@@ -1,0 +1,81 @@
+/**
+ * Main app less file
+*/
+@import "main";
+
+body{
+	font-family:"Roboto Slab", serif;
+	font-size:@defaultTextMediumSize;
+	font-weight:@defaultTextWeight;
+	color:@uiGreyBrighter;
+	background:@uiEvilDarker;
+
+	a, a:hover{ color:@uiGreyBrighter; }
+}
+
+
+#leftside-menu{
+	width:280px;
+	height:100%;
+	position:fixed;
+	left:0;
+	top:0;
+	background:@uiEvil;
+
+	h1{  margin:30px auto 20px; .header-logo(220px, 60px, "/images/discover/logo.svg"); background-position:center; }
+
+	.input-wrapper{
+		position:relative;
+
+		&::after{
+			position:absolute;
+			left:50px;
+			top:3px;
+			z-index:1;
+			.font-awesome("\f002", @defaultIconSize, @uiGreyBrighter);
+		}
+
+		.search-input{
+			position:static;
+			z-index:2;
+			display:block;
+			width:200px;
+			margin:auto;
+			padding:3px 10px 3px 35px;
+			outline:none;
+			background:transparent;
+			border:1px solid @uiGreyBrighter;
+			.border-radius(5px);
+		}
+	}
+
+
+	nav ul{
+		margin-top:50px;
+		padding:0;
+		list-style:none;
+
+		h4{
+			padding-left:40px;
+			margin-bottom:20px;
+			font-size:@defaultTextSmallSize;
+		}
+
+		li{
+			display:block;
+			overflow:hidden;
+			padding:8px 0;
+			border-left:6px solid transparent;
+
+			&:hover{ background:@uiEvilBrighter; }
+			&.active{ border-left:6px solid @uiHeaven; background:@uiEvilBrighter; }
+
+			a{
+				display:block;
+				padding-left:34px;
+				text-decoration:none;
+				i{ margin-right:20px; }
+			}
+		}
+	}
+}
