@@ -13,7 +13,6 @@ body{
 	a, a:hover{ color:@uiGreyBrighter; }
 }
 
-
 #leftside-menu{
 	width:280px;
 	height:100%;
@@ -76,6 +75,68 @@ body{
 				text-decoration:none;
 				i{ margin-right:20px; }
 			}
+		}
+	}
+}
+
+.content{
+	padding:20px 20px 20px 300px;
+	max-width:100%;
+
+	h3{
+		font-size:@defaultTextFatSize;
+		margin-bottom:20px;
+
+		a.more-button{
+			.ui-button;
+			.ui-blue;
+			vertical-align:text-top;
+			margin-top:15px;
+			margin-left:30px;
+		}
+	}
+
+	ul.inline-items-list{
+		list-style:none;
+		width:100%;
+		overflow:auto;
+		padding:0;
+		.flexbox();
+
+		li.item{
+			display:block;
+			min-width:140px;
+			margin-right:20px;
+
+			a{ text-decoration:none; }
+
+			.thumb-wrapper{
+				display:block;
+				width:141px;
+				height:204px;
+				.border-radius(5px);
+				position:relative;
+				overflow:hidden;
+				margin-bottom:10px;
+				.transition(background .3s ease);
+
+				.thumb{
+					width:133px;
+					height:196px;
+					.absolute-center();
+					.border-radius(5px);
+					background-position:center;
+					background-size:cover;
+					background-repeat:no-repeat;
+				}
+			}
+
+			&:hover{
+				.thumb-wrapper{ background:@uiHeaven; }
+			}
+
+			.title, .artist{ font-size:@defaultTextSmallSize; padding:0 4px; overflow:hidden; .text-overflow(ellipsis); white-space: nowrap; margin-bottom:0; }
+			.artist{ color:@uiGrey; }
 		}
 	}
 }

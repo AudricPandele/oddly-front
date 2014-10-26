@@ -55,6 +55,7 @@
 		@defaultTextSize: 		16px;
 		@defaultTextMediumSize:	18px;
 		@defaultTextLargeSize:	20px;
+		@defaultTextFatSize:	40px;
 		@defaultTextWeight:		300;
 		@defaultIconSize:		16px;
 
@@ -155,6 +156,51 @@
 		-ms-text-overflow:		@arg;
 		-o-text-overflow:		@arg;
 		text-overflow:			@arg;
+	}
+
+	.flexbox(){
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+	}
+
+	.flex(@values) {
+		-webkit-box-flex:	@values;
+		-moz-box-flex:		@values;
+		-webkit-flex:		@values;
+		-ms-flex:			@values;
+		flex:				@values;
+	}
+
+	.flex_direction(@values) {
+		-webkit-flex-direction:	@values;
+		-moz-flex-direction:	@values;
+		-ms-flex-direction:		@values;
+		-o-flex-direction:		@values;
+		flex-direction:			@values;
+	}
+
+	.flex_flow(@values){
+		-webkit-flex-flow:	@values;
+		-moz-flex-flow:		@values;
+		-ms-flex-flow:		@values;
+		-o-flex-flow:		@values;
+		flex-flow:			@values;
+	}
+
+	.flex_order(@val){
+		-webkit-box-ordinal-group:	@val;
+		-moz-box-ordinal-group:		@val;
+		-ms-flex-order:				@val;
+		-webkit-order:				@val;
+		order:						@val;
+	}
+
+	.flex_justify(@val){
+		-webkit-justify-content:	@val;
+		justify-content: 			@val;
 	}
 
 
