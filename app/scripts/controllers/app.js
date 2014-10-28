@@ -3,13 +3,23 @@
 angular
 	.module('oddlyFrontApp')
 	.controller('GeneralAppCtrl', function ($scope, $http, $location, $translate, SERVER) {
-		$scope.items = {
-			books:[],
-			comics:[],
-			magazines:[],
-			newspapers:[]
-		};
 
+		//Set default models
+		$scope.advert = {};
+		$scope.items = { books:[], comics:[], magazines:[], newspapers:[] };
+
+
+		//Get home advert
+		$http({
+			method: "GET",
+			url: "/dummy/fresh/home_ad.json"
+		})
+		.success(function(data){
+			$scope.advert = data.advert;
+		});
+
+
+		//Get new items from each type
 		$http({
 			method: "GET",
 			url: "/dummy/fresh/items.json"
@@ -17,6 +27,7 @@ angular
 		.success(function(data){
 			$scope.items = data.items;
 		});
+
 
 		//Check current route for active links
 		$scope.activeRoute = function(rt){
