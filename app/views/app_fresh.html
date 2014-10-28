@@ -1,6 +1,16 @@
 <ng-include src="'/views/fragments/app_menu.html'"></ng-include>
 
 <div class="content">
+	<div ng-if="advert.image" class="home-highlight" style="background-image:url(/dummy/fresh/ad/{{ advert.image.url }}); background-position:{{ advert.image.x }} {{ advert.image.y }};">
+		<div class="home-highlight-wrapper">
+			<div class="home-highlight-caption" style="left:{{ advert.caption.x }}px; top:{{ advert.caption.y }}px;">
+				<h2>{{ advert.caption.title }}</h2>
+				<p>{{ advert.caption.text }}</p>
+				<a href="{{ advert.caption.button.url }}" class="ui-button ui-blue ui-no-shadow">Découvrir</a>
+			</div>
+		</div>
+	</div>
+
 	<h3>Livres <a href="/app/fresh/books" class="more-button">Plus</a></h3>
 	<ul class="inline-items-list">
 		<li class="item" ng-repeat="book in items.books">
