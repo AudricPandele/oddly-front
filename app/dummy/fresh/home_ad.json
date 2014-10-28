@@ -1,0 +1,20 @@
+{
+	"advert" : {
+		"image": {
+			"x": "center",
+			"y": "-700px",
+			"url": "http://cdn.oddly.fr/ad/TGTYY56U45U45TH435H56H456J46735RH356H/4T343EFFRGN67I78453YURTEH.jpg"
+		},
+		"caption": {
+			"x": 100,
+			"y": 100,
+			"title": "Amélie Nothomb",
+			"text": "Son nouveau thriller",
+			"ui": 0,
+			"button": {
+				"type": 0,
+				"url": "/app/item/554646GHTG435H354Y"
+			}
+		}
+	}
+}
