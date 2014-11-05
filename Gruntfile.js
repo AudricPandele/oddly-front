@@ -361,7 +361,7 @@ module.exports = function (grunt) {
 						'views/{,*/}*.html',
 						'images/{,*/}*.{webp}',
 						'fonts/*',
-						'dummy/{,*/}*',
+						'dummy/{,*/}*.{jpg,jpeg,png,json}',
 						'styles/css/angular-flat-flags.css'
 					]
 				},
