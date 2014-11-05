@@ -6,7 +6,7 @@
 			<div class="home-highlight-caption" style="top:{{ advert.caption.position[0] }}px; right:{{ advert.caption.position[1] }}px; bottom:{{ advert.caption.position[2] }}px; left:{{ advert.caption.position[3] }}px;">
 				<h2>{{ advert.caption.title }}</h2>
 				<p>{{ advert.caption.text }}</p>
-				<a href="{{ advert.caption.button.url }}" class="ui-button ui-blue ui-no-shadow">Découvrir</a>
+				<a ng-href="{{ advert.caption.button.url }}" class="ui-button ui-blue ui-no-shadow">Découvrir</a>
 			</div>
 		</div>
 	</div>
@@ -14,7 +14,7 @@
 	<h3>Livres <a href="/app/fresh/books" class="more-button">Plus</a></h3>
 	<ul class="inline-items-list">
 		<li class="item" ng-repeat="book in items.books">
-			<a href="/app/item/{{ book._id }}">
+			<a ng-href="/app/item/{{ book._id }}">
 				<div class="thumb-wrapper"><div class="thumb" style="background-image:url(/dummy/fresh/covers/{{ book._id }}.jpg);"></div></div>
 				<p class="title">{{ book.name}}</p>
 				<p class="artist">{{ book.infos.artist }}</p>
