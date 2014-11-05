@@ -361,7 +361,6 @@ module.exports = function (grunt) {
 						'views/{,*/}*.html',
 						'images/{,*/}*.{webp}',
 						'fonts/*',
-						'dummy/{,*/}*.{jpg,jpeg,png,json}',
 						'styles/css/angular-flat-flags.css'
 					]
 				},
@@ -405,6 +404,13 @@ module.exports = function (grunt) {
 			cwd: '<%= yeoman.app %>/languages',
 			dest: '<%= yeoman.dist %>/languages',
 			src: '*.json'
+		},
+
+		dummy: {
+			expand: true,
+			cwd: '<%= yeoman.app %>/dummy',
+			dest: '<%= yeoman.dist %>/dummy',
+			src: '**/*'
 		}
 	},
 
@@ -479,7 +485,8 @@ module.exports = function (grunt) {
 		'htmlmin',
 		'less:dist',
 		'copy:images',
-		'copy:languages'
+		'copy:languages',
+		'copy:dummy'
 	]);
 
 	grunt.registerTask('default', [
