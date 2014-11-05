@@ -3,7 +3,7 @@
 <div class="content">
 	<div ng-if="advert.image" class="home-highlight" style="background-image:url(/dummy/fresh/ad/{{ advert.image.url }}); background-position:{{ advert.image.x }} {{ advert.image.y }};">
 		<div class="home-highlight-wrapper">
-			<div class="home-highlight-caption" style="left:{{ advert.caption.x }}px; top:{{ advert.caption.y }}px;">
+			<div class="home-highlight-caption" style="top:{{ advert.caption.position[0] }}px; right:{{ advert.caption.position[1] }}px; bottom:{{ advert.caption.position[2] }}px; left:{{ advert.caption.position[3] }}px;">
 				<h2>{{ advert.caption.title }}</h2>
 				<p>{{ advert.caption.text }}</p>
 				<a href="{{ advert.caption.button.url }}" class="ui-button ui-blue ui-no-shadow">Découvrir</a>
