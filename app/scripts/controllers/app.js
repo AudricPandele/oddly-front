@@ -12,7 +12,7 @@ angular
 		//Get home advert
 		$http({
 			method: "GET",
-			url: "dummy/fresh/home_ad.json"
+			url: "/dummy/fresh/home_ad.json"
 		})
 		.success(function(data){
 			$scope.advert = data.advert;
@@ -22,7 +22,7 @@ angular
 		//Get new items from each type
 		$http({
 			method: "GET",
-			url: "dummy/fresh/items.json"
+			url: "/dummy/fresh/items.json"
 		})
 		.success(function(data){
 			$scope.items = data.items;
