@@ -11,14 +11,21 @@
 		</div>
 	</div>
 
-	<h3>Livres <a href="/app/fresh/books" class="more-button">Plus</a></h3>
-	<ul class="inline-items-list">
-		<li class="item" ng-repeat="book in items.books">
-			<a ng-href="/app/item/{{ book._id }}">
-				<div class="thumb-wrapper"><div class="thumb" style="background-image:url(/dummy/fresh/covers/{{ book._id }}.jpg);"></div></div>
-				<p class="title">{{ book.name}}</p>
-				<p class="artist">{{ book.infos.artist }}</p>
-			</a>
-		</li>
-	</ul>
+	<div ng-repeat="(key, value) in items">
+		<h3>
+			<span translate="{{ 'APP_FRESH_TITLE_' + (key|uppercase) }}">{{ key }}</span>
+			<a href="/app/fresh/{{ key }}" class="more-button" translate="{{ 'APP_FRESH_MORE_BUTTON' }}">Plus</a>
+		</h3>
+		<ul class="inline-items-list">
+			<li class="item" ng-repeat="item in value">
+				<a ng-href="/app/item/{{ item._id }}">
+					<div class="thumb-wrapper">
+						<div class="thumb" style="background-image:url(/dummy/fresh/covers/{{ item._id }}.jpg);"></div>
+					</div>
+					<p class="title">{{ item.name }}</p>
+					<p class="artist">{{ item.info }}</p>
+				</a>
+			</li>
+		</ul>
+	</div>
 </div>
