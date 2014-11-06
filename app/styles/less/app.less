@@ -23,30 +23,7 @@ body{
 
 	h1{  margin:30px auto 20px; .header-logo(220px, 60px, "/images/discover/logo.svg"); background-position:center; }
 
-	.input-wrapper{
-		position:relative;
-
-		&::after{
-			position:absolute;
-			left:50px;
-			top:3px;
-			z-index:1;
-			.font-awesome("\f002", @defaultIconSize, @uiGreyBrighter);
-		}
-
-		.search-input{
-			position:static;
-			z-index:2;
-			display:block;
-			width:200px;
-			margin:auto;
-			padding:3px 10px 3px 35px;
-			outline:none;
-			background:transparent;
-			border:1px solid @uiGreyBrighter;
-			.border-radius(5px);
-		}
-	}
+	.search{ text-align:center; }
 
 
 	nav ul{
