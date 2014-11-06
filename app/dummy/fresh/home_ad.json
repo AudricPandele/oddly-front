@@ -2,7 +2,7 @@
 	"advert" : {
 		"image": {
 			"x": "center",
-			"y": "-400px",
+			"y": "center",
 			"url": "4T343EFFRGN67I78453YURTEH.jpg"
 		},
 		"caption": {
