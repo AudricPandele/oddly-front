@@ -54,5 +54,13 @@
 	"STATIC_ABOUT_SUPPORT_P3":		"<strong>2.</strong> Le formulaire de contact : Si vous ne trouvez aucune solution à votre problème avec l’Aide et que vous souhaitez contacter le support client d’Oddly, vous pouvez envoyer votre demande grace au formulaire de contact.",
 
 	"STATIC_ABOUT_FINDUS_TITLE":	"Où nous trouver ?",
-	"STATIC_ABOUT_FINDUS_ADDRESS":	"<strong>Oddly France</strong><br />44 rue de la Faïencerie<br />33000 Bordeaux"
+	"STATIC_ABOUT_FINDUS_ADDRESS":	"<strong>Oddly France</strong><br />44 rue de la Faïencerie<br />33000 Bordeaux",
+
+
+	"APP_FRESH_TITLE_BOOKS":		"Livres",
+	"APP_FRESH_TITLE_COMICS":		"Bandes dessinées",
+	"APP_FRESH_TITLE_MAGAZINES":	"Magazines",
+	"APP_FRESH_TITLE_NEWSPAPERS":	"Journaux",
+
+	"APP_FRESH_MORE_BUTTON":		"Plus"
 }

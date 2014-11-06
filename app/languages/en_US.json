@@ -54,5 +54,13 @@
 	"STATIC_ABOUT_SUPPORT_P3":		"<strong>2.</strong> Contact form : If you are unable to find any solution to your problem using help desk and want to contact Oddly Customer Support, you can send your request using the contact form.",
 
 	"STATIC_ABOUT_FINDUS_TITLE":	"Where to find us ?",
-	"STATIC_ABOUT_FINDUS_ADDRESS":	"<strong>Oddly France</strong><br />44 rue de la Faïencerie<br />33000 Bordeaux"
+	"STATIC_ABOUT_FINDUS_ADDRESS":	"<strong>Oddly France</strong><br />44 rue de la Faïencerie<br />33000 Bordeaux",
+
+
+	"APP_FRESH_TITLE_BOOKS":		"Books",
+	"APP_FRESH_TITLE_COMICS":		"Comics",
+	"APP_FRESH_TITLE_MAGAZINES":	"Magazines",
+	"APP_FRESH_TITLE_NEWSPAPERS":	"Newspapers",
+
+	"APP_FRESH_MORE_BUTTON":		"More"
 }
