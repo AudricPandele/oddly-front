@@ -57,6 +57,19 @@
 	"STATIC_ABOUT_FINDUS_ADDRESS":	"<strong>Oddly France</strong><br />44 rue de la Faïencerie<br />33000 Bordeaux",
 
 
+	"APP_SEARCH":					"Search",
+	"APP_MENU" :					"Menu",
+	"APP_MENU_FRESH":				"Fresh",
+	"APP_MENU_TOPS":				"Tops",
+	"APP_MENU_CAT":					"Categories",
+
+	"APP_BOOKSHELF":				"My bookshelf",
+	"APP_BOOKSHELF_AUTHORS":		"Authors",
+	"APP_BOOKSHELF_BOOKS":			"Books",
+	"APP_BOOKSHELF_COMICS":			"Comics",
+	"APP_BOOKSHELF_MAGAZINES":		"Magazines",
+	"APP_BOOKSHELF_NEWSPAPERS":		"Newspapers",
+
 	"APP_FRESH_TITLE_BOOKS":		"Books",
 	"APP_FRESH_TITLE_COMICS":		"Comics",
 	"APP_FRESH_TITLE_MAGAZINES":	"Magazines",
