@@ -26,7 +26,7 @@ angular
 
 		$scope.login = function(user){
 			$http({
-				method: "GET",
+				method: "POST",
 				url: "http://"+SERVER.prod.url+"/login/",
 				data : user,
 				headers : {
