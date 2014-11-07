@@ -16,22 +16,22 @@
 		<ng-form name="register-form">
 			<p class="form-item">
 				<label for="register_username" translate="{{ 'REGISTER_EMAIL' }}">Adresse e-mail</label>
-				<input class="ui-input" type="text" name="register_username" ng-model="user.email" ng-required="true" />
+				<input class="ui-input" type="text" name="register_username" ng-model="register.email" ng-required="true" />
 			</p>
 			<p class="form-item">
 				<label for="register_password" translate="{{ 'REGISTER_PASSWORD' }}">Choisissez un mot de passe</label>
-				<input class="ui-input" type="password" name="register_password" ng-model="user.password" ng-required="true" />
+				<input class="ui-input" type="password" name="register_password" ng-model="register.password" ng-required="true" />
 			</p>
 			<p class="form-item">
 				<label for="register_password_repead" translate="{{ 'REGISTER_PASSWORD_REPEAT' }}">Répétez le mot de passe</label>
-				<input class="ui-input" type="password" name="register_password_repeat" ng-model="user.password_repeat" ng-required="true" />
+				<input class="ui-input" type="password" name="register_password_repeat" ng-model="register.password_repeat" ng-required="true" />
 			</p>
 			<p class="form-item checkbox">
-				<label><input type="checkbox" name="register_cgu" ng-model="user.policy" value="true" /> <span translate="{{ 'REGISTER_POLICY' }}">J’accepte la <a href="#">Politique de Confidentialité</a> et les
+				<label><input type="checkbox" name="register_cgu" ng-model="register.policy" value="true" /> <span translate="{{ 'REGISTER_POLICY' }}">J’accepte la <a href="#">Politique de Confidentialité</a> et les
 				<a href="#">Conditions Générales d’Utilisation</a> d’Oddly</span></label>
 			</p>
 			<p class="form-item">
-				<button class="ui-progress-button ui-green" ng-click="register(user)" translate="{{ 'REGISTER_BUTTON' }}">Créer un compte</button>
+				<button class="ui-progress-button ui-green" ng-click="register(register)" translate="{{ 'REGISTER_BUTTON' }}">Créer un compte</button>
 			</p>
 		</ng-form>
 	</div>
@@ -42,11 +42,11 @@
 		<ng-form name="login-form">
 			<p class="form-item">
 				<label for="username" translate="{{ 'LOGIN_EMAIL' }}">E-mail</label>
-				<input class="ui-input" type="text" name="username" ng-required="true" />
+				<input class="ui-input" type="text" name="username" ng-required="true" ng-model="user.username" />
 			</p>
 			<p class="form-item">
 				<label for="password" translate="{{ 'LOGIN_PASSWORD' }}">Mot de passe</label>
-				<input class="ui-input" type="password" name="password" ng-required="true" />
+				<input class="ui-input" type="password" name="password" ng-required="true" ng-model="user.password" />
 			</p>
 			<p class="form-item">
 				<button class="ui-progress-button ui-green" ng-click="login(user)" translate="{{ 'LOGIN_BUTTON' }}">S'identifier</button>
