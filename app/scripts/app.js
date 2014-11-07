@@ -50,7 +50,7 @@ angular
 
 			//App
 			.when('/app', {			templateUrl: 'views/app_fresh.html',	controller: 'GeneralAppCtrl',	css: 'styles/css/_app.css' })
-
+			.when('/app/item/:id',{ templateUrl: 'views/app_item.html',		controller: 'ItemCtrl',			css: 'styles/css/_app.css' })
 
 			.otherwise({ 			redirectTo: '/' });
 

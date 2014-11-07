@@ -2,6 +2,8 @@
 
 angular
 	.module('oddlyFrontApp')
+
+	//General app controller
 	.controller('GeneralAppCtrl', function ($scope, $http, $location, $translate, SERVER) {
 
 		//Set default models
@@ -41,4 +43,9 @@ angular
 			$scope.selected = { name: name, code: code };
 		};
 
+	})
+
+	//Single item controller
+	.controller('ItemCtrl', function ($scope, $http, $location, $translate, SERVER) {
+		
 	});
