@@ -3,6 +3,8 @@
 */
 @import "main";
 
+html, body, div[ng-view]{ height:100%; }
+
 body{
 	font-family:"Roboto Slab", serif;
 	font-size:@defaultTextSmallSize;
@@ -59,8 +61,10 @@ body{
 }
 
 .content{
-	padding:0 0 20px 240px;
+	padding-left:240px;
 	max-width:100%;
+	height:100%;
+	position:relative;
 
 	.home-highlight{
 		width:100%;
@@ -138,6 +142,21 @@ body{
 
 			.title, .artist{ font-size:@defaultTextSmallSize; padding:0 4px; overflow:hidden; .text-overflow(ellipsis); white-space: nowrap; margin-bottom:0; }
 			.artist{ color:@uiGrey; }
+		}
+	}
+
+	//Single item page
+	.single-item-container{
+		width:100%;
+		height:100%;
+		background-position:center;
+		background-size:cover;
+		background-repead:no-repeat;
+
+		.single-item-wrapper{
+			width:100%;
+			height:100%;
+			background:rgba(0,0,0,0.9);
 		}
 	}
 }
