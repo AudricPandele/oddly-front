@@ -95,14 +95,17 @@ body{
 	ul.inline-items-list{
 		list-style:none;
 		width:100%;
-		overflow:auto;
+		overflow:hidden;
 		padding:0 40px 30px 40px;
+		height:260px;
 		.flexbox();
+		.flex_justify(space-between);
+		.flex_flow(row wrap);
 
 		li.item{
 			display:block;
-			min-width:140px;
-			margin-right:20px;
+			width:141px;
+			margin-bottom:30px;
 
 			a{ text-decoration:none; }
 
