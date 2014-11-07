@@ -47,5 +47,19 @@ angular
 
 	//Single item controller
 	.controller('ItemCtrl', function ($scope, $http, $location, $translate, SERVER) {
-		
+
+		//Set default model
+		$scope.item = { };
+
+		//Get asked item
+		$http({
+			method: "GET",
+			url: "/dummy/item/item.json"
+		})
+		.success(function(data){
+			$scope.item = data.item;
+		})
+		.error(function(data, status, headers, config){
+			console.log(status+" : "+data);
+		});
 	});
