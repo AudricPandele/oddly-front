@@ -104,7 +104,6 @@ module.exports = function (grunt) {
 		connect: {
 			options: {
 				port: 9000,
-
 				// Change this to '0.0.0.0' to access the server from outside.
 				hostname: 'localhost',
 				livereload: 35729
@@ -116,12 +115,12 @@ module.exports = function (grunt) {
 					middleware: function (connect) {
 						return [
 							modRewrite([
-								'!\\.html|\\.js|\\.css|\\.png|\\.svg|\\.jpg|\\.jpeg|\\.gif$ /index.html [L]'
+								'!\\.html|\\.js|\\.css|\\.png|\\.svg|\\.jpg|\\.jpeg|\\.gif|\\.json$ /index.html [L]'
 							]),
 							connect.static('app'),
 							connect().use(
 								'/bower_components',
-								connect.static('./bower_components')
+								connect.static('bower_components')
 							),
 
 							connect.static(appConfig.app)
