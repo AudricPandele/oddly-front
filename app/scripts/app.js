@@ -41,7 +41,7 @@ angular
 		$routeProvider
 
 			//Landing
-			.when('/', { 			templateUrl: '/views/landing.html', 		controller: 'LandingCtrl', 		css: "styles/css/_landing.css" })
+			.when('/', { 			templateUrl: '/views/landing.html', 	controller: 'LandingCtrl', 		css: "styles/css/_landing.css" })
 			.when('/discover', { 	templateUrl: '/views/discover.html', 	controller: 'DiscoverCtrl', 	css: "styles/css/_discover.css" })
 			.when('/signin', { 		templateUrl: '/views/signin.html', 		controller: 'SignInCtrl', 		css: 'styles/css/_signin.css' })
 
@@ -50,7 +50,7 @@ angular
 
 			//App
 			.when('/app', {			templateUrl: '/views/app_fresh.html',	controller: 'GeneralAppCtrl',	css: 'styles/css/_app.css' })
-			.when('/app/item/:id',{ templateUrl: '/views/app_item.html',		controller: 'ItemCtrl',			css: 'styles/css/_app.css' })
+			.when('/app/item/:id',{ templateUrl: '/views/app_item.html',	controller: 'ItemCtrl',			css: 'styles/css/_app.css' })
 
 			.otherwise({ 			redirectTo: '/' });
 
