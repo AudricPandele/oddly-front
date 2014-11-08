@@ -159,6 +159,41 @@ body{
 			width:100%;
 			height:100%;
 			background:rgba(0,0,0,0.9);
+			position:relative;
+
+			.go-back{ position:absolute; top:40px; left:60px; font-size:@defaultTextMediumSize; }
+
+			.single-item-inner{
+				width:800px;
+				height:300px;
+				.absolute-center;
+
+				.thumb{
+					width:200px;
+					height:300px;
+					float:left;
+
+					.thumb-inner{
+						width:100%;
+						height:100%;
+						background-position:center;
+						background-size:cover;
+						background-repeat:no-repeat;
+						.border-radius(5px);
+					}
+
+				}
+
+				.infos{
+					float:left;
+					width:600px;
+					padding-left:20px;
+
+					.authors, .other_infos{ font-size:@defaultTextExtraSmallSize; margin-bottom:0; font-weight:100; }
+					.title{ padding-left:0; margin:3px 0 4px; font-size:24px; }
+					.synopsis{ margin:20px 0; max-height:160px; overflow:auto; }
+				}
+			}
 		}
 	}
 }
