@@ -120,7 +120,7 @@ module.exports = function (grunt) {
 							connect.static('app'),
 							connect().use(
 								'/bower_components',
-								connect.static('bower_components')
+								connect.static('./bower_components')
 							),
 
 							connect.static(appConfig.app)
