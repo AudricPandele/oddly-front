@@ -62,4 +62,30 @@ angular
 		.error(function(data, status, headers, config){
 			console.log(status+" : "+data);
 		});
+
+		$scope.implode = function(arr, column){
+			var res = [];
+			for(var i in arr) res.push(arr[i][column]);
+			return res.join("   •   ");
+		};
+
+		$scope.getYear = function(date){
+			var res = date.split("-");
+			return res[2];
+		};
+
+		$scope.getRank = function(rate){
+			rate = parseInt(rate);
+			rate = (rate > 5) ? 5 : ((rate < 0) ? 0 : rate);
+
+			var full_stars = rate;
+			var empty_stars = 5 - rate;
+
+			var res = "";
+			for(var i = 0; i < full_stars; i++) res+="<i class='fa fa-star'></i>";
+			for(var i = 0; i < empty_stars; i++) res+="<i class='fa fa-star-o'></i>";
+
+			return res;
+		}
+
 	});
