@@ -39,7 +39,11 @@ angular
 		$httpProvider.interceptors.push('HttpInterceptor');
 
 	})
-	.run(["$rootScope", "CookieCheckator", function($rootScope, CookieCheckator){
+	.run(["$rootScope", "$location", "CookieCheckator", function($rootScope, $location, CookieCheckator){
+
+		//Init history for back purpose
+		var history = [];
+
 
 		//Add check on route change
 		$rootScope.$on('$routeChangeStart', function (e, next, current) {
@@ -47,5 +51,17 @@ angular
 				CookieCheckator({ route : true, checkator : true });
 			}
 		});
+
+		//Push current path to history
+		$rootScope.$on('$routeChangeSuccess', function() {
+			history.push($location.$$path);
+		});
+
+
+		//Add back function to go back in history, yihhhhhaaaaaaa !
+		$rootScope.back = function () {
+			var prevUrl = history.length > 1 ? history.splice(-2)[0] : "/app";
+			$location.path(prevUrl);
+		};
 
 	}]);
