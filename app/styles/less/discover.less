@@ -10,40 +10,82 @@ body{
 	font-size:@defaultTextSize;
 	font-weight:@defaultTextWeight;
 	position:relative;
-	.full-width-background("/images/discover/extraordinary-cailloux.jpg");
 }
 
 
-header{
-	padding:50px 80px;
+.content{
+	height:100%;
+	.full-width-background("/images/discover/extraordinary-cailloux.jpg");
 
-	h1{
-		float:left;
-		a{
-			display:block;
-			width:127px;
-			height:34px;
-			margin:0;
-			text-indent:-9999px;
-			.full-width-background("/images/discover/logo.svg");
+	header{
+		padding:50px 80px;
+
+		h1{
+			float:left;
+			a{
+				display:block;
+				width:127px;
+				height:34px;
+				margin:0;
+				text-indent:-9999px;
+				.full-width-background("/images/discover/logo.svg");
+			}
+		}
+
+		a.ui-button{
+			margin-top:20px;
+			float:right;
 		}
 	}
 
-	a.ui-button{
-		margin-top:20px;
-		float:right;
+
+	.wrapper{
+		width:860px;
+		height:200px;
+		text-align:center;
+		color:@defaultTextColor;
+		.absolute-center;
+
+		h2,h3{ .text-shadow(0 2px 0 rgba(0,0,0,0.28)); }
+		h2{ font-size:42px; }
+		h3{ font-weight:@defaultTextWeight; font-size:@defaultTextSize; }
 	}
 }
 
+.promo{
+	padding:150px 0;
 
-.wrapper{
-	width:860px;
-	height:200px;
-	text-align:center;
-	color:@defaultTextColor;
-	.absolute-center;
+	h2{ font-size:@defaultTextFatSize; }
 
-	h2,h3{ .text-shadow(0 2px 0 rgba(0,0,0,0.28)); }
-	h2{ font-size:42px; }
-	h3{ font-weight:@defaultTextWeight; font-size:@defaultTextSize; }
+	&.promo-oddly{ h2{ margin-top:50px; } }
+	&.promo-mobile{ padding:50px 0; h2{ margin-top:150px; text-align:center; }}
+
+	.store-button{ margin-right:20px; &::last-child{ margin-right:0; } }
+}
+
+.promo-background{
+	background-size:cover;
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-position:center;
+	height:600px;
+}
+
+footer.main-footer{
+	background:@uiAbstractGrey;
+	padding:20px 0;
+
+	a, .dropdown-toggle{
+		color:@uiGrey !important;
+	}
+
+	nav ul{
+		list-style:none;
+		-webkit-padding-start:0 !important;
+		li{
+			float:left;
+			padding:5px 20px;
+			&:first-child{ padding-left:0; }
+		}
+	}
 }
