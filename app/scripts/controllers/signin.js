@@ -9,11 +9,12 @@ angular
 		 * avec vérif du model user
 		 * et personnalisation message success / error
 		 */
-		$scope.register = function(register){
+		$scope.register = function(reg){
+			console.log(reg);
 			$http({
 				method : "POST",
 				url: "http://"+SERVER.prod.url+"/register/",
-				data : register
+				data : reg
 			})
 			.success(function(data){
 				console.log(data);
