@@ -2,7 +2,7 @@
 
 angular
 	.module('oddlyFrontApp')
-	.controller('SignInCtrl', function ($scope, $http, $translate, SERVER) {
+	.controller('SignInCtrl', function ($scope, $http, $translate, $cookieStore, $location, SERVER) {
 
 		/**
 		 * @todo Faire ça plus propre
@@ -35,8 +35,9 @@ angular
 				}
 			})
 			.success(function(data){
-				console.log("logged");
-				console.log(data);
+				$cookieStore.put('sid',data.sid);
+				$cookieStore.put('username', data.username);
+				$location.path("/app");
 			})
 			.error(function(e,status,header,detail){
 				console.error(e.error);
