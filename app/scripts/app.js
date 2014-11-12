@@ -19,7 +19,8 @@ angular
 		'routeStyles',
 		'pascalprecht.translate',
 		'loginCheck',
-		'ngFlatFlags'
+		'ngFlatFlags',
+		'ngFullHeight'
 	])
 	.constant("SERVER", {
 		dev : { url: "localhost:8000/api/v1" },
