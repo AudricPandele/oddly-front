@@ -27,34 +27,20 @@ angular
 		pre_prod : { url : "api.oddly.ninja/api/v1"},
 		prod : { url : "api.oddly.fr/api/v1" }
 	})
-	.config(['$routeProvider', '$locationProvider','$translateProvider', function($routeProvider, $locationProvider, $translateProvider) {
+	.config(['$routeProvider', '$locationProvider','$translateProvider','$cookieStore', function($routeProvider, $locationProvider, $translateProvider, $cookieStore) {
+
+		//Check cookies for preferred language
+		var locale = $cookieStore.get("locale") || "fr_FR";
+
 
 		//Load translations
 		$translateProvider
-			.registerAvailableLanguageKeys(['en_US', 'fr_FR'], {
-				'en_us': 'en_US',
-				'en-us': 'en_US',
-				'en': 'en_US',
-
-				'fr_fr': 'fr_FR',
-				'fr-fr': 'fr_FR',
-				'fr': 'fr_FR'
-			})
 			.useStaticFilesLoader({
 				prefix: '/languages/',
 				suffix: '.json'
 			})
-			.determinePreferredLanguage()
-			/*.determinePreferredLanguage(function(){
-				var nav = window.navigator;
-				var locale = nav.language || nav.browserLanguage || nav.systemLanguage || nav.userLanguage;
-				locale = locale.split("-");
-				locale[1] = locale[1].toUpperCase();
-				return locale.join("_");
-			})*/
-			.fallbackLanguage('fr_FR')
-
-console.log(window.navigator);
+			.preferredLanguage(locale)
+			.fallbackLanguage('fr_FR');
 
 
 		//Load routes
