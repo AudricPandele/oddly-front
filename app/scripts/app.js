@@ -30,12 +30,21 @@ angular
 	.config(['$routeProvider', '$locationProvider','$translateProvider', function($routeProvider, $locationProvider, $translateProvider) {
 
 		//Load translations
-		$translateProvider.determinePreferredLanguage();
-		$translateProvider.fallbackLanguage('fr_FR');
-		$translateProvider.useStaticFilesLoader({
-			prefix: '/languages/',
-			suffix: '.json'
-		});
+		$translateProvider
+			.registerAvailableLanguageKeys(['en_US', 'fr_FR'], {
+				'en_us': 'en_US',
+				'en': 'en_US',
+				'fr_fr': 'fr_FR',
+				'fr': 'fr_FR'
+			})
+			.useStaticFilesLoader({
+				prefix: '/languages/',
+				suffix: '.json'
+			})
+			.determinePreferredLanguage()
+			.fallbackLanguage('fr_FR')
+
+
 
 
 		//Load routes
