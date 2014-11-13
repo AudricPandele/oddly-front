@@ -27,11 +27,7 @@ angular
 		pre_prod : { url : "api.oddly.ninja/api/v1"},
 		prod : { url : "api.oddly.fr/api/v1" }
 	})
-	.config(['$routeProvider', '$locationProvider','$translateProvider','$cookieStore', function($routeProvider, $locationProvider, $translateProvider, $cookieStore) {
-
-		//Check cookies for preferred language
-		var locale = $cookieStore.get("locale") || "fr_FR";
-
+	.config(['$routeProvider', '$locationProvider','$translateProvider', function($routeProvider, $locationProvider, $translateProvider) {
 
 		//Load translations
 		$translateProvider
@@ -39,7 +35,7 @@ angular
 				prefix: '/languages/',
 				suffix: '.json'
 			})
-			.preferredLanguage(locale)
+			.preferredLanguage('fr_FR')
 			.fallbackLanguage('fr_FR');
 
 
@@ -63,3 +59,9 @@ angular
 		if(window.history && window.history.pushState)
 			$locationProvider.html5Mode(true);
 	}])
+	.run(function($cookieStore, $translate){
+
+		//Try to set locale from cookie
+		$translate.use($cookieStore.get("locale"));
+
+	})
