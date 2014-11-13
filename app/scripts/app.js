@@ -33,8 +33,11 @@ angular
 		$translateProvider
 			.registerAvailableLanguageKeys(['en_US', 'fr_FR'], {
 				'en_us': 'en_US',
+				'en-us': 'en_US',
 				'en': 'en_US',
+
 				'fr_fr': 'fr_FR',
+				'fr-fr': 'fr_FR',
 				'fr': 'fr_FR'
 			})
 			.useStaticFilesLoader({
@@ -42,9 +45,16 @@ angular
 				suffix: '.json'
 			})
 			.determinePreferredLanguage()
+			/*.determinePreferredLanguage(function(){
+				var nav = window.navigator;
+				var locale = nav.language || nav.browserLanguage || nav.systemLanguage || nav.userLanguage;
+				locale = locale.split("-");
+				locale[1] = locale[1].toUpperCase();
+				return locale.join("_");
+			})*/
 			.fallbackLanguage('fr_FR')
 
-
+console.log(window.navigator);
 
 
 		//Load routes
