@@ -1,58 +1,60 @@
-<header class="clearfix">
-	<h1><a href="http://www.oddly.fr">Oddly</a></h1>
-</header>
+<div resize class="signin">
+	<header class="clearfix">
+		<h1><a href="http://www.oddly.fr">Oddly</a></h1>
+	</header>
 
-<div class="container">
-	<div class="col-lg-2"></div>
-	<div class="wrapper col-lg-8">
-	<div class="col-lg-6 register">
-		<h2 translate="{{ 'REGISTER_TITLE' }}">Créez votre compte</h2>
+	<div class="container">
+		<div class="col-lg-2"></div>
+		<div class="wrapper col-lg-8">
+		<div class="col-lg-6 register">
+			<h2 translate="{{ 'REGISTER_TITLE' }}">Créez votre compte</h2>
 
-		<div ng-if="error" class="alert alert-warning" role="alert">
-			<strong>{{ error.code }}</strong>
-			<p>{{ error.message }}</p>
+			<div ng-if="error" class="alert alert-warning" role="alert">
+				<strong>{{ error.code }}</strong>
+				<p>{{ error.message }}</p>
+			</div>
+
+			<ng-form name="register-form">
+				<p class="form-item">
+					<label for="register_username" translate="{{ 'REGISTER_EMAIL' }}">Adresse e-mail</label>
+					<input class="ui-input" type="text" name="register_username" ng-model="reg.email" ng-required="true" />
+				</p>
+				<p class="form-item">
+					<label for="register_password" translate="{{ 'REGISTER_PASSWORD' }}">Choisissez un mot de passe</label>
+					<input class="ui-input" type="password" name="register_password" ng-model="reg.password" ng-required="true" />
+				</p>
+				<p class="form-item">
+					<label for="register_password_repead" translate="{{ 'REGISTER_PASSWORD_REPEAT' }}">Répétez le mot de passe</label>
+					<input class="ui-input" type="password" name="register_password_repeat" ng-model="reg.password_repeat" ng-required="true" />
+				</p>
+				<p class="form-item checkbox">
+					<label><input type="checkbox" name="register_cgu" ng-model="reg.policy" value="true" /> <span translate="{{ 'REGISTER_POLICY' }}">J’accepte la <a href="#">Politique de Confidentialité</a> et les
+					<a href="#">Conditions Générales d’Utilisation</a> d’Oddly</span></label>
+				</p>
+				<p class="form-item">
+					<button class="ui-progress-button ui-green" ng-click="register(reg)" translate="{{ 'REGISTER_BUTTON' }}">Créer un compte</button>
+				</p>
+			</ng-form>
 		</div>
 
-		<ng-form name="register-form">
-			<p class="form-item">
-				<label for="register_username" translate="{{ 'REGISTER_EMAIL' }}">Adresse e-mail</label>
-				<input class="ui-input" type="text" name="register_username" ng-model="reg.email" ng-required="true" />
-			</p>
-			<p class="form-item">
-				<label for="register_password" translate="{{ 'REGISTER_PASSWORD' }}">Choisissez un mot de passe</label>
-				<input class="ui-input" type="password" name="register_password" ng-model="reg.password" ng-required="true" />
-			</p>
-			<p class="form-item">
-				<label for="register_password_repead" translate="{{ 'REGISTER_PASSWORD_REPEAT' }}">Répétez le mot de passe</label>
-				<input class="ui-input" type="password" name="register_password_repeat" ng-model="reg.password_repeat" ng-required="true" />
-			</p>
-			<p class="form-item checkbox">
-				<label><input type="checkbox" name="register_cgu" ng-model="reg.policy" value="true" /> <span translate="{{ 'REGISTER_POLICY' }}">J’accepte la <a href="#">Politique de Confidentialité</a> et les
-				<a href="#">Conditions Générales d’Utilisation</a> d’Oddly</span></label>
-			</p>
-			<p class="form-item">
-				<button class="ui-progress-button ui-green" ng-click="register(reg)" translate="{{ 'REGISTER_BUTTON' }}">Créer un compte</button>
-			</p>
-		</ng-form>
-	</div>
+		<div class="col-lg-6 sign-in clearfix">
+			<h2 translate="{{ 'LOGIN_TITLE' }}">S'identifier</h2>
 
-	<div class="col-lg-6 signin clearfix">
-		<h2 translate="{{ 'LOGIN_TITLE' }}">S'identifier</h2>
-
-		<ng-form name="login-form">
-			<p class="form-item">
-				<label for="username" translate="{{ 'LOGIN_EMAIL' }}">E-mail</label>
-				<input class="ui-input" type="text" name="username" ng-required="true" ng-model="user.username" />
-			</p>
-			<p class="form-item">
-				<label for="password" translate="{{ 'LOGIN_PASSWORD' }}">Mot de passe</label>
-				<input class="ui-input" type="password" name="password" ng-required="true" ng-model="user.password" />
-			</p>
-			<p class="form-item">
-				<button class="ui-progress-button ui-green" ng-click="login(user)" translate="{{ 'LOGIN_BUTTON' }}">S'identifier</button>
-			</p>
-		</ng-form>
+			<ng-form name="login-form">
+				<p class="form-item">
+					<label for="username" translate="{{ 'LOGIN_EMAIL' }}">E-mail</label>
+					<input class="ui-input" type="text" name="username" ng-required="true" ng-model="user.username" />
+				</p>
+				<p class="form-item">
+					<label for="password" translate="{{ 'LOGIN_PASSWORD' }}">Mot de passe</label>
+					<input class="ui-input" type="password" name="password" ng-required="true" ng-model="user.password" />
+				</p>
+				<p class="form-item">
+					<button class="ui-progress-button ui-green" ng-click="login(user)" translate="{{ 'LOGIN_BUTTON' }}">S'identifier</button>
+				</p>
+			</ng-form>
+		</div>
+		</div>
+		<div class="col-lg-2"></div>
 	</div>
-	</div>
-	<div class="col-lg-2"></div>
 </div>

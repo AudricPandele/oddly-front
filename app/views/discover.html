@@ -1,67 +1,69 @@
-<div resize parallax-background parallax-ratio="0.4" class="content">
-	<header class="clearfix">
-		<h1><a href="http://www.oddly.fr">Oddly</a></h1>
+<div class="discover">
+	<div resize class="discover-inner">
+		<header class="clearfix">
+			<h1><a href="http://www.oddly.fr">Oddly</a></h1>
 
-		<a ng-href="/signin" class="ui-button ui-blue" translate="{{'DISCOVER_LOGIN'}}"></a>
-	</header>
+			<a ng-href="/signin" class="ui-button ui-blue" translate="{{'DISCOVER_LOGIN'}}"></a>
+		</header>
 
-	<div class="wrapper">
-		<p>
-			<h2 translate="{{'DISCOVER_TITLE'}}"></h2>
-			<h3 translate="{{'DISCOVER_SUBTITLE'}}"></h3>
-		</p>
-		<p><br /></p>
-		<p>
-			<a ng-href="/signin" class="ui-button ui-red ui-large" translate="{{'DISCOVER_MAIN_BUTTON'}}"></a>
-		</p>
-	</div>
-</div>
-
-<div class="promo promo-oddly">
-	<div class="container">
-		<div class="col-lg-6">
-			<img src="/images/discover/promo-1.jpg" />
-		</div>
-		<div class="col-lg-6">
-			<h2>Tous vos livres, au même endroit.</h2>
-			<p>Oddly met à votre disposition des millions d'ouvrages : vos auteurs préférés, les derniers journaux et les meilleurs magazines rien que pour vous. <a ng-href="/signin">Cliquez ici</a> pour découvrir Oddly et lire tout ce que vous voulez, autant que vous le voulez.</p>
-		</div>
-	</div>
-</div>
-
-<div class="promo-background" style="background-image:url(/images/discover/reading-man.jpg);"></div>
-
-<div class="promo promo-artists">
-	<div class="container">
-		<div class="col-lg-6">
-			<h2>Ici, tout le monde a sa place.</h2>
+		<div class="wrapper">
+			<p>
+				<h2 translate="{{'DISCOVER_TITLE'}}"></h2>
+				<h3 translate="{{'DISCOVER_SUBTITLE'}}"></h3>
+			</p>
 			<p><br /></p>
-			<p>Que vous soyez une grande maison d'édition, un petit éditeur ou un artiste indépendant, la plate-forme Oddly Artists a été créée pour vous.</p>
-			<p><br /></p>
-			<p class="text-center"><a href="http://artists.oddly.fr/" class="ui-button ui-green">Découvrir Oddly pour les artistes</a></p>
-		</div>
-		<div class="col-lg-6 text-right">
-			<img src="/images/discover/promo-2.jpg" />
-		</div>
-	</div>
-</div>
-
-<div class="promo-background" style="background-image:url(/images/discover/bookshelf.jpg);"></div>
-
-<div class="promo promo-mobile">
-	<div class="container">
-		<div class="col-lg-6">
-			<img src="/images/discover/promo-3.jpg" />
-		</div>
-		<div class="col-lg-6">
-			<h2>Disponible partout où vous pourriez en avoir besoin.</h2>
-			<p><br /></p>
-			<p class="text-center">
-				<a class="store-button" href="#"><img src="/images/discover/appstore.svg" /></a>
-				<a class="store-button" href="#"><img src="https://developer.android.com/images/brand/fr_generic_rgb_wo_45.png" height="40" /></a>
+			<p>
+				<a ng-href="/signin" class="ui-button ui-red ui-large" translate="{{'DISCOVER_MAIN_BUTTON'}}"></a>
 			</p>
 		</div>
 	</div>
-</div>
 
-<ng-include src="'/views/fragments/footer.html'"></ng-include>
+	<div class="promo promo-oddly">
+		<div class="container">
+			<div class="col-lg-6">
+				<img src="/images/discover/promo-1.jpg" />
+			</div>
+			<div class="col-lg-6">
+				<h2>Tous vos livres, au même endroit.</h2>
+				<p>Oddly met à votre disposition des millions d'ouvrages : vos auteurs préférés, les derniers journaux et les meilleurs magazines rien que pour vous. <a ng-href="/signin">Cliquez ici</a> pour découvrir Oddly et lire tout ce que vous voulez, autant que vous le voulez.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="promo-background" style="background-image:url(/images/discover/reading-man.jpg);"></div>
+
+	<div class="promo promo-artists">
+		<div class="container">
+			<div class="col-lg-6">
+				<h2>Ici, tout le monde a sa place.</h2>
+				<p><br /></p>
+				<p>Que vous soyez une grande maison d'édition, un petit éditeur ou un artiste indépendant, la plate-forme Oddly Artists a été créée pour vous.</p>
+				<p><br /></p>
+				<p class="text-center"><a href="http://artists.oddly.fr/" class="ui-button ui-green">Découvrir Oddly pour les artistes</a></p>
+			</div>
+			<div class="col-lg-6 text-right">
+				<img src="/images/discover/promo-2.jpg" />
+			</div>
+		</div>
+	</div>
+
+	<div class="promo-background" style="background-image:url(/images/discover/bookshelf.jpg);"></div>
+
+	<div class="promo promo-mobile">
+		<div class="container">
+			<div class="col-lg-6">
+				<img src="/images/discover/promo-3.jpg" />
+			</div>
+			<div class="col-lg-6">
+				<h2>Disponible partout où vous pourriez en avoir besoin.</h2>
+				<p><br /></p>
+				<p class="text-center">
+					<a class="store-button" href="#"><img src="/images/discover/appstore.svg" /></a>
+					<a class="store-button" href="#"><img src="https://developer.android.com/images/brand/fr_generic_rgb_wo_45.png" height="40" /></a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<ng-include src="'/views/fragments/footer.html'"></ng-include>
+</div>

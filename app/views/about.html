@@ -1,43 +1,45 @@
-<ng-include src="'/views/fragments/header.html'"></ng-include>
+<div class="static">
+	<ng-include src="'/views/fragments/header.html'"></ng-include>
 
-<div class="container">
-	<nav class="submenu" role="menubar">
-		<ul class="clearfix">
-			<h4 translate="{{ 'STATIC_ABOUT_MENU_TITLE' }}">A propos</h4>
-			<li ng-class="{ active:activeRoute('/about') }"><a href="/about" translate="{{ 'STATIC_ABOUT_MENU_US' }}">Notre histoire</a></li>
-			<li ng-class="{ active:activeRoute('/about/legal') }"><a href="/about/legal" translate="{{ 'STATIC_ABOUT_MENU_LEGAL' }}">Mentions légales</a></li>
-			<li ng-class="{ active:activeRoute('/about/policy') }"><a href="/about/policy" translate="{{ 'STATIC_ABOUT_MENU_PRIVACY' }}">Politique de confidentialité</a></li>
-			<li ng-class="{ active:activeRoute('/about/press') }"><a href="/about/press" translate="{{ 'STATIC_ABOUT_MENU_PRESS' }}">Presse</a></li>
-		</ul>
-	</nav>
-</div>
-
-<div class="container">
-	<div class="col-lg-8">
-
-		<div class="text-wrapper text-justify">
-			<h2 translate="{{ 'STATIC_ABOUT_WHOWEARE_TITLE' }}">Qui sommes-nous ?</h2>
-			<p translate="{{ 'STATIC_ABOUT_WHOWEARE_P1' }}">Oddly, c’est avant tout un lecteur de livres, bandes dessinées, journaux et magazines conçu pour vous <strong>faciliter</strong> la vie et vous redonner goût pour la lecture numérique.</p>
-			<p translate="{{ 'STATIC_ABOUT_WHOWEARE_P2' }}">Oddly vous permet de lire tout ce que vous voulez, quand vous le voulez, où vous le voulez et surtout, <strong>autant de fois que vous le voulez</strong>. Fini les multiples achats de livres, fini les journaux à la poubelles, commençons à penser à notre planète, et notre portefeuille.</p>
-			<p translate="{{ 'STATIC_ABOUT_WHOWEARE_P3' }}">Et si jamais vous ne savez pas quoi lire, grace à son système de suggestions, Oddly vous proposera tous les jours de nouveaux articles en relation avec ce que vous avez déjà lu.</p>
-			<p translate="{{ 'STATIC_ABOUT_WHOWEARE_P4' }}">Un univers entier n’est plus qu’à quelques pas de vous. Abonnez-vous et <strong>profitez</strong>, tout simplement.</p>
-		</div>
-
-		<div class="text-wrapper text-justify">
-			<h3 translate="{{ 'STATIC_ABOUT_SUPPORT_TITLE' }}">Support client</h3>
-			<p translate="{{ 'STATIC_ABOUT_SUPPORT_P1' }}">Afin de contacter notre support client, deux solutions existent :</p>
-			<p translate="{{ 'STATIC_ABOUT_SUPPORT_P2' }}"><strong>1.</strong> L’Aide : Consulter l’aide et les <a href="/help/faq">questions les plus fréquentes</a> reste le meilleur moyen de connaître toutes les options et fonctionnalités d’Oddly.</p>
-			<p translate="{{ 'STATIC_ABOUT_SUPPORT_P3' }}"><strong>2.</strong> Le formulaire de contact : Si vous ne trouvez aucune solution à votre problème avec l’Aide et que vous souhaitez contacter le support client d’Oddly, vous pouvez envoyer votre demande grace au formulaire de contact.</p>
-		</div>
-
+	<div class="container">
+		<nav class="submenu" role="menubar">
+			<ul class="clearfix">
+				<h4 translate="{{ 'STATIC_ABOUT_MENU_TITLE' }}">A propos</h4>
+				<li ng-class="{ active:activeRoute('/about') }"><a href="/about" translate="{{ 'STATIC_ABOUT_MENU_US' }}">Notre histoire</a></li>
+				<li ng-class="{ active:activeRoute('/about/legal') }"><a href="/about/legal" translate="{{ 'STATIC_ABOUT_MENU_LEGAL' }}">Mentions légales</a></li>
+				<li ng-class="{ active:activeRoute('/about/policy') }"><a href="/about/policy" translate="{{ 'STATIC_ABOUT_MENU_PRIVACY' }}">Politique de confidentialité</a></li>
+				<li ng-class="{ active:activeRoute('/about/press') }"><a href="/about/press" translate="{{ 'STATIC_ABOUT_MENU_PRESS' }}">Presse</a></li>
+			</ul>
+		</nav>
 	</div>
-	<div class="col-lg-4">
 
-		<div class="text-wrapper text-justify">
-			<h3 translate="{{ 'STATIC_ABOUT_FINDUS_TITLE' }}">Où nous trouver ?</h3>
-			<p translate="{{ 'STATIC_ABOUT_FINDUS_ADDRESS' }}"><strong>Oddly France</strong><br />44 rue de la Faïencerie<br />33000 Bordeaux</p>
+	<div class="container">
+		<div class="col-lg-8">
+
+			<div class="text-wrapper text-justify">
+				<h2 translate="{{ 'STATIC_ABOUT_WHOWEARE_TITLE' }}">Qui sommes-nous ?</h2>
+				<p translate="{{ 'STATIC_ABOUT_WHOWEARE_P1' }}">Oddly, c’est avant tout un lecteur de livres, bandes dessinées, journaux et magazines conçu pour vous <strong>faciliter</strong> la vie et vous redonner goût pour la lecture numérique.</p>
+				<p translate="{{ 'STATIC_ABOUT_WHOWEARE_P2' }}">Oddly vous permet de lire tout ce que vous voulez, quand vous le voulez, où vous le voulez et surtout, <strong>autant de fois que vous le voulez</strong>. Fini les multiples achats de livres, fini les journaux à la poubelles, commençons à penser à notre planète, et notre portefeuille.</p>
+				<p translate="{{ 'STATIC_ABOUT_WHOWEARE_P3' }}">Et si jamais vous ne savez pas quoi lire, grace à son système de suggestions, Oddly vous proposera tous les jours de nouveaux articles en relation avec ce que vous avez déjà lu.</p>
+				<p translate="{{ 'STATIC_ABOUT_WHOWEARE_P4' }}">Un univers entier n’est plus qu’à quelques pas de vous. Abonnez-vous et <strong>profitez</strong>, tout simplement.</p>
+			</div>
+
+			<div class="text-wrapper text-justify">
+				<h3 translate="{{ 'STATIC_ABOUT_SUPPORT_TITLE' }}">Support client</h3>
+				<p translate="{{ 'STATIC_ABOUT_SUPPORT_P1' }}">Afin de contacter notre support client, deux solutions existent :</p>
+				<p translate="{{ 'STATIC_ABOUT_SUPPORT_P2' }}"><strong>1.</strong> L’Aide : Consulter l’aide et les <a href="/help/faq">questions les plus fréquentes</a> reste le meilleur moyen de connaître toutes les options et fonctionnalités d’Oddly.</p>
+				<p translate="{{ 'STATIC_ABOUT_SUPPORT_P3' }}"><strong>2.</strong> Le formulaire de contact : Si vous ne trouvez aucune solution à votre problème avec l’Aide et que vous souhaitez contacter le support client d’Oddly, vous pouvez envoyer votre demande grace au formulaire de contact.</p>
+			</div>
+
+		</div>
+		<div class="col-lg-4">
+
+			<div class="text-wrapper text-justify">
+				<h3 translate="{{ 'STATIC_ABOUT_FINDUS_TITLE' }}">Où nous trouver ?</h3>
+				<p translate="{{ 'STATIC_ABOUT_FINDUS_ADDRESS' }}"><strong>Oddly France</strong><br />44 rue de la Faïencerie<br />33000 Bordeaux</p>
+			</div>
 		</div>
 	</div>
-</div>
 
-<ng-include src="'/views/fragments/footer.html'"></ng-include>
+	<ng-include src="'/views/fragments/footer.html'"></ng-include>
+</div>

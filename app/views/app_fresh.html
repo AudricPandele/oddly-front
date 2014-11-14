@@ -1,31 +1,33 @@
-<ng-include src="'/views/fragments/app_menu.html'"></ng-include>
+<div class="main-app">
+	<ng-include src="'/views/fragments/app_menu.html'"></ng-include>
 
-<div class="content">
-	<div ng-if="advert.image" class="home-highlight" style="background-image:url(/dummy/fresh/ad/{{ advert.image.url }}); background-position:{{ advert.image.x }} {{ advert.image.y }};">
-		<div class="home-highlight-wrapper">
-			<div class="home-highlight-caption {{(advert.caption.position) ? 'right' : ''}}">
-				<h2>{{ advert.caption.title }}</h2>
-				<p>{{ advert.caption.text }}</p>
-				<a ng-href="{{ advert.caption.button.url }}" class="ui-button ui-blue ui-no-shadow">Découvrir</a>
+	<div class="content">
+		<div ng-if="advert.image" class="home-highlight" style="background-image:url(/dummy/fresh/ad/{{ advert.image.url }}); background-position:{{ advert.image.x }} {{ advert.image.y }};">
+			<div class="home-highlight-wrapper">
+				<div class="home-highlight-caption {{(advert.caption.position) ? 'right' : ''}}">
+					<h2>{{ advert.caption.title }}</h2>
+					<p>{{ advert.caption.text }}</p>
+					<a ng-href="{{ advert.caption.button.url }}" class="ui-button ui-blue ui-no-shadow">Découvrir</a>
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<div ng-repeat="(key, value) in items">
-		<h3>
-			<span translate="{{ 'APP_FRESH_TITLE_' + (key|uppercase) }}">{{ key }}</span>
-			<a href="/app/fresh/{{ key }}" class="more-button" translate="{{ 'APP_FRESH_MORE_BUTTON' }}">Plus</a>
-		</h3>
-		<ul class="inline-items-list">
-			<li class="item" ng-repeat="item in value">
-				<a ng-href="/app/item/{{ item._id }}">
-					<div class="thumb-wrapper">
-						<div class="thumb" style="background-image:url(/dummy/fresh/covers/{{ item._id }}.jpg);"></div>
-					</div>
-					<p class="title">{{ item.name }}</p>
-					<p class="artist">{{ item.info }}</p>
-				</a>
-			</li>
-		</ul>
+		<div ng-repeat="(key, value) in items">
+			<h3>
+				<span translate="{{ 'APP_FRESH_TITLE_' + (key|uppercase) }}">{{ key }}</span>
+				<a href="/app/fresh/{{ key }}" class="more-button" translate="{{ 'APP_FRESH_MORE_BUTTON' }}">Plus</a>
+			</h3>
+			<ul class="inline-items-list">
+				<li class="item" ng-repeat="item in value">
+					<a ng-href="/app/item/{{ item._id }}">
+						<div class="thumb-wrapper">
+							<div class="thumb" style="background-image:url(/dummy/fresh/covers/{{ item._id }}.jpg);"></div>
+						</div>
+						<p class="title">{{ item.name }}</p>
+						<p class="artist">{{ item.info }}</p>
+					</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 </div>
