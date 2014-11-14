@@ -37,8 +37,7 @@ module.exports = function (grunt) {
 					optimization: 2
 				},
 				files: {
-					"<%= yeoman.app %>/styles/css/_static.css": "<%= yeoman.app %>/styles/less/static.less",
-					"<%= yeoman.app %>/styles/css/_app.css": "<%= yeoman.app %>/styles/less/app.less"
+					"<%= yeoman.app %>/styles/css/main.css": "<%= yeoman.app %>/styles/less/main.less",
 				}
 			},
 
@@ -49,8 +48,7 @@ module.exports = function (grunt) {
 					optimization: 2
 				},
 				files: {
-					"<%= yeoman.dist %>/styles/css/_static.css": "<%= yeoman.app %>/styles/less/static.less",
-					"<%= yeoman.dist %>/styles/css/_app.css": "<%= yeoman.app %>/styles/less/app.less"
+					"<%= yeoman.app %>/styles/css/main.css": "<%= yeoman.app %>/styles/less/main.less",
 				}
 			}
 		},
@@ -353,8 +351,7 @@ module.exports = function (grunt) {
 						'*.html',
 						'views/{,*/}*.html',
 						'images/{,*/}*.{webp}',
-						'fonts/*',
-						'styles/css/angular-flat-flags.css'
+						'fonts/*'
 					]
 				},
 				{
@@ -381,7 +378,7 @@ module.exports = function (grunt) {
 		styles: {
 			expand: true,
 			cwd: '<%= yeoman.app %>/styles',
-			dest: '.tmp/styles/',
+			dest: '<%= yeoman.dist %>/styles',
 			src: 'css/*.css'
 		},
 
