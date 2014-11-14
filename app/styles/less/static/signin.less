@@ -1,0 +1,64 @@
+/**
+ * ========================================
+ * Static page : Signin
+ * ========================================
+ */
+.signin{
+	.full-width-background("/images/login/gloomy-lake.jpeg");
+
+	header{
+		padding:50px 80px;
+
+		h1 a{
+			display:block;
+			width:127px;
+			height:34px;
+			margin:0;
+			text-indent:-9999px;
+			.full-width-background("/images/discover/logo.svg");
+		}
+	}
+
+	.wrapper{
+		background:@uiGreyBrighter;
+
+		h2{ font-size:@defaultTextLargeSize; font-weight:bold; color:@uiBlack; }
+		p.form-item{
+			padding-top:15px;
+
+			& label, & input{ font-weight:@defaultTextWeight; display:block; width:100%; }
+			&.checkbox label{
+				input{ z-index:0; }
+				span{ position:static; z-index:1; }
+			}
+		}
+		button{ margin-bottom:20px; }
+
+		.register{
+			position:relative;
+			padding-right:20px;
+
+			&::after{
+				display:block;
+				content:'';
+				position:absolute;
+				right:0px;
+				width:1px;
+				height:60%;
+				top:0;
+				bottom:0;
+				margin:auto;
+				background:@uiGrey;
+				opacity:0.5;
+			}
+		}
+	}
+
+	@media @mobile{
+		header h1 a{ margin:auto; }
+		.wrapper .register{
+			padding-top:20px;
+			&::after{ display:none; }
+		}
+	}
+}

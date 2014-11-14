@@ -1,0 +1,87 @@
+/**
+ * ========================================
+ * Static page : Other
+ * ========================================
+ */
+.static{
+	header.main-header{
+		background:@uiBlue;
+
+		h1{ margin:20px 0; float:left; .header-logo(189px, 50px, "/images/discover/logo.svg"); }
+		nav.main-nav ul {
+			list-style:none;
+			margin-top:25px;
+
+			li{
+				float:left;
+				padding:6px 20px;
+				.border-radius(5px);
+
+				a{
+					color:@uiGreyBrighter;
+				}
+			}
+		}
+
+		.special-link{
+			margin-left:10px;
+			background:@uiGreyBrighter;
+			a{
+				color:@uiBlue !important;
+			}
+		}
+	}
+
+	footer.main-footer{
+		background:@uiAbstractGrey;
+		margin-top:100px;
+		padding:20px 0;
+
+		a, .dropdown-toggle{
+			color:@uiGrey !important;
+		}
+
+		nav ul{
+			list-style:none;
+			-webkit-padding-start:0 !important;
+			li{
+				float:left;
+				padding:5px 20px;
+				&:first-child{ padding-left:0; }
+			}
+		}
+	}
+
+	.submenu{
+		margin:30px 0 0;
+
+		ul{
+			list-style:none;
+
+			h4{ float:left; margin-right:20px; }
+			li{
+				float:left;
+				padding:5px 20px;
+				margin:4px 10px 0;
+				.border-radius(5px);
+
+				a{ color:@uiGrey; }
+
+				&.active{
+					background:@uiBlue;
+
+					a{ color:@uiGreyBrighter; }
+				}
+			}
+		}
+	}
+
+	.container{
+		h2,h3{ margin:50px 0 30px; }
+		h3{ color:@uiBlue; font-weight:400; }
+
+		.text-wrapper{
+			p{ margin-bottom:20px; }
+		}
+	}
+}
