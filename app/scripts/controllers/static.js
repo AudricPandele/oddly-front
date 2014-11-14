@@ -2,7 +2,7 @@
 
 angular
 	.module('oddlyFrontApp')
-	.controller('StaticPageCtrl', function ($scope, $http, $location, $translate, SERVER) {
+	.controller('StaticPageCtrl', function ($scope, $http, $location, $translate, $cookieStore, SERVER) {
 
 		//Check current route for active links
 		$scope.activeRoute = function(rt){
@@ -12,6 +12,7 @@ angular
 
 		//Change lang
 		$scope.setLocale = function(name, code, locale){
+			$cookieStore.put("locale", locale);
 			$translate.use(locale);
 			$scope.selected = { name: name, code: code };
 		};
