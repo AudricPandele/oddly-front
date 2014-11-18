@@ -42,8 +42,8 @@ angular
 		$routeProvider
 
 			//Landing
-			.when('/', { templateUrl: '/views/landing.html', controller: 'LandingCtrl' })
-			.when('/discover', { templateUrl: '/views/discover.html', controller: 'DiscoverCtrl' })
+			//.when('/', { templateUrl: '/views/landing.html', controller: 'LandingCtrl' })
+			.when('/', { templateUrl: '/views/discover.html', controller: 'DiscoverCtrl' })
 			.when('/signin', { templateUrl: '/views/signin.html', controller: 'SignInCtrl' })
 
 			//Static pages
