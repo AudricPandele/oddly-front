@@ -19,7 +19,8 @@ angular
 		'pascalprecht.translate',
 		'loginCheck',
 		'ngFlatFlags',
-		'ngFullHeight'
+		'ngFullHeight',
+		'angularSmoothscroll'
 	])
 	.constant("SERVER", {
 		dev : { url: "localhost:8000/api/v1" },
