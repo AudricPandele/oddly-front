@@ -3,7 +3,7 @@
 		<header class="clearfix">
 			<h1><a href="http://www.oddly.fr">Oddly</a></h1>
 
-			<a href="/discover/#beta" class="ui-button ui-blue" translate="{{'DISCOVER.LOGIN'}}">S'identifier</a>
+			<a ng-href="/discover" class="ui-button ui-blue" translate="{{'DISCOVER.LOGIN'}}">S'identifier</a>
 		</header>
 
 		<div class="wrapper">
@@ -13,9 +13,11 @@
 			</p>
 			<p><br /></p>
 			<p>
-				<a href="/about" class="ui-button ui-red ui-large" translate="{{'DISCOVER.MAIN_BUTTON'}}">Découvrir gratuitement pendant un mois</a>
+				<a href="/about" class="ui-button ui-red ui-large" translate="{{'DISCOVER.MORE_INFO_BUTTON'}}">En savoir plus</a> <!-- Découvrir gratuitement pendant un mois</a> -->
 			</p>
 		</div>
+
+		<a class="down-arrow" ng-href="/discover"><i class="fa fa-angle-down"></i></a>
 	</div>
 
 	<div id="know-more" class="promo promo-oddly">
