@@ -1,79 +1,183 @@
 {
-	"LANDING_BUTTON": 				"Register",
-	"LANDING_SUBTITLE": 			"Register for news about <strong>Oddly</strong>. IT's comming freaky fastly.",
+	"LANDING" : {
+		"BUTTON" : "Register",
+		"SUBTITLE" : "Register for news about <strong>Oddly</strong>. IT's comming freaky fastly."
+	},
 
 
-	"DISCOVER_LOGIN": 				"Sign In",
-	"DISCOVER_TITLE": 				"You'll love reading books again.",
-	"DISCOVER_SUBTITLE": 			"A whole library, for <strong>only</strong> EUR4,99 per month.",
-	"DISCOVER_MAIN_BUTTON": 		"Start your free month",
+	"DISCOVER" : {
+
+		"LOGIN" : "Sign In",
+		"TITLE" : "You'll love reading books again.",
+		"SUBTITLE" : "A whole library, for <strong>only</strong> EUR4,99 per month.",
+		"MAIN_BUTTON" : "Start your free month",
+		"MORE_INFO_BUTTON" : "Read more",
+
+		"PROMO" : {
+
+			"ODDLY" : {
+				"TITLE" : "All your books, in the same place.",
+				"TEXT" : "Oddly lets you read millions of books : your favorite authors, the last newspapers and the best magazines, only for you. <a href='/discover/#beta'>Click here</a> to discover Oddly and start reading everything you want, as much as you want."
+			},
+
+			"ARTISTS" : {
+				"TITLE" : "There's a place for everyone here.",
+				"TEXT" : "Wether you are a great publisher, a small editor or an independant artist, Oddly Artists was created for you.",
+				"BUTTON" : "Discover Oddly for artists"
+			},
+
+			"MOBILE" : {
+				"TITLE" : "Available wherever you may need it."
+			},
+
+			"BETA" : {
+				"TITLE" : "Register for news about Oddly",
+				"BUTTON" : "Register"
+			}
+
+		}
+
+	},
 
 
-	"REGISTER_TITLE": 				"Sign Up",
-	"REGISTER_EMAIL": 				"Email address",
-	"REGISTER_PASSWORD": 			"Chose a password",
-	"REGISTER_PASSWORD_REPEAT": 	"Repeat your password",
-	"REGISTER_POLICY": 				"I agree with the <a href='/policy'>Privacy Policy</a> and the <a href='/terms'>Terms of Use</a> of Oddly",
-	"REGISTER_BUTTON": 				"Register",
+	"REGISTER" : {
+		"TITLE" : "Sign Up",
+		"EMAIL" : "Email address",
+		"PASSWORD" : "Chose a password",
+		"PASSWORD_REPEAT" : "Repeat your password",
+		"POLICY" : "I agree with the <a href='/policy'>Privacy Policy</a> and the <a href='/terms'>Terms of Use</a> of Oddly",
+		"BUTTON" : "Register"
+	},
 
 
-	"LOGIN_TITLE": 					"Sign In",
-	"LOGIN_EMAIL": 					"Email",
-	"LOGIN_PASSWORD": 				"Password",
-	"LOGIN_BUTTON": 				"Login",
+	"LOGIN" : {
+		"TITLE" : "Sign In",
+		"EMAIL" : "Email",
+		"PASSWORD" : "Password",
+		"BUTTON" : "Login"
+	},
 
 
-	"STATIC_HEADER_MENU_PRICING":	"Pricing",
-	"STATIC_HEADER_MENU_HELP":		"Help",
-	"STATIC_HEADER_MENU_LOGOUT":	"Logout",
-	"STATIC_HEADER_MENU_SIGNIN":	"Signin",
-	"STATIC_HEADER_MENU_PLAYER":	"Go to Player",
+	"STATIC" : {
+
+		"HEADER" : {
+
+			"MENU" : {
+				"PRICING" : "Pricing",
+				"HELP" : "Help",
+				"LOGOUT" : "Logout",
+				"SIGNIN" : "Signin",
+				"PLAYER" : "Go to Player"
+			}
+
+		},
 
 
-	"STATIC_FOOTER_MENU_ABOUT":		"About us",
-	"STATIC_FOOTER_MENU_JOBS":		"Jobs",
-	"STATIC_FOOTER_MENU_PRESS":		"Press",
-	"STATIC_FOOTER_MENU_NEWS":		"News",
+		"FOOTER" : {
+
+			"MENU" : {
+				"ABOUT" : "About us",
+				"JOBS" : "Jobs",
+				"PRESS" : "Press",
+				"NEWS" : "News"
+			}
+
+		},
 
 
-	"STATIC_ABOUT_MENU_TITLE":		"About us",
-	"STATIC_ABOUT_MENU_US":			"Our story",
-	"STATIC_ABOUT_MENU_LEGAL":		"Legal",
-	"STATIC_ABOUT_MENU_PRIVACY":	"Privacy policy",
-	"STATIC_ABOUT_MENU_PRESS":		"Press",
+		"ABOUT" : {
 
-	"STATIC_ABOUT_WHOWEARE_TITLE":	"Who we are ?",
-	"STATIC_ABOUT_WHOWEARE_P1":		"Oddly is mainly a reader for books, comics, newspapers and magazines designed to make your life <strong>easier</strong> and give you back a taste for digital reading.",
-	"STATIC_ABOUT_WHOWEARE_P2":		"Oddly allows you to read whatever you want, whenever you want, wherever you want and above all, <strong>as many times as you want</strong>. Enough multiple book purchases, newspaper ending in the trash, start thinking about our planet, and out wallets.",
-	"STATIC_ABOUT_WHOWEARE_P3":		"And if you really don't know what to read, thanks to its suggestion system, Oddly gives you new items every day, related to things you have already read.",
-	"STATIC_ABOUT_WHOWEARE_P4":		"An entire universe is just steps away from you. subscribe and <strong>enjoy</strong>, as simply as that.",
-
-	"STATIC_ABOUT_SUPPORT_TITLE":	"Customer support",
-	"STATIC_ABOUT_SUPPORT_P1":		"To contact our customer support there are two solutions :",
-	"STATIC_ABOUT_SUPPORT_P2":		"<strong>1.</strong> Help desk : Check help desk and <a href='/help/faq'>frequently asked questions</a> remains the best way to know all the options and features of Oddly.",
-	"STATIC_ABOUT_SUPPORT_P3":		"<strong>2.</strong> Contact form : If you are unable to find any solution to your problem using help desk and want to contact Oddly Customer Support, you can send your request using the contact form.",
-
-	"STATIC_ABOUT_FINDUS_TITLE":	"Where to find us ?",
-	"STATIC_ABOUT_FINDUS_ADDRESS":	"<strong>Oddly France</strong><br />44 rue de la Faïencerie<br />33000 Bordeaux",
+			"MENU" : {
+				"TITLE" : "About us",
+				"US" : "Our story",
+				"LEGAL" : "Legal",
+				"PRIVACY" : "Privacy policy",
+				"PRESS" : "Press"
+			},
 
 
-	"APP_SEARCH":					"Search",
-	"APP_MENU" :					"Menu",
-	"APP_MENU_FRESH":				"Fresh",
-	"APP_MENU_TOPS":				"Tops",
-	"APP_MENU_CAT":					"Categories",
+			"WHOWEARE" : {
+				"TITLE" : "Who we are ?",
+				"P1" : "Oddly is mainly a reader for books, comics, newspapers and magazines designed to make your life <strong>easier</strong> and give you back a taste for digital reading.",
+				"P2" : "Oddly allows you to read whatever you want, whenever you want, wherever you want and above all, <strong>as many times as you want</strong>. Enough multiple book purchases, newspaper ending in the trash, start thinking about our planet, and out wallets.",
+				"P3" : "And if you really don't know what to read, thanks to its suggestion system, Oddly gives you new items every day, related to things you have already read.",
+				"P4" : "An entire universe is just steps away from you. subscribe and <strong>enjoy</strong>, as simply as that."
+			},
 
-	"APP_BOOKSHELF":				"My bookshelf",
-	"APP_BOOKSHELF_AUTHORS":		"Authors",
-	"APP_BOOKSHELF_BOOKS":			"Books",
-	"APP_BOOKSHELF_COMICS":			"Comics",
-	"APP_BOOKSHELF_MAGAZINES":		"Magazines",
-	"APP_BOOKSHELF_NEWSPAPERS":		"Newspapers",
 
-	"APP_FRESH_TITLE_BOOKS":		"Books",
-	"APP_FRESH_TITLE_COMICS":		"Comics",
-	"APP_FRESH_TITLE_MAGAZINES":	"Magazines",
-	"APP_FRESH_TITLE_NEWSPAPERS":	"Newspapers",
+			"SUPPORT" : {
+				"TITLE" : "Customer support",
+				"P1" : "To contact our customer support there are two solutions :",
+				"P2" : "<strong>1.</strong> Help desk : Check help desk and <a href='/help/faq'>frequently asked questions</a> remains the best way to know all the options and features of Oddly.",
+				"P3" : "<strong>2.</strong> Contact form : If you are unable to find any solution to your problem using help desk and want to contact Oddly Customer Support, you can send your request using the contact form."
+			},
 
-	"APP_FRESH_MORE_BUTTON":		"More"
+
+			"FINDUS" : {
+				"TITLE" : "Where to find us ?",
+				"ADDRESS" : "<strong>Oddly France</strong><br />44 rue de la Faïencerie<br />33000 Bordeaux"
+			}
+
+		}
+
+	},
+
+
+	"APP" : {
+
+		"LEFTSIDE" : {
+
+			"SEARCH" : {
+				"BUTTON" : "Search"
+			},
+
+
+			"MENU" : {
+				"TITLE" : "Menu",
+				"FRESH" : "Fresh",
+				"TOPS" : "Tops",
+				"CAT" : "Categories"
+			},
+
+
+			"BOOKSHELF" : {
+				"TITLE" : "My bookshelf",
+				"AUTHORS" : "Authors",
+				"BOOKS" : "Books",
+				"COMICS" : "Comics",
+				"MAGAZINES" : "Magazines",
+				"NEWSPAPERS" : "Newspapers"
+			}
+
+		},
+
+
+		"FRESH" : {
+
+			"BUTTONS" : {
+				"DISCOVER" : "Discover",
+				"MORE" : "Plus"
+			},
+
+			"TITLES" : {
+				"BOOKS" : "Books",
+				"COMICS" : "Comics",
+				"MAGAZINES" : "Magazines",
+				"NEWSPAPERS" : "Newspapers"
+			}
+
+		},
+
+
+		"SINGLE" : {
+
+			"BUTTONS" : {
+				"READ" : "Read now !",
+				"LATER" : "Read later"
+			}
+
+		}
+
+	}
+
 }

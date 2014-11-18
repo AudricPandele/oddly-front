@@ -3,17 +3,17 @@
 		<header class="clearfix">
 			<h1><a href="http://www.oddly.fr">Oddly</a></h1>
 
-			<a href="/discover/#beta" class="ui-button ui-blue" translate="{{'DISCOVER_LOGIN'}}">S'identifier</a>
+			<a href="/discover/#beta" class="ui-button ui-blue" translate="{{'DISCOVER.LOGIN'}}">S'identifier</a>
 		</header>
 
 		<div class="wrapper">
 			<p>
-				<h2 translate="{{'DISCOVER_TITLE'}}">Vous allez de nouveau adorer lire.</h2>
-				<h3 translate="{{'DISCOVER_SUBTITLE'}}">Une bibliothèque entière, pour <strong>seulement</strong> 4,99&euro; par mois.</h3>
+				<h2 translate="{{'DISCOVER.TITLE'}}">Vous allez de nouveau adorer lire.</h2>
+				<h3 translate="{{'DISCOVER.SUBTITLE'}}">Une bibliothèque entière, pour <strong>seulement</strong> 4,99&euro; par mois.</h3>
 			</p>
 			<p><br /></p>
 			<p>
-				<a href="/about" class="ui-button ui-red ui-large" translate="{{'DISCOVER_MAIN_BUTTON'}}">Découvrir gratuitement pendant un mois</a>
+				<a href="/about" class="ui-button ui-red ui-large" translate="{{'DISCOVER.MAIN_BUTTON'}}">Découvrir gratuitement pendant un mois</a>
 			</p>
 		</div>
 	</div>
@@ -24,8 +24,8 @@
 				<img src="/images/discover/promo-1.jpg" />
 			</div>
 			<div class="col-lg-6">
-				<h2>Tous vos livres, au même endroit.</h2>
-				<p>Oddly met à votre disposition des millions d'ouvrages : vos auteurs préférés, les derniers journaux et les meilleurs magazines rien que pour vous. <a href="/discover/#beta">Cliquez ici</a> pour découvrir Oddly et lire tout ce que vous voulez, autant que vous le voulez.</p>
+				<h2 translate="{{'DISCOVER.PROMO.ODDLY.TITLE'}}">Tous vos livres, au même endroit.</h2>
+				<p translate="{{'DISCOVER.PROMO.ODDLY.TEXT'}}">Oddly met à votre disposition des millions d'ouvrages : vos auteurs préférés, les derniers journaux et les meilleurs magazines rien que pour vous. <a href="/discover/#beta">Cliquez ici</a> pour découvrir Oddly et lire tout ce que vous voulez, autant que vous le voulez.</p>
 			</div>
 		</div>
 	</div>
@@ -35,11 +35,11 @@
 	<div class="promo promo-artists">
 		<div class="container">
 			<div class="col-lg-6">
-				<h2>Ici, tout le monde a sa place.</h2>
+				<h2 translate="{{'DISCOVER.PROMO.ARTISTS.TITLE'}}">Ici, tout le monde a sa place.</h2>
 				<p><br /></p>
-				<p>Que vous soyez une grande maison d'édition, un petit éditeur ou un artiste indépendant, la plate-forme Oddly Artists a été créée pour vous.</p>
+				<p translate="{{'DISCOVER.PROMO.ARTISTS.TEXT'}}">Que vous soyez une grande maison d'édition, un petit éditeur ou un artiste indépendant, la plate-forme Oddly Artists a été créée pour vous.</p>
 				<p><br /></p>
-				<p class="text-center"><a href="http://artists.oddly.fr/" class="ui-button ui-green">Découvrir Oddly pour les artistes</a></p>
+				<p class="text-center"><a href="http://artists.oddly.fr/" class="ui-button ui-green" translate="{{'DISCOVER.PROMO.ARTISTS.BUTTON'}}">Découvrir Oddly pour les artistes</a></p>
 			</div>
 			<div class="col-lg-6 text-right">
 				<img src="/images/discover/promo-2.jpg" />
@@ -55,7 +55,7 @@
 				<img src="/images/discover/promo-3.jpg" />
 			</div>
 			<div class="col-lg-6">
-				<h2>Disponible partout où vous pourriez en avoir besoin.</h2>
+				<h2 translate="{{'DISCOVER.PROMO.MOBILE.TITLE'}}">Disponible partout où vous pourriez en avoir besoin.</h2>
 				<p><br /></p>
 				<p class="text-center">
 					<a class="store-button" href="#"><img src="/images/discover/appstore.svg" /></a>
@@ -69,9 +69,9 @@
 		<div class="container">
 			<div class="col-lg-3"><!-- SPACER --></div>
 			<div class="col-lg-6">
-				<h2>Restez informé de l'évolution d'Oddly</h2>
+				<h2 translate="DISCOVER.PROMO.BETA.TITLE">Restez informé de l'évolution d'Oddly</h2>
 				<form name="subscribeForm" ng-controller="LandingCtrl">
-					<input class="ui-input ui-leftside ui-no-border" type="email" placeholder="Email..." required ng-model="user.mail" /><button ng-click="subscribe(user)" class="ui-progress-button ui-green ui-no-shadow"><span class="content" translate="{{'LANDING_BUTTON'}}"></span><span class="progress"></span></button>
+					<input class="ui-input ui-leftside ui-no-border" type="email" placeholder="Email..." required ng-model="user.mail" /><button ng-click="subscribe(user)" class="ui-progress-button ui-green ui-no-shadow"><span class="content" translate="{{'DISCOVER.PROMO.BETA.BUTTON'}}">S'enregistrer</span><span class="progress"></span></button>
 				</form>
 			</div>
 			<div class="col-lg-3"><!-- SPACER --></div>

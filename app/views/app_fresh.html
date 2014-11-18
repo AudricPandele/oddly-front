@@ -7,15 +7,15 @@
 				<div class="home-highlight-caption {{(advert.caption.position) ? 'right' : ''}}">
 					<h2>{{ advert.caption.title }}</h2>
 					<p>{{ advert.caption.text }}</p>
-					<a ng-href="{{ advert.caption.button.url }}" class="ui-button ui-blue ui-no-shadow">Découvrir</a>
+					<a ng-href="{{ advert.caption.button.url }}" class="ui-button ui-blue ui-no-shadow" translate="{{'APP.FRESH.BUTTONS.DISCOVER'}}">Découvrir</a>
 				</div>
 			</div>
 		</div>
 
 		<div ng-repeat="(key, value) in items">
 			<h3>
-				<span translate="{{ 'APP_FRESH_TITLE_' + (key|uppercase) }}">{{ key }}</span>
-				<a href="/app/fresh/{{ key }}" class="more-button" translate="{{ 'APP_FRESH_MORE_BUTTON' }}">Plus</a>
+				<span translate="{{ 'APP.FRESH.TITLES.' + (key|uppercase) }}">{{ key }}</span>
+				<a href="/app/fresh/{{ key }}" class="more-button" translate="{{ 'APP.FRESH.BUTTONS.MORE' }}">Plus</a>
 			</h3>
 			<ul class="inline-items-list">
 				<li class="item" ng-repeat="item in value">
