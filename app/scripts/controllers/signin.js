@@ -13,7 +13,7 @@ angular
 			console.log(reg);
 			$http({
 				method : "POST",
-				url: "http://"+SERVER.prod.url+"/register/",
+				url: SERVER.api.url+"register/",
 				data : reg
 			})
 			.success(function(data){
@@ -28,7 +28,7 @@ angular
 		$scope.login = function(user){
 			$http({
 				method: "POST",
-				url: "http://"+SERVER.prod.url+"/login/",
+				url: SERVER.api.url+"login/",
 				data : user,
 				headers : {
 					"Authentication" : "BasicAuth "+btoa(user.username + ':' + user.password),
