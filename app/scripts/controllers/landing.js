@@ -3,7 +3,7 @@
 angular
 	.module('oddlyFrontApp')
 	.controller('LandingCtrl', function ($scope, $http, $translate, SERVER) {
-		
+
 		$scope.subscribe = function(user) {
 			$(".ui-progress-button").removeClass("error").removeClass("success");
 
@@ -13,7 +13,7 @@ angular
 
 				$http({
 					method : "POST",
-					url: "http://"+ SERVER.prod.url +"/beta/account/",
+					url: "http://"+ SERVER.API +"/beta/account/",
 					data : user
 				})
 				.success(function(data,status,headers,config){
