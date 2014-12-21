@@ -23,9 +23,9 @@ angular
 		'angularSmoothscroll'
 	])
 	.constant("SERVER", {
-		dev : { url: "localhost:8000/api/v1" },
-		pre_prod : { url : "api.oddly.ninja/api/v1"},
-		prod : { url : "api.oddly.fr/api/v1" }
+		API: "api.oddly.ninja/api/v1",
+		CDN: "cdn.oddly.ninja",
+		CDPI: "api.oddly.ninja/api/v1"
 	})
 	.config(['$routeProvider', '$locationProvider','$translateProvider', function($routeProvider, $locationProvider, $translateProvider) {
 
