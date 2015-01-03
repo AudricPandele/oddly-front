@@ -7,6 +7,7 @@ angular
 	.controller('GeneralAppCtrl', function ($scope, $http, $location, $translate, SERVER) {
 
 		//Set default models
+		$scope.SERVER = SERVER;
 		$scope.advert = {};
 		$scope.items = { books:[], comics:[], magazines:[], newspapers:[] };
 
@@ -24,7 +25,9 @@ angular
 		//Get new items from each type
 		$http({
 			method: "GET",
-			url: "/dummy/fresh/items.json"
+			url: SERVER.METHOD + SERVER.API + "/items/fresh/",
+			//url: "/dummy/fresh/items.json", // DUMMY
+			checkator: true
 		})
 		.success(function(data){
 			$scope.items = data.items;
