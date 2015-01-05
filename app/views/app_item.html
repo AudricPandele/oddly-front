@@ -2,24 +2,24 @@
 	<ng-include src="'/views/fragments/app_menu.html'"></ng-include>
 
 	<div class="content" resize>
-		<div ng-if="item.name" class="single-item-container" style="background-image:url(/dummy/item/background/{{ item._id }}.jpg);">
+		<div ng-if="item.title" class="single-item-container" style="background-image:url({{SERVER.METHOD}}{{SERVER.CDN}}/item/background/{{ item._id }}/large);">
 			<div class="single-item-wrapper">
 				<a href="" class="go-back" ng-click="back()"><i class="fa fa-chevron-circle-left"></i> <span>Retour</span></a>
 
 				<div class="single-item-inner">
 					<div class="thumb">
-						<div class="thumb-inner" style="background-image:url(/dummy/item/cover/{{ item._id }}.jpg)"></div>
+						<div class="thumb-inner" style="background-image:url({{SERVER.METHOD}}{{SERVER.CDN}}/item/cover/{{ item._id }}/large)"></div>
 					</div>
 					<div class="infos">
-						<p class="authors">{{ implode(item.artist, 'name') }}</p>
-						<h3 class="title">{{ item.name }}</h3>
+						<p class="authors">{{ implode(item.artists, 'name', '   •   ') }}</p>
+						<h3 class="title">{{ item.title }}</h3>
 						<p class="other_infos">
-							<span>{{ item.category }}</span>
-							<span>{{ item.editor }}</span>
+							<span>{{ implode(item.categories, 'name', ', ') }}</span>
+							<span>{{ implode(item.editors, 'name', ', ') }}</span>
 							<span>{{ getYear(item.edition_date)}}</span>
 							<span ng-bind-html="getRank(item.rank)"></span>
 						</p>
-						<p ng-bind-html="item.synopsis" class="synopsis">{{ item.synopsis }}</p>
+						<p ng-bind-html="item.synopsis.text" class="synopsis">{{ item.synopsis.text }}</p>
 						<a ng-href="/app/read/{{ item.id }}" class="read-button ui-button ui-blue" translate="{{'APP.SINGLE.BUTTONS.READ'}}">Lire maintenant !</a>
 						<a ng-click="" href="#" class="later-button ui-button ui-blue"><i class="fa fa-clock-o"></i></a>
 					</div>

@@ -49,15 +49,20 @@ angular
 	})
 
 	//Single item controller
-	.controller('ItemCtrl', function ($scope, $http, $location, $translate, SERVER) {
+	.controller('ItemCtrl', function ($scope, $http, $location, $translate, SERVER, $routeParams) {
 
 		//Set default model
 		$scope.item = { };
+		$scope.SERVER = SERVER;
 
 		//Get asked item
 		$http({
 			method: "GET",
-			url: "/dummy/item/item.json"
+			url: SERVER.METHOD + SERVER.API + "/item/" + $routeParams.id,
+			//url: "/dummy/item/item.json", // DUMMY
+			params: {
+				locale : "en_US"
+			}
 		})
 		.success(function(data){
 			$scope.item = data.item;
@@ -66,15 +71,15 @@ angular
 			console.log(status+" : "+data);
 		});
 
-		$scope.implode = function(arr, column){
+		$scope.implode = function(arr, column, glue){
 			var res = [];
 			for(var i in arr) res.push(arr[i][column]);
-			return res.join("   •   ");
+			return res.join(glue);
 		};
 
 		$scope.getYear = function(date){
 			var res = date.split("-");
-			return res[2];
+			return res[0];
 		};
 
 		$scope.getRank = function(rate){
