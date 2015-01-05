@@ -21,7 +21,7 @@
 				<li class="item" ng-repeat="item in value">
 					<a ng-href="/app/item/{{ item._id }}">
 						<div class="thumb-wrapper">
-							<div class="thumb" style="background-image:url({{SERVER.METHOD}}{{SERVER.CDN}}/item/cover/{{ item._id }}/large);"></div>
+							<div class="thumb" style="background-image:url({{SERVER.METHOD}}{{SERVER.CDN}}/item/cover/{{ item._id }}/small);"></div>
 						</div>
 						<p class="title">{{ item.title }}</p>
 						<p ng-if="item.artists != ''" class="artist">{{ item.artists }}</p>
