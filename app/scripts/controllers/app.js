@@ -58,7 +58,7 @@ angular
 		//Get asked item
 		$http({
 			method: "GET",
-			url: SERVER.METHOD + SERVER.API + "/item/" + $routeParams.id,
+			url: SERVER.METHOD + SERVER.API + "/item/" + $routeParams.id, // PROD
 			//url: "/dummy/item/item.json", // DUMMY
 			params: {
 				locale : "en_US"
@@ -96,4 +96,59 @@ angular
 			return res;
 		}
 
-	});
+	})
+
+
+	.controller('PlayerCtrl', function($scope, $http, $location, $translate, SERVER, $routeParams, Fullscreen){
+
+		// Avoid right click
+		window.oncontextmenu = function(){
+			return false;
+		};
+
+		// Define scope
+		$scope.currentPage = 1;
+		$scope.previousPage = null;
+		$scope.item = {};
+		$scope.is_fullscreen = false;
+
+		// Get book infos
+		$http({
+			method: "GET",
+			url: SERVER.METHOD + SERVER.API + "/item/" + $routeParams.id, // PROD
+			//url: "/dummy/item/item.json", // DUMMY
+		})
+		.success(function(data){
+			$scope.item = data.item;
+			$scope.getPage(1);
+		})
+		.error(function(data, status, headers, config){
+			console.log(status+" : "+data);
+		});
+
+		$scope.getPage = function(page){
+			var canvas = document.getElementById("player-render");
+			var ctx = canvas.getContext("2d");
+
+			// If user quality setting = SD
+			$scope.previousPage = new Image();
+			$scope.previousPage.onload = function() {
+
+				canvas.width = this.width;
+				canvas.height = this.height * (this.width / canvas.width);
+
+				ctx.drawImage(this, 0, 0);
+
+				$scope.currentPage = page;
+				console.log($scope.currentPage);
+			};
+
+			$scope.previousPage.src = SERVER.METHOD + SERVER.CDN + "/item/" + $routeParams.id + "/SD/" + page;
+		};
+
+		$scope.fullscreen = function(){
+			Fullscreen.toggleAll();
+			$scope.is_fullscreen = (Fullscreen.isEnabled()) ? true : false;
+		};
+
+	})
