@@ -1,0 +1,87 @@
+.app-player{
+	width:100%;
+	height:100%;
+	background:@uiEvil;
+	overflow:auto;
+	position:absolute;
+
+	canvas{
+		position:static;
+		z-index:1;
+		display:block;
+		width:1070px;
+		max-width:80%;
+		height:auto;
+		margin:100px auto 200px;
+	}
+
+	.player-header{
+		position:fixed;
+		z-index:2;
+		width:100%;
+		height:130px;
+		top:0;
+		padding:20px 30px;
+		background:url("/images/app/player-header.png") repeat-x center bottom;
+
+		.header-item{
+			display:inline-block;
+			cursor:pointer;
+			font-size:@defaultTextMediumSize;
+
+			i.fa, span{
+				margin-right:10px;
+				.transition(color .4s ease);
+			}
+
+			&:hover{
+				cursor:pointer;
+
+				i.fa,
+				span{
+					color:@defaultTextColor;
+				}
+			}
+		}
+	}
+
+	.player-menu{
+		position:fixed;
+		z-index:2;
+		text-align:center;
+		width:100%;
+		height:200px;
+		bottom:0;
+		background:url("/images/app/player-overlay.png") repeat-x center top;
+
+		.menu-item{
+			position:static;
+			z-index:3;
+			display:inline-block;
+			cursor:pointer;
+			width:150px;
+			height:auto;
+			text-align:center;
+			margin-top:100px;
+
+			span.icon{
+				display:block;
+				font-size:40px;
+				color:@defaultSubTextColor;
+			}
+
+			span.text{
+				font-size:@defaultTextSize;
+			}
+
+			&:hover{
+				cursor:pointer;
+
+				span.icon,
+				span.text{
+					color:@defaultTextColor;
+				}
+			}
+		}
+	}
+}
