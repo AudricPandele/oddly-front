@@ -20,7 +20,8 @@ angular
 		'loginCheck',
 		'ngFlatFlags',
 		'ngFullHeight',
-		'angularSmoothscroll'
+		'angularSmoothscroll',
+		'FBAngular'
 	])
 	.constant("SERVER", {
 		METHOD: "http://",
