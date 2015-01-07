@@ -20,7 +20,7 @@ angular
 				console.log(data);
 			})
 			.error(function(e,status,header,detail){
-				$scope.error = e.error;
+				$scope.register_error = e.error;
 			});
 		}
 
@@ -41,7 +41,7 @@ angular
 				$location.path("/app");
 			})
 			.error(function(e,status,header,detail){
-				console.error(e.error);
+				$scope.login_error = e.error;
 			});
 		}
 
