@@ -25,7 +25,7 @@ angular
 		//Get new items from each type
 		$http({
 			method: "GET",
-			url: SERVER.METHOD + SERVER.API + "/items/fresh/",
+			url: SERVER.METHOD + SERVER.API + "/items/fresh",
 			//url: "/dummy/fresh/items.json", // DUMMY
 			checkator: true
 		})
