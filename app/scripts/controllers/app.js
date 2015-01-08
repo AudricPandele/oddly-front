@@ -60,6 +60,7 @@ angular
 			method: "GET",
 			url: SERVER.METHOD + SERVER.API + "/item/" + $routeParams.id, // PROD
 			//url: "/dummy/item/item.json", // DUMMY
+		        checkator: true,
 			params: {
 				locale : "en_US"
 			}
