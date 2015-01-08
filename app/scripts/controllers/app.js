@@ -60,7 +60,7 @@ angular
 			method: "GET",
 			url: SERVER.METHOD + SERVER.API + "/item/" + $routeParams.id, // PROD
 			//url: "/dummy/item/item.json", // DUMMY
-		        checkator: true,
+			checkator: true,
 			params: {
 				locale : "en_US"
 			}
@@ -118,6 +118,7 @@ angular
 			method: "GET",
 			url: SERVER.METHOD + SERVER.API + "/item/" + $routeParams.id, // PROD
 			//url: "/dummy/item/item.json", // DUMMY
+			checkator: true,
 		})
 		.success(function(data){
 			$scope.item = data.item;
