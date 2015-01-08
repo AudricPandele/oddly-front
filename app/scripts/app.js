@@ -62,9 +62,18 @@ angular
 		if(window.history && window.history.pushState)
 			$locationProvider.html5Mode(true);
 	}])
-	.run(function($cookieStore, $translate){
+	.run(function($cookieStore, $translate, $rootScope, $http, SERVER){
 
 		//Try to set locale from cookie
 		$translate.use($cookieStore.get("locale"));
 
+		//Register appconfig to rootscope
+		$http({
+			method: "GET",
+			url: SERVER.METHOD + SERVER.API + "/settings",
+			checkator: true,
+		})
+		.success(function(data){
+			$rootScope.settings = data.settings;
+		})
 	})
