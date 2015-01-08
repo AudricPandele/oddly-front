@@ -133,13 +133,12 @@ angular
 			// If user quality setting = SD
 			$scope.previousPage = new Image();
 			$scope.previousPage.onload = function() {
-
 				canvas.width = this.width;
 				canvas.height = this.height * (this.width / canvas.width);
-
 				ctx.drawImage(this, 0, 0);
 
 				$scope.currentPage = page;
+				$(window).trigger('resize');
 				console.log($scope.currentPage);
 			};
 
