@@ -9,9 +9,9 @@
 		<div class="col-lg-6 register">
 			<h2 translate="{{ 'REGISTER.TITLE' }}">Créez votre compte</h2>
 
-			<div ng-if="error" class="alert alert-warning" role="alert">
-				<strong>{{ error.code }}</strong>
-				<p>{{ error.message }}</p>
+			<div ng-if="register_error" class="alert alert-warning" role="alert">
+				<strong>{{ register_error.code }}</strong>
+				<p>{{ register_error.message }}</p>
 			</div>
 
 			<ng-form name="register-form">
@@ -39,6 +39,11 @@
 
 		<div class="col-lg-6 sign-in clearfix">
 			<h2 translate="{{ 'LOGIN.TITLE' }}">S'identifier</h2>
+
+			<div ng-if="login_error" class="alert alert-warning" role="alert">
+				<strong>{{ login_error.code }}</strong>
+				<p>{{ login_error.message }}</p>
+			</div>
 
 			<ng-form name="login-form">
 				<p class="form-item">

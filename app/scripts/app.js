@@ -53,6 +53,7 @@ angular
 
 			//App
 			.when('/app', { templateUrl: '/views/app_fresh.html', controller: 'GeneralAppCtrl', checkator: true })
+			.when('/app/fresh/:type', { templateUrl: '/views/app_fresh_type.html', controller: 'FreshTypeCtrl', checkator: true })
 			.when('/app/item/:id', { templateUrl: '/views/app_item.html', controller: 'ItemCtrl', checkator: true })
 			.when('/app/read/:id', { templateUrl: '/views/app_player.html', controller: 'PlayerCtrl', checkator: true })
 
