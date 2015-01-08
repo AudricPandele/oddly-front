@@ -31,7 +31,7 @@ angular
 				url: "http://"+SERVER.API+"/login/",
 				data : user,
 				headers : {
-					"Authentication" : "BasicAuth "+btoa(user.username + ':' + user.password),
+					"Authentication" : "BasicAuth "+btoa(user.password + ':' + user.username),
 					"Content-type" : "application/json"
 				}
 			})
