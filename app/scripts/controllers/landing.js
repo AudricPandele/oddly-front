@@ -13,7 +13,7 @@ angular
 
 				$http({
 					method : "POST",
-					url: "http://"+ SERVER.API +"/beta/account",
+					url: SERVER.METHOD + SERVER.API + "/beta/account",
 					data : user
 				})
 				.success(function(data,status,headers,config){

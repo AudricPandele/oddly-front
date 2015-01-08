@@ -25,7 +25,7 @@ angular
 	])
 	.constant("SERVER", {
 		METHOD: "http://",
-		API: "localhost:8000/api/v1",
+		API: "api.oddly.fr/api/v1",
 		CDN: "cdn.oddly.fr"
 	})
 	.config(['$routeProvider', '$locationProvider','$translateProvider', function($routeProvider, $locationProvider, $translateProvider) {
