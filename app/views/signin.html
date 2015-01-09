@@ -14,21 +14,39 @@
 				<p>{{ register_error.message }}</p>
 			</div>
 
-			<form name="register-form" ng-submit="register(reg)">
+			<form name="registerForm" ng-submit="register(reg)">
 				<p class="form-item">
 					<label for="register_username" translate="{{ 'REGISTER.EMAIL' }}">Adresse e-mail</label>
-					<input class="ui-input" type="text" name="register_username" ng-model="reg.email" ng-required="true" />
+					<input 
+						class="ui-input" 
+						ng-class="(registerForm.register_username.$error.pattern && registerForm.submitted) ? 'form-error' : ''" 
+						type="text" 
+						name="register_username" 
+						ng-model="reg.email" 
+						ng-required="true"
+						ng-pattern='/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/' />
 				</p>
 				<p class="form-item">
 					<label for="register_password" translate="{{ 'REGISTER.PASSWORD' }}">Choisissez un mot de passe</label>
-					<input class="ui-input" type="password" name="register_password" ng-model="reg.password" ng-required="true" />
+					<input 
+						class="ui-input" 
+						type="password" 
+						name="register_password" 
+						ng-model="reg.password" 
+						ng-required="true" />
 				</p>
 				<p class="form-item">
 					<label for="register_password_repead" translate="{{ 'REGISTER.PASSWORD_REPEAT' }}">Répétez le mot de passe</label>
-					<input class="ui-input" type="password" name="register_password_repeat" ng-model="reg.password_repeat" ng-required="true" />
+					<input 
+						class="ui-input" 
+						ng-class="((user.password != user.password_repeat) && registerForm.submitted) ? 'registerForm_error' : ''"
+						type="password" 
+						name="register_password_repeat" 
+						ng-model="reg.password_repeat" 
+						ng-required="true" />
 				</p>
 				<p class="form-item checkbox">
-					<label><input type="checkbox" name="register_cgu" ng-model="reg.policy" value="true" /> <span translate="{{ 'REGISTER.POLICY' }}">J’accepte la <a href="/policy">Politique de Confidentialité</a> et les
+					<label><input type="checkbox" name="register_cgu" ng-model="reg.policy" value="true" ng-required="true"/> <span translate="{{ 'REGISTER.POLICY' }}">J’accepte la <a href="/policy">Politique de Confidentialité</a> et les
 					<a href="/terms">Conditions Générales d’Utilisation</a> d’Oddly</span></label>
 				</p>
 				<p class="form-item">
@@ -41,7 +59,7 @@
 			<h2 translate="{{ 'LOGIN.TITLE' }}">S'identifier</h2>
 
 			<div ng-if="login_error" class="alert alert-warning" role="alert">
-				<strong>{{ login_error.code }}</strong>
+				<strong>{{ login_error }}</strong>
 				<p>{{ login_error.message }}</p>
 			</div>
 

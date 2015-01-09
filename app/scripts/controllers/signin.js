@@ -10,18 +10,21 @@ angular
 		 * et personnalisation message success / error
 		 */
 		$scope.register = function(reg){
-			console.log(reg);
-			$http({
-				method : "POST",
-				url: SERVER.METHOD + SERVER.API + "/register",
-				data : reg
-			})
-			.success(function(data){
-				console.log(data);
-			})
-			.error(function(e,status,header,detail){
-				$scope.register_error = e.error;
-			});
+			if($scope.registerForm.$valid) {
+				$http({
+					method : "POST",
+					url: SERVER.METHOD + SERVER.API + "/register",
+					data : reg
+				})
+				.success(function(data){
+					console.log(data);
+				})
+				.error(function(e,status,header,detail){
+					console.log(detail);
+					$scope.register_error = e.error;
+				});
+			} else 
+				return $scope.registerForm.submitted = true;
 		}
 
 
