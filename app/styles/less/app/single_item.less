@@ -43,7 +43,8 @@
 					padding-left:20px;
 
 					.authors, .other_infos{ font-size:@defaultTextExtraSmallSize; margin-bottom:0; color:@defaultSubTextColor; }
-					.other_infos span::after{ content:"•"; display:inline; margin:0 8px; }
+					.authors span::after, .other_infos span::after{ content:"•"; display:inline; margin:0 8px; }
+					.authors span:last-child::after, .other_infos span:last-child::after{ content:""; display:none; margin:0; }
 					.other_infos span:last-child::after{ content:""; display:none; }
 					.title{ padding-left:0; margin:3px 0 4px; font-size:24px; }
 					.synopsis{ margin:20px 0; max-height:155px; height:155px; overflow:auto; }
