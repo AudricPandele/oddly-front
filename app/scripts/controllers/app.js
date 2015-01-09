@@ -102,6 +102,12 @@ angular
 
 	.controller('PlayerCtrl', function($scope, $http, $location, $translate, SERVER, $routeParams, Fullscreen){
 
+		window.onkeyup = function(e) {
+			if(e.keyCode == 37) return $scope.getPage($scope.currentPage - 1);
+			else if(e.keyCode == 39) return $scope.getPage($scope.currentPage + 1);
+			else return false;
+		}
+
 		// Avoid right click
 		window.oncontextmenu = function(){
 			return false;
