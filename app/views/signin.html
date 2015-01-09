@@ -14,7 +14,7 @@
 				<p>{{ register_error.message }}</p>
 			</div>
 
-			<ng-form name="register-form">
+			<form name="register-form" ng-submit="register(reg)">
 				<p class="form-item">
 					<label for="register_username" translate="{{ 'REGISTER.EMAIL' }}">Adresse e-mail</label>
 					<input class="ui-input" type="text" name="register_username" ng-model="reg.email" ng-required="true" />
@@ -32,9 +32,9 @@
 					<a href="/terms">Conditions Générales d’Utilisation</a> d’Oddly</span></label>
 				</p>
 				<p class="form-item">
-					<button class="ui-progress-button ui-green" ng-click="register(reg)" translate="{{ 'REGISTER.BUTTON' }}">Créer un compte</button>
+					<button class="ui-progress-button ui-green" translate="{{ 'REGISTER.BUTTON' }}">Créer un compte</button>
 				</p>
-			</ng-form>
+			</form>
 		</div>
 
 		<div class="col-lg-6 sign-in clearfix">
@@ -45,7 +45,7 @@
 				<p>{{ login_error.message }}</p>
 			</div>
 
-			<ng-form name="login-form">
+			<form name="login-form" ng-submit="login(user)">
 				<p class="form-item">
 					<label for="username" translate="{{ 'LOGIN.EMAIL' }}">E-mail</label>
 					<input class="ui-input" type="text" name="username" ng-required="true" ng-model="user.username" />
@@ -55,9 +55,9 @@
 					<input class="ui-input" type="password" name="password" ng-required="true" ng-model="user.password" />
 				</p>
 				<p class="form-item">
-					<button class="ui-progress-button ui-green" ng-click="login(user)" translate="{{ 'LOGIN.BUTTON' }}">S'identifier</button>
+					<button class="ui-progress-button ui-green" translate="{{ 'LOGIN.BUTTON' }}">S'identifier</button>
 				</p>
-			</ng-form>
+			</form>
 		</div>
 		</div>
 		<div class="col-lg-2"></div>
