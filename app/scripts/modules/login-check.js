@@ -22,7 +22,7 @@ angular
 			return options;
 		}
 	}])
-	.factory("HttpInterceptor", ["$q", "CookieCheckator", function($q, CookieCheckator){
+	.factory("HttpInterceptor", ["$q", "CookieCheckator", "$location", function($q, CookieCheckator, $location){
 		return {
 			request: function (config) {
 				return CookieCheckator(config) || config || $q.when(config);
@@ -30,7 +30,13 @@ angular
 
 			requestError: function(rejection) { return $q.reject(rejection); },
 			response: function(response){ return response || $q.when(response); },
-			responseError: function(rejection){ return $q.reject(rejection); }
+
+			responseError: function(rejection){
+				if(rejection.status == 401 || rejection.statusText == "UNAUTHORIZED")
+					$location.path("/signin");
+
+					return $q.reject(rejection);
+			}
 		}
 	}])
 	.config(function($httpProvider){
