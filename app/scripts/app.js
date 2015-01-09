@@ -66,14 +66,4 @@ angular
 
 		//Try to set locale from cookie
 		$translate.use($cookieStore.get("locale"));
-
-		//Register appconfig to rootscope
-		$http({
-			method: "GET",
-			url: SERVER.METHOD + SERVER.API + "/settings",
-			checkator: true,
-		})
-		.success(function(data){
-			$rootScope.settings = data.settings;
-		})
 	})
