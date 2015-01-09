@@ -100,7 +100,7 @@ angular
 	})
 
 
-	.controller('PlayerCtrl', function($scope, $http, $location, $translate, SERVER, $routeParams, Fullscreen){
+	.controller('PlayerCtrl', function($scope, $http, $location, $translate, SERVER, $routeParams, Fullscreen, $lazyloading){
 
 		window.onkeyup = function(e) {
 			if(e.keyCode == 37) return $scope.getPage($scope.currentPage - 1);
@@ -129,17 +129,21 @@ angular
 		.success(function(data){
 			$scope.item = data.item;
 			$scope.getPage(1);
+			$scope.total_pages = data.item.total_pages;
 		})
 		.error(function(data, status, headers, config){
 			console.log(status+" : "+data);
 		});
+
+		$lazyloading.init($routeParams.id, $scope.total_pages, 1, "SD");
 
 		$scope.getPage = function(page){
 			var canvas = document.getElementById("player-render");
 			var ctx = canvas.getContext("2d");
 
 			// If user quality setting = SD
-			$scope.previousPage = new Image();
+			$scope.previousPage = $lazyloading.stream(page);
+
 			$scope.previousPage.onload = function() {
 				canvas.width = this.width;
 				canvas.height = this.height * (this.width / canvas.width);
@@ -150,7 +154,6 @@ angular
 				$('.app-player').scrollTop(0);
 			};
 
-			$scope.previousPage.src = SERVER.METHOD + SERVER.CDN + "/item/" + $routeParams.id + "/SD/" + page;
 		};
 
 		$scope.fullscreen = function(){
