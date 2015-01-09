@@ -147,7 +147,7 @@ angular
 
 				$scope.currentPage = page;
 				$(window).trigger('resize');
-				console.log($scope.currentPage);
+				$('.app-player').scrollTop(0);
 			};
 
 			$scope.previousPage.src = SERVER.METHOD + SERVER.CDN + "/item/" + $routeParams.id + "/SD/" + page;
