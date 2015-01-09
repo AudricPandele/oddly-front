@@ -11,7 +11,9 @@
 						<div class="thumb-inner" style="background-image:url({{SERVER.METHOD}}{{SERVER.CDN}}/item/cover/{{ item._id }}/large)"></div>
 					</div>
 					<div class="infos">
-						<p class="authors">{{ implode(item.artists, 'name', '   •   ') }}</p>
+						<p class="authors">
+							<span ng-repeat="artist in item.artists"><a class="authors_name" ng-href="/app/artist/{{ artist._id }}">{{ artist.name }}</a></span>
+						</p>
 						<h3 class="title">{{ item.title }}</h3>
 						<p class="other_infos">
 							<span>{{ implode(item.categories, 'name', ', ') }}</span>
