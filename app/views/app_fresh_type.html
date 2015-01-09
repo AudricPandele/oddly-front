@@ -6,10 +6,7 @@
 		<h2 class="special-title"><span class="text">{{type}}</span><span class="subtitle">Nouveautés</span></h2>
 
 		<div ng-repeat="(key, value) in items">
-			<h3>
-				<span translate="{{ 'APP.FRESH.TITLES.' + (key|uppercase) }}">{{ key }}</span>
-				<a href="/app/fresh/{{ key }}" class="more-button" translate="{{ 'APP.FRESH.BUTTONS.MORE' }}">Plus</a>
-			</h3>
+			<h3 class="special-subtitle"><span>{{ key }}</span></h3>
 			<ul class="inline-items-list">
 				<li class="item" ng-repeat="item in value">
 					<a ng-href="/app/item/{{ item._id }}">
