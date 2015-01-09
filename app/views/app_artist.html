@@ -1,0 +1,9 @@
+<div class="main-app app-artist">
+	<ng-include src="'/views/fragments/app_menu.html'"></ng-include>
+
+	<div class="content" resize>
+		<div ng-if="artist" class="artist-cover" style="background-image:url({{SERVER.METHOD}}{{SERVER.CDN}}/artist/cover/{{ artist._id }}/large);">
+
+		</div>
+	</div>
+</div>
