@@ -1,9 +1,15 @@
-/**
- * ng-full-height module
- * Resize container the size of your screen (fucktard css can't do it properly)
- */
-angular.module('ngFullHeight', []).
-	directive('resize', function($window) {
+"use strict";
+
+angular
+	.module("oddlyFullHeight", [])
+
+
+	/**
+	 * Resize container the size of your screen (fucktard css2 can't do it properly)
+	 * @directive resize
+	 * @param {Object} $window - Browser window
+	 */
+	.directive("resize", function($window) {
 		return function($scope, $element) {
 
 			//Set scope function to get window height

@@ -17,23 +17,18 @@ angular
 		'ngSanitize',
 		'ngTouch',
 		'pascalprecht.translate',
-		'loginCheck',
-		'ngFlatFlags',
-		'ngFullHeight',
+		'oddlyLoginCheck',
+		'oddlyLazyLoading',
+		'oddlyAppConstants',
+		'oddlyAppFilters',
+		'oddlyFlatFlags',
+		'oddlyFullHeight',
 		'angularSmoothscroll',
 		'FBAngular'
 	])
-	.constant("SERVER", {
-		METHOD: "http://",
-		API: "api.oddly.fr/api/v1",
-		CDN: "cdn.oddly.fr"
-	})
-	.filter('nl2br', function () {
-		return function(text) {
-			return text ? text.replace(/\n/g, '<br/>') : '';
-		}
-	})
-	.config(['$routeProvider', '$locationProvider','$translateProvider', function($routeProvider, $locationProvider, $translateProvider) {
+
+
+	.config(function($routeProvider, $locationProvider, $translateProvider) {
 
 		//Load translations
 		$translateProvider
@@ -68,9 +63,26 @@ angular
 
 		if(window.history && window.history.pushState)
 			$locationProvider.html5Mode(true);
-	}])
-	.run(function($cookieStore, $translate, $rootScope, $http, SERVER){
+	})
+
+
+	.run(function($cookieStore, $translate, $rootScope, $location){
 
 		//Try to set locale from cookie
 		$translate.use($cookieStore.get("locale"));
+
+		//Init history for back purpose
+		var history = [];
+
+		//Push current path to history
+		$rootScope.$on('$routeChangeSuccess', function() {
+			history.push($location.$$path);
+		});
+
+		//Add back function to go back in history, yihhhhhaaaaaaa !
+		$rootScope.back = function () {
+			var prevUrl = history.length > 1 ? history.splice(-2)[0] : "/app";
+			$location.path(prevUrl);
+		};
+
 	})

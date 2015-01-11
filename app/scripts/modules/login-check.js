@@ -1,13 +1,19 @@
-'use strict';
-
-/**
- * Created by Udo Stephant on 11/10/2014
- * http://www.ugostephant.io / contact@ugostephant.io
- */
+"use strict";
 
 angular
-	.module('loginCheck', ['ngRoute'])
-	.factory("CookieCheckator", ["$cookieStore", "$location", function($cookieStore, $location){
+	.module("oddlyLoginCheck", [
+		"ngRoute"
+	])
+
+
+	/**
+	 * CookieCheckator, the savior of our protected content !
+	 * Checks your cookies for the right one & adds needed headers to your http requests, what a hero !
+	 * @factory CookieCheckator
+	 * @param {Object} $cookieStore - Cookie manager
+	 * @param {Object} $location - Route manager
+	 */
+	.factory("CookieCheckator", function($cookieStore, $location){
 		return function(options){
 
 			if(options && !options.route && options.checkator && $cookieStore.get("sid", "username")){
@@ -21,8 +27,19 @@ angular
 
 			return options;
 		}
-	}])
-	.factory("HttpInterceptor", ["$q", "CookieCheckator", "$location", function($q, CookieCheckator, $location){
+	})
+
+
+	/**
+	 * Even better than CookieCheckator, hail to the great HttpInterceptor !!!
+	 * He watches every moves thou do wiz thy feetz, and call CookieCheckator
+	 * if you're doing something wrong... what a jerk, ain't he ?
+	 * @factory HttpInterceptor
+	 * @param {Object} $q - Query manager
+	 * @param {SuperHero} CookieCheckator - Bet you already know his name...
+	 * @param {Object} $location - Route manager
+	 */
+	.factory("HttpInterceptor", function($q, CookieCheckator, $location){
 		return {
 			request: function (config) {
 				return CookieCheckator(config) || config || $q.when(config);
@@ -38,18 +55,27 @@ angular
 					return $q.reject(rejection);
 			}
 		}
-	}])
-	.config(function($httpProvider){
-
-		//Add check on http request
-		$httpProvider.interceptors.push('HttpInterceptor');
-
 	})
-	.run(["$rootScope", "$location", "CookieCheckator", function($rootScope, $location, CookieCheckator){
 
-		//Init history for back purpose
-		var history = [];
 
+	/**
+	 * Attach HttpInterceptor to all HTTP requests
+	 * I'M PITTYLESS !!! MOUAHAHAHAHA !!!
+	 * @param {Object} $httpProvider - Http request provider
+	 */
+	.config(function($httpProvider){
+		$httpProvider.interceptors.push('HttpInterceptor');
+	})
+
+
+	/**
+	 * Attach CookieCheckator on every route change
+	 * Even more silly than http requests, lol
+	 * @param {Object} $rootScope - App root scope
+	 * @param {Object} $location - Route manager
+	 * @param {SuperHero} CookieCheckator - THE ONE AND ONLY
+	 */
+	.run(function($rootScope, $location, CookieCheckator){
 
 		//Add check on route change
 		$rootScope.$on('$routeChangeStart', function (e, next, current) {
@@ -58,16 +84,4 @@ angular
 			}
 		});
 
-		//Push current path to history
-		$rootScope.$on('$routeChangeSuccess', function() {
-			history.push($location.$$path);
-		});
-
-
-		//Add back function to go back in history, yihhhhhaaaaaaa !
-		$rootScope.back = function () {
-			var prevUrl = history.length > 1 ? history.splice(-2)[0] : "/app";
-			$location.path(prevUrl);
-		};
-
-	}]);
+	})
