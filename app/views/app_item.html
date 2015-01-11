@@ -21,7 +21,7 @@
 							<span>{{ getYear(item.edition_date)}}</span>
 							<span ng-bind-html="getRank(item.rank)"></span>
 						</p>
-						<p ng-bind-html="item.synopsis.text" class="synopsis">{{ item.synopsis.text }}</p>
+						<p ng-bind-html="item.synopsis.text|nl2br" class="synopsis">{{ item.synopsis.text|nl2br }}</p>
 						<a ng-href="/app/read/{{ item._id }}" class="read-button ui-button ui-blue" translate="{{'APP.SINGLE.BUTTONS.READ'}}">Lire maintenant !</a>
 						<a ng-click="" href="#" class="later-button ui-button ui-blue"><i class="fa fa-clock-o"></i></a>
 					</div>
