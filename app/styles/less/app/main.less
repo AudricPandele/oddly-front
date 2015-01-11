@@ -66,6 +66,8 @@
 			.name{
 				float:left;
 				color:@defaultSubTextColor;
+
+				&:hover{ color:@defaultTextColor; }
 			}
 
 			.settings{
@@ -75,13 +77,15 @@
 				height:18px;
 				overflow:hidden;
 				border:1px solid @defaultSubTextColor;
+				color:@defaultSubTextColor;
 				border-radius:2px;
 				text-align:center;
 				font-size:20px;
 
+				&:hover{ color:@defaultTextColor; }
+
 				i.fa{
 					margin-top:3px;
-					color:@defaultSubTextColor;
 				}
 			}
 		}
