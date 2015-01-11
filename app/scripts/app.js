@@ -28,6 +28,11 @@ angular
 		API: "api.oddly.fr/api/v1",
 		CDN: "cdn.oddly.fr"
 	})
+	.filter('nl2br', function () {
+		return function(text) {
+			return text ? text.replace(/\n/g, '<br/>') : '';
+		}
+	})
 	.config(['$routeProvider', '$locationProvider','$translateProvider', function($routeProvider, $locationProvider, $translateProvider) {
 
 		//Load translations
