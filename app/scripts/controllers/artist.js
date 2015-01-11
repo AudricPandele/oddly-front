@@ -17,7 +17,6 @@ angular
 			checkator: true
 		})
 		.success(function(data){
-			console.log(data.artist);
 			$scope.artist = data.artist;
 		})
 		.error(function(e){
