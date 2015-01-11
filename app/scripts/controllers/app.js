@@ -16,9 +16,6 @@ angular
 			url: SERVER.METHOD + SERVER.API + "/item/" + $routeParams.id, // PROD
 			//url: "/dummy/item/item.json", // DUMMY
 			checkator: true,
-			params: {
-				locale : "en_US"
-			}
 		})
 		.success(function(data){
 			$scope.item = data.item;
