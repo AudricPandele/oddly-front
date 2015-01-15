@@ -8,8 +8,9 @@
 	z-index: 100;
 	background: @uiEvil;
 	
-	div {
+	div:first-child {
 		margin-top: 100px;
+		position: relative;
 
 		input {
 			border: none;
@@ -37,12 +38,19 @@
 		.search-icon {
 			position: absolute;
 			right: 0;
-			top: 15px;
+			bottom: 15px;
 			padding-right: 100px;
 
 			i {
 				font-size: 60px;
 			}
+		}
+	}
+
+	.results {
+		.columns(4);
+		div {
+			
 		}
 	}
 }

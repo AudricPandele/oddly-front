@@ -79,6 +79,12 @@
 		filter:	   progid:DXImageTransform.Microsoft.gradient( startColorstr='@start', endColorstr='@end',GradientType=0 ); /* IE6-9 */
 	}
 
+	.columns(@nb) {
+		-webkit-columns: @nb;
+		-moz-columns: @nb;
+		columns: @nb;
+	}
+
 	.box-shadow (@args) {
 		-webkit-box-shadow: @args;
 		-moz-box-shadow: @args;
