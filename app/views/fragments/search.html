@@ -3,19 +3,28 @@
 		<input type="text" placeholder="Search" ng-model="query" ng-keyup="search(query)">
 		<div class="search-icon"><i class="fa fa-search"></i></div>
 	</div>
-	<div>
-		{{ _search | json }}
-		<div ng-if="_search.items" ng-repeat="item in _search.items">
-			{{ item }}
+	<div class="results">
+		<div class="result-column" ng-if="_search.items">
+			<h3>Items</h3>
+			<p ng-repeat="item in _search.items">
+				<a ng-href="/app/item/{{ item._id }}">{{ item.title }}</a>
+			</p>
 		</div>
-		<div ng-if="_search.editors" ng-repeat="editor in _search.editors">
-			{{ editor }}
+		<div class="result-column" ng-if="_search.editor">
+			<h3>Editors</h3>
+			<p ng-repeat="editor in _search.editor">{{ editor.name }}</p>
 		</div>
-		<div ng-if="_search.artists" ng-repeat="artist in _search.artists">
-			{{ artist }}
+		<div class="result-column" ng-if="_search.artist">
+			<h3>Artists</h3>
+			<p ng-repeat="artist in _search.artist">
+				<a ng-href="/app/artist/{{ artist._id }}">{{ artist.name }}</a>
+			</p>
 		</div>
-		<div ng-if="_search.category" ng-repeat="category in _search.category">
-			{{ category }}
+		<div class="result-column" ng-if="_search.category">
+			<h3>Category</h3>
+			<p ng-repeat="category in _search.category">
+				<a ng-href="/app/fresh/{{ category.name }}">{{ category.name }}</a>
+			</p>
 		</div>
 	</div>
 </section>

@@ -8,7 +8,7 @@ angular
 		$scope._search = {};
 
 		$scope.search = function(query) {
-			if(query.length > 2) {
+			if(query.length > 0) {
 
 				$http({
 					medtod: "GET",
@@ -19,6 +19,7 @@ angular
 					}
 				})
 				.success(function(data){
+					console.log(data);
 					return $scope._search = data.result;
 				});
 
