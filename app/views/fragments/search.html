@@ -1,0 +1,9 @@
+<section id="search" ng-controller="SearchCtrl">
+	<div>
+		<input type="text" placeholder="Search" ng-model="query" ng-keyup="search(query)">
+		<div class="search-icon"><i class="fa fa-search"></i></div>
+	</div>
+	<div>
+		{{ search | json }}
+	</div>
+</section>
