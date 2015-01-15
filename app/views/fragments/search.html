@@ -5,5 +5,17 @@
 	</div>
 	<div>
 		{{ _search | json }}
+		<div ng-if="_search.items" ng-repeat="item in _search.items">
+			{{ item }}
+		</div>
+		<div ng-if="_search.editors" ng-repeat="editor in _search.editors">
+			{{ editor }}
+		</div>
+		<div ng-if="_search.artists" ng-repeat="artist in _search.artists">
+			{{ artist }}
+		</div>
+		<div ng-if="_search.category" ng-repeat="category in _search.category">
+			{{ category }}
+		</div>
 	</div>
 </section>
