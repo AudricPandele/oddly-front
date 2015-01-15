@@ -5,7 +5,7 @@ angular
 
 	.controller('SearchCtrl', function($scope, $http, SERVER) {
 
-		$scope.search = {};
+		$scope._search = {};
 
 		$scope.search = function(query) {
 			if(query.length > 2) {
@@ -19,11 +19,12 @@ angular
 					}
 				})
 				.success(function(data){
-					$scope.search = data.result;
+					return $scope._search = data.result;
 				});
 
-			} else 
-				return false;
+			} else if(query.length < 2) {
+				return $scope._search = {};
+			}
 		}
 
 	});
