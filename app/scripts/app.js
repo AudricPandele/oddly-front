@@ -69,7 +69,7 @@ angular
 	})
 
 
-	.run(function($cookieStore, $translate, $rootScope, $location){
+	.run(function($cookieStore, $translate, $rootScope, $location, $route){
 
 		//Try to set locale from cookie
 		$translate.use($cookieStore.get("locale"));
@@ -86,6 +86,11 @@ angular
 		$rootScope.back = function () {
 			var prevUrl = history.length > 1 ? history.splice(-2)[0] : "/app";
 			$location.path(prevUrl);
+		};
+
+
+		$rootScope.getCurrentRoute = function(route){
+			return route == $route.current.$$route.originalPath;
 		};
 
 	})
