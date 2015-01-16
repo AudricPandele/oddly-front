@@ -9,6 +9,7 @@ angular
 		//Set default model
 		$scope.item = { };
 		$scope.SERVER = SERVER;
+		$scope.addedToReadLater = false;
 
 		//Get asked item
 		$http({
@@ -47,7 +48,25 @@ angular
 			for(var i = 0; i < empty_stars; i++) res+="<i class='fa fa-star-o'></i>";
 
 			return res;
-		}
+		};
+
+		$scope.readlater = function(id){
+			if($scope.addedToReadLater == true) return;
+
+			$http({
+				method: "POST",
+				url: SERVER.METHOD + SERVER.API + "/user/readLater/" + id, // PROD
+				//url: "/dummy/item/item.json", // DUMMY
+				checkator: true,
+			})
+			.success(function(data){
+				$scope.addedToReadLater = true;
+				console.log(data);
+			})
+			.error(function(data, status, headers, config){
+				console.log(status+" : "+data);
+			});
+		};
 
 	})
 
