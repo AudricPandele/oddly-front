@@ -1,6 +1,7 @@
 <section id="search" ng-controller="SearchCtrl">
 	<div>
-		<input type="text" placeholder="Search" ng-model="query" ng-keyup="search(query)">
+		<h4>Search Oddly</h4>
+		<input type="text" ng-model="query" ng-keyup="search(query)" autofocus>
 		<div class="search-icon"><i class="fa fa-search"></i></div>
 	</div>
 	<div class="results">

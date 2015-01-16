@@ -6,6 +6,11 @@ angular
 	.controller('SearchCtrl', function($scope, $http, SERVER) {
 
 		/**
+		 * Autofocus search input 
+		 */
+		$('#search').find('input[type="text"]').focus();
+
+		/**
 		 * @var (object)
 		 */
 		$scope._search = {};
@@ -17,7 +22,9 @@ angular
 		 * @return
 		 */
 		$scope.search = function(query) {
-			if(query.length > 2) {
+			// tmp
+			// > 0
+			if(query.length > 0) {
 
 				$http({
 					medtod: "GET",
