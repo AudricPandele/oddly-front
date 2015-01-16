@@ -12,6 +12,8 @@
  * 3. UI
  *  3.1. Buttons
  *  3.2. Inputs
+ *  3.3. Lists
+ *  3.4. Titles
  * 4. Useful class
  */
 
@@ -456,4 +458,36 @@
 				.title, .artist{ font-size:@defaultTextSmallSize; padding:0 4px; overflow:hidden; .text-overflow(ellipsis); white-space: nowrap; margin-bottom:0; }
 				.artist{ color:@uiGrey; }
 			}
+		}
+
+		/* 3.4. TITLES */
+		.special-title{
+			width:auto;
+			height:158px;
+			background:url("/images/app/bookmark.png") no-repeat left top;
+			margin-left:40px;
+			padding-top:60px;
+			padding-left:90px;
+			margin-top:0;
+			margin-bottom:40px;
+
+			.text{
+				color:@defaultTextColor;
+				font-size:@defaultTextFatSize;
+				font-weight:300;
+				margin-right:20px;
+			}
+
+			.subtitle{
+				color:@defaultSubTextColor;
+				font-weight:300;
+				font-size:@defaultTextSmallSize;
+				vertical-align:5px;
+			}
+		}
+
+		.special-subtitle{
+			margin-top:30px;
+			font-size:@defaultTextSemiFatSize !important;
+			font-weight:300;
 		}
