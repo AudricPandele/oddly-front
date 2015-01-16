@@ -10,20 +10,20 @@
 			<ul>
 				<h4 translate="{{ 'APP.LEFTSIDE.MENU.TITLE' }}">Menu</h4>
 
-				<li class="active"><a href="/app"><i class="fa fa-paper-plane"></i> <span translate="{{ 'APP.LEFTSIDE.MENU.FRESH' }}">Nouveautés</span></a></li>
-				<li><a href="/app/tops"><i class="fa fa-star"></i> <span translate="{{ 'APP.LEFTSIDE.MENU.TOPS' }}">Les Tops</span></a></li>
-				<li><a href="/app/categories"><i class="fa fa-bars"></i> <span translate="{{ 'APP.LEFTSIDE.MENU.CAT' }}">Catégories</span></a></li>
+				<li ng-class="{'active': getCurrentRoute('/app') || getCurrentRoute('/app/fresh/:type') }"><a href="/app"><i class="fa fa-paper-plane"></i> <span translate="{{ 'APP.LEFTSIDE.MENU.FRESH' }}">Nouveautés</span></a></li>
+				<li ng-class="{'active': getCurrentRoute('/app/tops') }"><a href="/app/tops"><i class="fa fa-star"></i> <span translate="{{ 'APP.LEFTSIDE.MENU.TOPS' }}">Les Tops</span></a></li>
+				<li ng-class="{'active': getCurrentRoute('/app/categories') }"><a href="/app/categories"><i class="fa fa-bars"></i> <span translate="{{ 'APP.LEFTSIDE.MENU.CAT' }}">Catégories</span></a></li>
 			</ul>
 
 			<ul>
 				<h4 translate="{{ 'APP.LEFTSIDE.BOOKSHELF.TITLE' }}">Ma bibliothèque</h4>
 
-				<li><a href="/app/bookshelf/authors"><i class="fa fa-pencil"></i> <span translate="{{ 'APP.LEFTSIDE.BOOKSHELF.AUTHORS' }}">Auteurs</span></a></li>
-				<li><a href="/app/bookshelf/books"><i class="fa fa-book"></i> <span translate="{{ 'APP.LEFTSIDE.BOOKSHELF.BOOKS' }}">Livres</span></a></li>
-				<li><a href="/app/bookshelf/comics"><i class="fa fa-rocket"></i> <span translate="{{ 'APP.LEFTSIDE.BOOKSHELF.COMICS' }}">Bandes dessinées</span></a></li>
-				<li><a href="/app/bookshelf/magazines"><i class="fa fa-tag"></i> <span translate="{{ 'APP.LEFTSIDE.BOOKSHELF.MAGAZINES' }}">Magazines</span></a></li>
-				<li><a href="/app/bookshelf/newspaper"><i class="fa fa-newspaper-o"></i> <span translate="{{ 'APP.LEFTSIDE.BOOKSHELF.NEWSPAPERS' }}">Journaux</span></a></li>
-				<li><a href="/app/bookshelf/toread"><i class="fa fa-clock-o"></i> <span translate="{{ 'APP.LEFTSIDE.BOOKSHELF.READLATER' }}">À lire plus tard</span></a></li>
+				<li ng-class="{'active': getCurrentRoute('/app/bookshelf/authors') }"><a href="/app/bookshelf/authors"><i class="fa fa-pencil"></i> <span translate="{{ 'APP.LEFTSIDE.BOOKSHELF.AUTHORS' }}">Auteurs</span></a></li>
+				<li ng-class="{'active': getCurrentRoute('/app/bookshelf/books') }"><a href="/app/bookshelf/books"><i class="fa fa-book"></i> <span translate="{{ 'APP.LEFTSIDE.BOOKSHELF.BOOKS' }}">Livres</span></a></li>
+				<li ng-class="{'active': getCurrentRoute('/app/bookshelf/comics') }"><a href="/app/bookshelf/comics"><i class="fa fa-rocket"></i> <span translate="{{ 'APP.LEFTSIDE.BOOKSHELF.COMICS' }}">Bandes dessinées</span></a></li>
+				<li ng-class="{'active': getCurrentRoute('/app/bookshelf/magazines') }"><a href="/app/bookshelf/magazines"><i class="fa fa-tag"></i> <span translate="{{ 'APP.LEFTSIDE.BOOKSHELF.MAGAZINES' }}">Magazines</span></a></li>
+				<li ng-class="{'active': getCurrentRoute('/app/bookshelf/newspapers') }"><a href="/app/bookshelf/newspapers"><i class="fa fa-newspaper-o"></i> <span translate="{{ 'APP.LEFTSIDE.BOOKSHELF.NEWSPAPERS' }}">Journaux</span></a></li>
+				<li ng-class="{'active': getCurrentRoute('/app/bookshelf/pending') }"><a href="/app/bookshelf/pending"><i class="fa fa-clock-o"></i> <span translate="{{ 'APP.LEFTSIDE.BOOKSHELF.READLATER' }}">À lire plus tard</span></a></li>
 			</ul>
 		</nav>
 
