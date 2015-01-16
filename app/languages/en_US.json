@@ -147,7 +147,8 @@
 				"BOOKS" : "Books",
 				"COMICS" : "Comics",
 				"MAGAZINES" : "Magazines",
-				"NEWSPAPERS" : "Newspapers"
+				"NEWSPAPERS" : "Newspapers",
+				"READLATER" : "To read later"
 			}
 
 		},

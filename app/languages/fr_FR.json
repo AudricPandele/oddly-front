@@ -146,7 +146,8 @@
 				"BOOKS" : "Livres",
 				"COMICS" : "Bandes dessinées",
 				"MAGAZINES" : "Magazines",
-				"NEWSPAPERS" : "Journaux"
+				"NEWSPAPERS" : "Journaux",
+				"READLATER" : "À lire plus tard"
 			}
 
 		},
