@@ -13,10 +13,12 @@
 		</div>
 		<div class="result-column" ng-if="_search.artist">
 			<h3>Artists</h3>
-			<p ng-repeat="artist in _search.artist | orderBy: 'name' ">
-				<div class="artist-picture" style="background-image: url({{ SERVER.METHOD }}{{ SERVER.CDN }}/item/cover/{{ artist._id }}/small)"></div>
-				<a ng-href="/app/artist/{{ artist._id }}">{{ artist.name }}</a>
-			</p>
+			<div ng-repeat="artist in _search.artist | orderBy: 'name' ">
+				<div class="result-artist">
+					<div class="artist-picture" style="background-image: url({{ SERVER.METHOD }}{{ SERVER.CDN }}/artist/thumb/{{ artist._id }}/small)"></div>
+					<a ng-href="/app/artist/{{ artist._id }}">{{ artist.name }}</a>
+				</div>
+			</div>
 		</div>
 		<div class="result-column" ng-if="_search.editor">
 			<h3>Editors</h3>
