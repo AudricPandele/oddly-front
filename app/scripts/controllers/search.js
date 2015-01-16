@@ -15,6 +15,8 @@ angular
 		 */
 		$scope._search = {};
 
+		$scope.SERVER = SERVER;
+
 		/**
 		 * launch search
 		 *

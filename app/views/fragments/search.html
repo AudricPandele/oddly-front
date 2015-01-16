@@ -7,23 +7,24 @@
 	<div class="results">
 		<div class="result-column" ng-if="_search.items">
 			<h3>Items</h3>
-			<p ng-repeat="item in _search.items">
+			<p ng-repeat="item in _search.items | orderBy: 'title' ">
 				<a ng-href="/app/item/{{ item._id }}">{{ item.title }}</a>
+			</p>
+		</div>
+		<div class="result-column" ng-if="_search.artist">
+			<h3>Artists</h3>
+			<p ng-repeat="artist in _search.artist | orderBy: 'name' ">
+				<div class="artist-picture" style="background-image: url({{ SERVER.METHOD }}{{ SERVER.CDN }}/item/cover/{{ artist._id }}/small)"></div>
+				<a ng-href="/app/artist/{{ artist._id }}">{{ artist.name }}</a>
 			</p>
 		</div>
 		<div class="result-column" ng-if="_search.editor">
 			<h3>Editors</h3>
-			<p ng-repeat="editor in _search.editor">{{ editor.name }}</p>
-		</div>
-		<div class="result-column" ng-if="_search.artist">
-			<h3>Artists</h3>
-			<p ng-repeat="artist in _search.artist">
-				<a ng-href="/app/artist/{{ artist._id }}">{{ artist.name }}</a>
-			</p>
+			<p ng-repeat="editor in _search.editor | orderBy: 'name' ">{{ editor.name }}</p>
 		</div>
 		<div class="result-column" ng-if="_search.category">
 			<h3>Category</h3>
-			<p ng-repeat="category in _search.category">
+			<p ng-repeat="category in _search.category | orderBy: 'name' ">
 				<a ng-href="/app/fresh/{{ category.name }}">{{ category.name }}</a>
 			</p>
 		</div>

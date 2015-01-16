@@ -7,13 +7,13 @@
 	position: fixed;
 	z-index: 100;
 	background: @uiEvil;
+	padding: 50px;
+	box-sizing: border-box;
 	
 	div:first-child {
-		margin-top: 60px;
 		position: relative;
 
 		h4 {
-			padding-left: 50px;
 			text-transform: uppercase;
 			margin-bottom: 40px;
 		}
@@ -25,7 +25,6 @@
 			background: transparent;
 			outline: none;
 			font-size: 60px;
-			padding-left: 50px;
 			text-transform: uppercase;
 		}
 
@@ -44,10 +43,16 @@
 	.results {
 
 		.result-column {
-			display: inline-block;
+			float: left;
 			width: 25%;
 			min-height: 40px;
 			overflow: hidden;
+
+			.artist-picture {
+				width: 50px;
+				height: 50px;
+				background: center center no-repeat;
+			}
 		}
 	}
 }
