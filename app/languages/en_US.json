@@ -177,6 +177,15 @@
 				"LATER" : "Read later"
 			}
 
+		},
+
+		"SEARCH" : {
+			"TITLE": "Search Oddly",
+			"ARTISTS" : "Artists",
+			"EDITORS" : "Editors",
+			"ITEMS": "Items",
+			"CATEGORIES": "Categories",
+			"NORESULTS" : "No result for"
 		}
 
 	}

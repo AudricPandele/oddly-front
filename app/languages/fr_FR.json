@@ -176,6 +176,15 @@
 				"LATER" : "A lire plus tard"
 			}
 
+		},
+
+		"SEARCH" : {
+			"TITLE" : "Rechercher sur Oddly",
+			"ARTISTS" : "Artistes",
+			"EDITORS" : "Editeurs",
+			"ITEMS": "Ouvrages",
+			"CATEGORIES": "Catégories",
+			"NORESULTS" : "Pas de résultats pour"
 		}
 
 	}
