@@ -229,6 +229,7 @@
 			font-size:@defaultTextSize;
 			color: @defaultTextColor;
 			background:@uiBlue;
+			border:1px solid transparent;
 			.transition(all .3s ease);
 
 			&:hover{ color:@defaultTextColor; text-decoration:none; }
@@ -244,22 +245,63 @@
 			&.ui-blue{
 				.box-shadow(0 4px 0 0 @uiBlueDarker); background:@uiBlue;
 				&:hover{ .box-shadow(0 4px 0 0 @uiBlue); background:@uiBlueBrighter; }
+				&.ui-empty{
+					border: 1px solid @uiBlue;
+					color: @uiBlue;
+
+					&:hover{ color:@uiBlueBrighter; border-color:@uiBlueBrighter; }
+				}
 			}
 
 			&.ui-red{
 				.box-shadow(0 4px 0 0 @uiRedDarker); background:@uiRed;
 				&:hover{ .box-shadow(0 4px 0 0 @uiRed); background:@uiRedBrighter; }
+				&.ui-empty{
+					border: 1px solid @uiRed;
+					color: @uiRed;
+
+					&:hover{ color:@uiRedBrighter; border-color:@uiRedBrighter; }
+				}
 			}
 
 			&.ui-green{
 				.box-shadow(0 4px 0 0 @uiGreenDarker); background:@uiGreen;
 				&:hover{ .box-shadow(0 4px 0 0 @uiGreen); background:@uiGreenBrighter; }
+				&.ui-empty{
+					border: 1px solid @uiGreen;
+					color: @uiGreen;
+
+					&:hover{ color:@uiGreenBrighter; border-color:@uiGreenBrighter; }
+				}
+			}
+
+			&.ui-grey{
+				.box-shadow(0 4px 0 0 @uiGreyDarker); background:@uiGrey;
+				&:hover{ .box-shadow(0 4px 0 0 @uiGrey); background:@uiGreyBrighter; }
+				&.ui-empty{
+					border: 1px solid @uiGrey;
+					color: @uiGrey;
+
+					&:hover{ color:@uiGreyBrighter; border-color:@uiGreyBrighter; }
+					&.ui-no-hover{
+						&:hover{ border-color:@uiGrey; box-shadow: none; }
+					}
+				}
+				&.ui-no-hover{
+					&:hover{ color:@uiGrey; cursor:default; .box-shadow(0 4px 0 0 @uiGreyDarker); }
+				}
 			}
 
 			&.ui-no-shadow{
 				.box-shadow(none);
 				&:hover{ .box-shadow(none); }
 			}
+
+			&.ui-empty{
+				background: transparent;
+				&:hover{ background: transparent; }
+			}
+
 		}
 
 
