@@ -55,13 +55,12 @@ angular
 
 			$http({
 				method: "POST",
-				url: SERVER.METHOD + SERVER.API + "/user/readLater/" + id, // PROD
+				url: SERVER.METHOD + SERVER.API + "/user/readlater/" + id, // PROD
 				//url: "/dummy/item/item.json", // DUMMY
 				checkator: true,
 			})
 			.success(function(data){
 				$scope.addedToReadLater = true;
-				console.log(data);
 			})
 			.error(function(data, status, headers, config){
 				console.log(status+" : "+data);
