@@ -1,9 +1,6 @@
 <div class="main-app app-fresh">
 	<ng-include src="'/views/fragments/app_menu.html'"></ng-include>
 	
-	<!-- Temporary commented --> 
-	<ng-include src="'/views/fragments/search.html'"></ng-include>
-
 	<div class="content">
 		<div ng-if="advert.image" class="home-highlight" style="background-image:url(/dummy/fresh/ad/{{ advert.image.url }}); background-position:{{ advert.image.x }} {{ advert.image.y }};">
 			<div class="home-highlight-wrapper">
