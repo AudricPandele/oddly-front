@@ -22,8 +22,11 @@
 							<span ng-bind-html="getRank(item.rank)"></span>
 						</p>
 						<p ng-bind-html="item.synopsis.text|nl2br" class="synopsis">{{ item.synopsis.text|nl2br }}</p>
-						<a ng-href="/app/read/{{ item._id }}" class="read-button ui-button ui-blue" translate="{{'APP.SINGLE.BUTTONS.READ'}}">Lire maintenant !</a>
-						<a ng-click="" href="#" class="later-button ui-button ui-blue"><i class="fa fa-clock-o"></i></a>
+						<a ng-href="/app/read/{{ item._id }}" class="read-button ui-button ui-blue ui-no-shadow" translate="{{'APP.SINGLE.BUTTONS.READ'}}">Lire maintenant !</a>
+						<a ng-click="readlater(item._id)" ng-class="{'ui-blue': addedToReadLater == false, 'ui-grey ui-no-hover': addedToReadLater == true }" class="later-button ui-button ui-no-shadow ui-empty">
+							<span ng-if="addedToReadLater == true"><i class="fa fa-check"></i> Ajouté !</span>
+							<span ng-if="addedToReadLater == false">Lire plus tard</span>
+						</a>
 					</div>
 				</div>
 			</div>
