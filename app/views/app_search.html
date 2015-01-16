@@ -1,13 +1,14 @@
 <section id="search">
 	<div>
-		<h4>Search Oddly</h4>
+		<h4 translate="{{'APP.SEARCH.TITLE'}}">Search Oddly</h4>
 		<input type="text" ng-model="query" ng-keyup="search(query)" autofocus>
 		<div class="search-icon"><i class="fa fa-search"></i></div>
 	</div>
-	<div class="results">
-		<div class="result-column" ng-if="_search.artist">
-			<h3>Artists</h3>
-			<div ng-repeat="artist in _search.artist | orderBy: 'name' ">
+
+	<div class="results" ng-if="!(_search | isEmpty)">
+		<div class="result-column" ng-if="_search.artists">
+			<h3 translate="{{'APP.SEARCH.ARTISTS'}}">Artistes</h3>
+			<div ng-repeat="artist in _search.artists | orderBy: 'name' ">
 				<div class="result-artist">
 					<div class="artist-picture" style="background-image: url({{ SERVER.METHOD }}{{ SERVER.CDN }}/artist/thumb/{{ artist._id }}/small)"></div>
 					<a ng-href="/app/artist/{{ artist._id }}">{{ artist.name }}</a>
@@ -15,7 +16,7 @@
 			</div>
 		</div>
 		<div class="result-column" ng-if="_search.items">
-			<h3>Items</h3>
+			<h3 translate="{{'APP.SEARCH.ITEMS'}}">Ouvrages</h3>
 			<div ng-repeat="item in _search.items | orderBy: 'title' ">
 				<div class="result-item">
 					<div class="item-picture" style="background-image: url({{ SERVER.METHOD }}{{ SERVER.CDN }}/item/cover/{{ item._id }}/small)"></div>
@@ -23,15 +24,19 @@
 				</div>
 			</div>
 		</div>
-		<div class="result-column" ng-if="_search.editor">
-			<h3>Editors</h3>
-			<p ng-repeat="editor in _search.editor | orderBy: 'name' ">{{ editor.name }}</p>
+		<div class="result-column" ng-if="_search.editors">
+			<h3 translate="{{'APP.SEARCH.EDITORS'}}">Editeurs</h3>
+			<p ng-repeat="editor in _search.editors | orderBy: 'name' ">{{ editor.name }}</p>
 		</div>
-		<div class="result-column" ng-if="_search.category">
-			<h3>Category</h3>
-			<p ng-repeat="category in _search.category | orderBy: 'name' ">
+		<div class="result-column" ng-if="_search.categories">
+			<h3 translate="{{'APP.SEARCH.CATEGORY'}}">Catégories</h3>
+			<p ng-repeat="category in _search.categories | orderBy: 'name' ">
 				<a ng-href="/app/fresh/{{ category.name }}">{{ category.name }}</a>
 			</p>
 		</div>
+	</div>
+
+	<div ng-if="noResults(_search) && query.length > 2">
+		<p><span translate="{{'APP.SEARCH.NORESULTS'}}">Pas de résultats pour</span>{{ query }}</p>
 	</div>
 </section>

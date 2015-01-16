@@ -48,6 +48,13 @@ angular
 			$scope.search($scope.query);
 		}
 
+		$scope.noResults = function(search) {
+			for(var i in search)
+				if(search[i].length != 0) return false;
+
+			return true;
+		} 
+
 		/**
 		 * Autofocus search input 
 		 *
