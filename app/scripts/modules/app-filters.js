@@ -14,3 +14,14 @@ angular
 			return text ? text.replace(/\n/g, "<br/>") : "";
 		}
 	})
+
+	/**
+	 * Check is object is empty
+	 * @filter isEmpty
+	 * @return {Bool}
+	 */
+	.filter('isEmpty', function () {
+        return function (obj) {
+            return Object.keys(obj).length == 0;
+        };
+    })
