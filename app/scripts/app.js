@@ -93,4 +93,8 @@ angular
 			return route == $route.current.$$route.originalPath;
 		};
 
+		$rootScope.getCookie = function(key){
+			return $cookieStore.get(key);
+		};
+
 	})

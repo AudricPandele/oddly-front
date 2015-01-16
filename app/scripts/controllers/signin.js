@@ -23,7 +23,7 @@ angular
 					console.log(detail);
 					$scope.register_error = e.error;
 				});
-			} else 
+			} else
 				return $scope.registerForm.submitted = true;
 		}
 
@@ -41,6 +41,7 @@ angular
 			.success(function(data){
 				$cookieStore.put('sid',data.sid);
 				$cookieStore.put('username', data.username);
+				$cookieStore.put('user', data.name + " " + data.lastname);
 				$location.path("/app");
 			})
 			.error(function(e,status,header,detail){
