@@ -88,7 +88,6 @@ angular
 			$location.path(prevUrl);
 		};
 
-
 		$rootScope.getCurrentRoute = function(route){
 			return route == $route.current.$$route.originalPath;
 		};

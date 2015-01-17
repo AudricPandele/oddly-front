@@ -72,11 +72,20 @@ angular
 
 	.controller('PlayerCtrl', function($scope, $http, $location, $translate, SERVER, $routeParams, Fullscreen, $lazyloading){
 
+		$scope.previousSave = new Date();
+
 		window.onkeyup = function(e) {
+			var tmp = new Date();
+			var diff = tmp.getTime() - $scope.previousSave.getTime();
+			if(diff >= 5000){
+				$scope.savePage($scope.item._id, $scope.currentPage);
+				$scope.previousSave = new Date();
+			}
+
 			if(e.keyCode == 37) return $scope.getPage($scope.currentPage - 1);
 			else if(e.keyCode == 39) return $scope.getPage($scope.currentPage + 1);
 			else return false;
-		}
+		};
 
 		// Avoid right click
 		window.oncontextmenu = function(){
@@ -89,23 +98,40 @@ angular
 		$scope.item = {};
 		$scope.is_fullscreen = false;
 
-		// Get book infos
-		$http({
-			method: "GET",
-			url: SERVER.METHOD + SERVER.API + "/item/" + $routeParams.id, // PROD
-			//url: "/dummy/item/item.json", // DUMMY
-			checkator: true,
-		})
-		.success(function(data){
-			$scope.item = data.item;
-			$scope.getPage(1);
-			$scope.total_pages = data.item.total_pages;
-		})
-		.error(function(data, status, headers, config){
-			console.log(status+" : "+data);
-		});
+		$scope.getBookInfos = function(){
+			$http({
+				method: "GET",
+				url: SERVER.METHOD + SERVER.API + "/item/" + $routeParams.id, // PROD
+				//url: "/dummy/item/item.json", // DUMMY
+				checkator: true,
+			})
+			.success(function(data){
+				$scope.item = data.item;
+				$scope.total_pages = data.item.total_pages;
+				$scope.getReadItem();
+			})
+			.error(function(data, status, headers, config){
+				console.log(status+" : "+data);
+			});
+		};
 
-		$lazyloading.init($routeParams.id, $scope.total_pages, 1, "SD");
+		$scope.getReadItem = function(){
+			$http({
+				method: "GET",
+				url: SERVER.METHOD + SERVER.API + "/user/haveread/" + $routeParams.id,
+				checkator: true,
+			})
+			.success(function(data){
+				if(data.item)
+					$scope.currentPage = parseInt(data.current_page);
+
+				$lazyloading.init($routeParams.id, $scope.total_pages, $scope.currentPage, "SD");
+				$scope.getPage($scope.currentPage);
+			})
+			.error(function(data, status, headers, config){
+				console.log(status+" : "+data);
+			});
+		};
 
 		$scope.getPage = function(page){
 			var canvas = document.getElementById("player-render");
@@ -126,9 +152,25 @@ angular
 
 		};
 
+		$scope.savePage = function(itemid, page){
+			$http({
+				method: "POST",
+				url: SERVER.METHOD + SERVER.API + "/user/read/" + itemid + "/" + page,
+				checkator: true,
+			})
+			.success(function(data){
+				console.log(data);
+			})
+			.error(function(e){
+				console.log(e);
+			})
+		};
+
 		$scope.fullscreen = function(){
 			Fullscreen.toggleAll();
 			$scope.is_fullscreen = (Fullscreen.isEnabled()) ? true : false;
 		};
+
+		$scope.getBookInfos();
 
 	})
