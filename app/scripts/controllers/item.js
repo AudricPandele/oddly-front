@@ -10,6 +10,7 @@ angular
 		$scope.item = { };
 		$scope.SERVER = SERVER;
 		$scope.addedToReadLater = false;
+		$scope.addedToBookshelf = false;
 
 		//Get asked item
 		$http({
@@ -20,6 +21,8 @@ angular
 		})
 		.success(function(data){
 			$scope.item = data.item;
+			$scope.addedToReadLater = data.item.to_read == "true";
+			$scope.addedToBookshelf = data.item.in_bookshelf == "true";
 		})
 		.error(function(data, status, headers, config){
 			console.log(status+" : "+data);
@@ -55,12 +58,26 @@ angular
 
 			$http({
 				method: "POST",
-				url: SERVER.METHOD + SERVER.API + "/user/readlater/" + id, // PROD
-				//url: "/dummy/item/item.json", // DUMMY
+				url: SERVER.METHOD + SERVER.API + "/user/readlater/" + id,
 				checkator: true,
 			})
 			.success(function(data){
 				$scope.addedToReadLater = true;
+			})
+			.error(function(data, status, headers, config){
+				console.log(status+" : "+data);
+			});
+		};
+
+		$scope.save = function(id){
+			$http({
+				method: "POST",
+				url: SERVER.METHOD + SERVER.API + "/user/save/" + id,
+				checkator: true,
+			})
+			.success(function(data){
+				console.log(data);
+				$scope.addedToBookshelf = data.in_bookshelf == "true";
 			})
 			.error(function(data, status, headers, config){
 				console.log(status+" : "+data);
