@@ -1,0 +1,21 @@
+<div class="main-app app-bookshelf-pending">
+    <ng-include src="'/views/fragments/app_menu.html'"></ng-include>
+
+    <div class="content">
+
+        <h2 class="special-title"><span class="text">Vos auteurs préférés</span></h2>
+
+        <ul class="inline-items-list">
+            <li class="item" ng-repeat="item in items">
+                <a ng-href="/app/item/{{ item._id }}">
+                    <div class="thumb-wrapper">
+                        <div class="thumb" style="background-image:url({{SERVER.METHOD}}{{SERVER.CDN}}/item/cover/{{ item._id }}/small);"></div>
+                    </div>
+                    <p class="title">{{ item.title }}</p>
+                    <p ng-if="item.artists != ''" class="artist">{{ item.artists }}</p>
+                    <p ng-if="item.artists == ''" class="artist">{{ item.editors }}</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
