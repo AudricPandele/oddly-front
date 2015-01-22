@@ -59,7 +59,9 @@ angular
 			.when('/app/item/:id', { templateUrl: '/views/app_item.html', controller: 'ItemCtrl', checkator: true })
 			.when('/app/artist/:id', { templateUrl: '/views/app_artist.html', controller: 'ArtistCtrl', checkator: true })
 			.when('/app/read/:id', { templateUrl: '/views/app_player.html', controller: 'PlayerCtrl', checkator: true })
-			.when('/app/bookshelf/pending', { templateUrl: '/views/app_bookshelf_pending.html', controller: 'PendingCtrl', checkator: true })
+			.when('/app/bookshelf/pending', { templateUrl: '/views/app_bookshelf_pending.html', controller: 'BookshelfPendingCtrl', checkator: true })
+			.when('/app/bookshelf/artists', { templateUrl: '/views/app_bookshelf_artists.html', controller: 'BookshelfArtistsCtrl', checkator: true })
+			.when('/app/bookshelf/:type', { templateUrl: '/views/app_bookshelf_type.html', controller: 'BookshelfTypeCtrl', checkator: true })
 			.when('/app/settings', { templateUrl: '/views/app_settings.html', controller: 'SettingsCtrl', checkator: true })
 
 			.otherwise({ redirectTo: '/' });
