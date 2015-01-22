@@ -1,7 +1,7 @@
 /**
  * Reset styles file
  */
-html, body, div[ng-view]{ min-height:100%; }
+html, body, div[ng-view]{ min-height:100vh; }
 
 body{
 	font-family:"Roboto Slab", serif;
@@ -15,5 +15,7 @@ body{
 
 	.oddly-app{
 		background:@uiEvilDarker;
+
+		.main-app .content{ min-height:100vh; }
 	}
 }
