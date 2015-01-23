@@ -41,11 +41,9 @@
 				float: left;
 				color: @defaultTextColor;
 				text-decoration: none;
-				.text-shadow(1px 0 1px @uiEvilBrighter);
-				.text-overflow(ellipsis);
 				white-space: nowrap;
 
-				p:first-child { color:#FFF; font-size: @defaultTextSize; }
+				p:first-child { color:#FFF; font-size: @defaultTextSize; .text-shadow(1px 0 1px @uiEvilBrighter); .text-overflow(ellipsis); }
 				p { margin: 0; color:@defaultSubTextColor; }
 			}
 
