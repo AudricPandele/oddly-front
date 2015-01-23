@@ -6,6 +6,14 @@
 			<a href="/app/search"><i class="fa fa-search"></i> <span translate="{{ 'APP.LEFTSIDE.SEARCH.BUTTON' }}">Rechercher</span></a>
 		</p>
 
+		<a ng-href="/app/read/{{ item._id }}" id="current" ng-if="item">
+			<div class="cover" style="background-image: url({{ SERVER.METHOD }}{{ SERVER.CDN }}/item/cover/{{ item._id }}/small)"></div>
+			<div class="text">
+				<p>{{ item.title }}</p>
+				<p>En cours de lecture</p>
+			</div>
+		</a>
+
 		<nav>
 			<ul>
 				<h4 translate="{{ 'APP.LEFTSIDE.MENU.TITLE' }}">Menu</h4>
