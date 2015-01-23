@@ -92,13 +92,6 @@ angular
 		$scope.previousSave = new Date();
 
 		window.onkeyup = function(e) {
-			var tmp = new Date();
-			var diff = tmp.getTime() - $scope.previousSave.getTime();
-			if(diff >= 5000){
-				$scope.savePage($scope.item._id, $scope.currentPage);
-				$scope.previousSave = new Date();
-			}
-
 			if(e.keyCode == 37) return $scope.getPage($scope.currentPage - 1);
 			else if(e.keyCode == 39) return $scope.getPage($scope.currentPage + 1);
 			else return false;
@@ -151,6 +144,14 @@ angular
 		};
 
 		$scope.getPage = function(page){
+
+			var tmp = new Date();
+			var diff = tmp.getTime() - $scope.previousSave.getTime();
+			if(diff >= 5000){
+				$scope.savePage($scope.item._id, $scope.currentPage);
+				$scope.previousSave = new Date();
+			}
+
 			var canvas = document.getElementById("player-render");
 			var ctx = canvas.getContext("2d");
 
