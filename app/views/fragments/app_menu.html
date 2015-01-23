@@ -9,8 +9,8 @@
 		<a ng-href="/app/read/{{ item._id }}" id="current" ng-if="item">
 			<div class="cover" style="background-image: url({{ SERVER.METHOD }}{{ SERVER.CDN }}/item/cover/{{ item._id }}/small)"></div>
 			<div class="text">
-				<p>{{ item.title }}</p>
-				<p>En cours de lecture</p>
+				<span class="title">{{ item.title }}</span>
+				<span>En cours de lecture</span>
 			</div>
 		</a>
 
