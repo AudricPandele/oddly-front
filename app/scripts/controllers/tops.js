@@ -125,7 +125,7 @@ angular
 		})
 		.success(function(data){
 			$scope.items = data.items;
-			console.log(data.items.highlighted.categories)
+			$scope.highlighted = data.highlighted;
 		});
 
 	})

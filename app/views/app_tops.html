@@ -2,31 +2,31 @@
 	<ng-include src="'/views/fragments/app_menu.html'"></ng-include>
 
 	<div class="content">
-		<div ng-if="items.highlighted" class="tops-highlight">
+		<div ng-if="highlighted" class="tops-highlight">
 			<h2 class="big-ass-title">Top of the Pops</h2>
 			<div class="single-item">
 				<div class="thumb">
-					<div class="thumb-inner" style="background-image:url({{SERVER.METHOD}}{{SERVER.CDN}}/item/cover/{{ items.highlighted._id }}/large)"></div>
+					<div class="thumb-inner" style="background-image:url({{SERVER.METHOD}}{{SERVER.CDN}}/item/cover/{{ highlighted._id }}/large)"></div>
 				</div>
 				<div class="infos">
 					<p class="authors">
-						<span ng-repeat="artist in items.highlighted.artists"><a class="authors_name" ng-href="/app/artist/{{ artist._id }}">{{ artist.name }}</a></span>
+						<span ng-repeat="artist in highlighted.artists"><a class="authors_name" ng-href="/app/artist/{{ artist._id }}">{{ artist.name }}</a></span>
 					</p>
-					<h3 class="title">{{ items.highlighted.title }}</h3>
+					<h3 class="title">{{ highlighted.title }}</h3>
 					<p class="other_infos">
-						<span>{{ implode(items.highlighted.categories, 'name', ', ') }}</span>
-						<span>{{ implode(items.highlighted.editors, 'name', ', ') }}</span>
-						<span>{{ getYear(items.highlighted.edition_date)}}</span>
-						<span ng-bind-html="getRank(items.highlighted.rank)"></span>
+						<span>{{ implode(highlighted.categories, 'name', ', ') }}</span>
+						<span>{{ implode(highlighted.editors, 'name', ', ') }}</span>
+						<span>{{ getYear(highlighted.edition_date)}}</span>
+						<span ng-bind-html="getRank(highlighted.rank)"></span>
 					</p>
-					<p ng-bind-html="items.highlighted.synopsis.text|nl2br" class="synopsis">{{ items.highlighted.synopsis.text|nl2br }}</p>
+					<p ng-bind-html="highlighted.synopsis.text|nl2br" class="synopsis">{{ highlighted.synopsis.text|nl2br }}</p>
 
-					<a ng-click="readlater(items.highlighted._id)" ng-class="{'ui-blue': addedToReadLater == false, 'ui-grey ui-no-hover': addedToReadLater == true }" class="later-button ui-button ui-no-shadow ui-empty">
+					<a ng-click="readlater(highlighted._id)" ng-class="{'ui-blue': addedToReadLater == false, 'ui-grey ui-no-hover': addedToReadLater == true }" class="later-button ui-button ui-no-shadow ui-empty">
 						<span ng-if="addedToReadLater == true"><i class="fa fa-check"></i> Ajouté !</span>
 						<span ng-if="addedToReadLater == false">Lire plus tard</span>
 					</a>
-					<a ng-href="/app/read/{{ items.highlighted._id }}" class="read-button ui-button ui-blue ui-no-shadow" translate="{{'APP.SINGLE.BUTTONS.READ'}}">Lire maintenant !</a>
-					<a ng-click="save(items.highlighted._id)" class="save-button ui-button ui-no-shadow saved" ng-class="{ 'ui-blue': addedToBookshelf == false, 'ui-red': addedToBookshelf == true }"><i class="fa fa-heart"></i></a>
+					<a ng-href="/app/read/{{ highlighted._id }}" class="read-button ui-button ui-blue ui-no-shadow" translate="{{'APP.SINGLE.BUTTONS.READ'}}">Lire maintenant !</a>
+					<a ng-click="save(highlighted._id)" class="save-button ui-button ui-no-shadow saved" ng-class="{ 'ui-blue': addedToBookshelf == false, 'ui-red': addedToBookshelf == true }"><i class="fa fa-heart"></i></a>
 				</div>
 			</div>
 		</div>
