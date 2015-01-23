@@ -3,9 +3,15 @@
 angular
 	.module('oddlyFrontApp')
 
-	.controller('SearchCtrl', function($scope, $http, SERVER, $routeParams) {
+	.controller('SearchCtrl', function($scope, $http, SERVER, $routeParams, $rootScope) {
 
 		autoFocus();
+
+		window.onkeyup = function(e) {
+			if(e.keyCode == 27) {
+				$rootScope.back();
+			}
+		}
 
 		/**
 		 * @var (object)
