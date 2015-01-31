@@ -6,14 +6,13 @@
         <h2 class="special-title"><span class="text">Vos auteurs préférés</span></h2>
 
         <ul class="inline-items-list">
-            <li class="item" ng-repeat="item in items">
+            <li class="item" ng-repeat="item in artists">
                 <a ng-href="/app/item/{{ item._id }}">
-                    <div class="thumb-wrapper">
-                        <div class="thumb" style="background-image:url({{SERVER.METHOD}}{{SERVER.CDN}}/item/cover/{{ item._id }}/small);"></div>
+                    <div class="thumb-wrapper circle">
+                        <div class="thumb circle" style="background-image:url({{SERVER.METHOD}}{{SERVER.CDN}}/artist/cover/{{ item._id }}/small);"></div>
                     </div>
-                    <p class="title">{{ item.title }}</p>
-                    <p ng-if="item.artists != ''" class="artist">{{ item.artists }}</p>
-                    <p ng-if="item.artists == ''" class="artist">{{ item.editors }}</p>
+                    <p class="title">{{ item.name }}</p>
+                    <p class="artist">{{ types[item.type] }}</p>
                 </a>
             </li>
         </ul>

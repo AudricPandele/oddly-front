@@ -23,11 +23,14 @@ angular
 	.controller("BookshelfArtistsCtrl", function($scope, $http, SERVER){
 		$scope.SERVER = SERVER;
 		$scope.artists = [];
+		$scope.types = [
+			"Writer",
+			"Drawer"
+		];
 
 		$http({
 			method: "GET",
-			url: SERVER.METHOD + SERVER.API + "/bookshelf/artists", // PROD
-			//url: "/dummy/bookshelf/artists.json", // DUMMY
+			url: SERVER.METHOD + SERVER.API + "/bookshelf/artists",
 			checkator: true,
 		})
 		.success(function(data){
@@ -35,6 +38,7 @@ angular
 			$scope.artists = data.artists;
 		})
 		.error(function(e){
+
 		})
 	})
 
