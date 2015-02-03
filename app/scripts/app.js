@@ -50,6 +50,7 @@ angular
 
 			//Static pages
 			.when('/about', { templateUrl: '/views/about.html', controller: 'StaticPageCtrl' })
+			.when('/about/legal', { templateUrl: '/views/legal.html', controller: 'StaticPageCtrl' })
 
 			//App
 			.when('/app', { templateUrl: '/views/app_fresh.html', controller: 'FreshCtrl', checkator: true })
