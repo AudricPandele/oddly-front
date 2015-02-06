@@ -55,3 +55,34 @@ angular
 			return res;
 		}
 	})
+
+
+	/**
+	 * Implode strings from an object
+	 * @filter implode
+	 * @param {Array|Object} arr - The array you want data from
+	 * @param {int|String} column - The column you want data from
+	 * @param {String} glue - UHU, lol.
+	 * @return {String} - Your content joint by your glue in a string
+	 */
+	.filter('implode', function(){
+		return function(arr, column, glue){
+			var res = [];
+			for(var i in arr) res.push(arr[i][column]);
+			return res.join(glue);
+		}
+	})
+
+
+	/**
+	 * Split a date by an hyphen - fucking dummy but in a hurry
+	 * @filter getYear
+	 * @param {String} date - The wanted date
+	 * @return {String} - Only the year of a whole date
+	 */
+	.filter('toYear', function(){
+		return function(date){
+			var res = date.split("-");
+			return res[0];
+		}
+	})
