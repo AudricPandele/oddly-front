@@ -30,7 +30,7 @@
 			<p ng-repeat="editor in _search.editors | orderBy: 'name' ">{{ editor.name }}</p>
 		</div>
 		<div class="result-column" ng-if="_search.categories">
-			<h3 translate="{{'APP.SEARCH.CATEGORY'}}">Catégories</h3>
+			<h3 translate="{{'APP.SEARCH.CATEGORIES'}}">Catégories</h3>
 			<p ng-repeat="category in _search.categories | orderBy: 'name' ">
 				<a ng-href="/app/fresh/{{ category.name }}">{{ category.name }}</a>
 			</p>
