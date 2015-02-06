@@ -2,8 +2,24 @@
 
 angular
 	.module('oddlyFrontApp')
+
+
+	/**
+	 * Landing page controller
+	 * @controller LandingCtrl
+	 * @param {Object} $scope - Current scope
+	 * @param {Object} $http - HTTP manager
+	 * @param {Object} $translate - Translation manager
+	 * @param {Object} SERVER - App server constant
+	 */
 	.controller('LandingCtrl', function ($scope, $http, $translate, SERVER) {
 
+
+		/**
+		 * Subscribe a user to the beta test list
+		 * @method subscribe
+		 * @param {Object} user - User email
+		 */
 		$scope.subscribe = function(user) {
 			$(".ui-progress-button").removeClass("error").removeClass("success");
 
@@ -21,16 +37,14 @@ angular
 					$(".ui-progress-button").addClass("success");
 					$('input[type="email"]').val('');
 
-					return $scope.success = true;
+					$scope.success = true;
 				})
 				.error(function(e,status,detail,request){
 					$(".progress").width("101%");
 					$(".ui-progress-button").addClass("error");
-
-					console.error(status);
-					console.error(request); // Request debug
 				});
 			}
-		}
+		};
+
 
 	});

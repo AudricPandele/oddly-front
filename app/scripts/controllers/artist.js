@@ -3,39 +3,54 @@
 angular
 	.module('oddlyFrontApp')
 
+
+	/**
+	 * Get an artist infos
+	 *
+	 * @controller ArtistCtrl
+	 * @param {Object} $scope - Current scope
+	 * @param {Object} $http - HTTP manager
+	 * @param {Object} $location - Route manager
+	 * @param {Object} $translate - Translations manager
+	 * @param {Object} SERVER - App SERVER constant
+	 * @param {Object} $routeParams - Route parameters (e.g. /item/:id -> id)
+	 */
 	.controller('ArtistCtrl', function ($scope, $http, $location, $translate, SERVER, $routeParams) {
+
+
+		/**
+		 * Add SERVER constant to current scope for view (mostly for images)
+		 * @attribute {Object} SERVER
+		 */
 		$scope.SERVER = SERVER;
-		$scope.types = [
-			"Writer",
-			"Drawer"
-		];
+
+
+		/**
+		 * Artist default types
+		 * @attribute {Array} types
+		 */
+		$scope.types = ["Writer", "Drawer"];
+
+
+		/**
+		 * Get the actual artist infos from the API
+		 *
+		 * @method getArtist
+		 * @param {String} artist_id - Everything is in the title
+		 */
+		$scope.getArtist = function(artist_id){
+			$http({
+				method: "GET",
+				url: SERVER.METHOD + SERVER.API + "/artist/" + artist_id,
+				checkator: true
+			})
+			.success(function(data){
+				$scope.artist = data.artist;
+			})
+		};
+
 
 		// Get artist infos
-		$http({
-			method: "GET",
-			url: SERVER.METHOD + SERVER.API + "/artist/" + $routeParams.id,
-			checkator: true
-		})
-		.success(function(data){
-			$scope.artist = data.artist;
-		})
-		.error(function(e){
-			console.log(e);
-		});
-
-
-		$scope.getRank = function(rate){
-			rate = parseInt(rate);
-			rate = (rate > 5) ? 5 : ((rate < 0) ? 0 : rate);
-
-			var full_stars = rate;
-			var empty_stars = 5 - rate;
-
-			var res = "";
-			for(var i = 0; i < full_stars; i++) res+="<i class='fa fa-star'></i>";
-			for(var i = 0; i < empty_stars; i++) res+="<i class='fa fa-star-o'></i>";
-
-			return res;
-		};
+		$scope.getArtist($routeParams.id);
 
 	})

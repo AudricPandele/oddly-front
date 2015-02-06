@@ -6,28 +6,41 @@ angular
 
 	/**
 	 * Top items from every types
+	 *
 	 * @controller FreshCtrl
-	 * @param $scope - Controller scope
-	 * @param $http - Http request handler
-	 * @param $location - Route manager
-	 * @param $translate - Translation manager
-	 * @param SERVER - Server constant
+	 * @param {Object} $scope - Controller scope
+	 * @param {Object} $http - Http request handler
+	 * @param {Object} $location - Route manager
+	 * @param {Object} $translate - Translation manager
+	 * @param {Object} SERVER - Server constant
 	 */
 	.controller('TopsCtrl', function ($scope, $http, $location, $translate, SERVER) {
+
+
+		/**
+		 * Whether you already added a book to your pending list
+		 * @attribute {boolean} addedToReadLater
+		 */
 		$scope.addedToReadLater = false;
+
+
+		/**
+		 * Whether you already added a book to your bookshelf
+		 * @attribute {boolean} addedToBookshelf
+		 */
 		$scope.addedToBookshelf = false;
 
 
 		/**
-		 * Pass SERVER constant to view for images path
-		 * @attribute SERVER
+		 * Pass SERVER constant to view for images
+		 * @attribute {Object} SERVER
 		 */
 		$scope.SERVER = SERVER;
 
 
 		/**
 		 * Init items lists
-		 * @attribute items
+		 * @attribute {Object<Array>} items
 		 */
 		$scope.items = {
 			books:[],
@@ -38,94 +51,62 @@ angular
 
 
 		/**
-		 * Change current language
-		 * @todo Move it to rootScope
-		 * @method setLocale
-		 * @param name - Language name
-		 * @param code - Language ISO code (ex: French = fr_FR)
-		 * @param locale - Can't remember what is that shit
+		 * Add an item to your pending list
+		 *
+		 * @method readLater
+		 * @param {String} item_id - Your item ID
+		 * @return {boolean} - false if the book is already in your bookshelf
 		 */
-		$scope.setLocale = function(name, code, locale){
-			$translate.use(locale);
-			$scope.selected = { name: name, code: code };
-		};
-
-
-		$scope.implode = function(arr, column, glue){
-			var res = [];
-			for(var i in arr) res.push(arr[i][column]);
-			return res.join(glue);
-		};
-
-
-		$scope.getYear = function(date){
-			var res = date.split("-");
-			return res[0];
-		};
-
-
-		$scope.getRank = function(rate){
-			rate = parseInt(rate);
-			rate = (rate > 5) ? 5 : ((rate < 0) ? 0 : rate);
-
-			var full_stars = rate;
-			var empty_stars = 5 - rate;
-
-			var res = "";
-			for(var i = 0; i < full_stars; i++) res+="<i class='fa fa-star'></i>";
-			for(var i = 0; i < empty_stars; i++) res+="<i class='fa fa-star-o'></i>";
-
-			return res;
-		};
-
-
 		$scope.readlater = function(id){
-			if($scope.addedToReadLater == true) return;
+			if($scope.addedToReadLater == true) return false;
 
 			$http({
 				method: "POST",
-				url: SERVER.METHOD + SERVER.API + "/user/readlater/" + id,
+				url: SERVER.METHOD + SERVER.API + "/user/readlater/" + item_id,
 				checkator: true,
 			})
 			.success(function(data){
 				$scope.addedToReadLater = true;
 			})
-			.error(function(data, status, headers, config){
-				console.log(status+" : "+data);
-			});
 		};
 
 
-		$scope.save = function(id){
+		/**
+		 * Save an item to your bookshelf. Pretty useful tho.
+		 *
+		 * @method save
+		 * @param {String} item_id - Your item ID
+		 */
+		$scope.save = function(item_id){
 			$http({
 				method: "POST",
-				url: SERVER.METHOD + SERVER.API + "/user/save/" + id,
+				url: SERVER.METHOD + SERVER.API + "/user/save/" + item_id,
 				checkator: true,
 			})
 			.success(function(data){
-				console.log(data);
 				$scope.addedToBookshelf = data.in_bookshelf == "true";
 			})
-			.error(function(data, status, headers, config){
-				console.log(status+" : "+data);
-			});
 		};
 
 
 		/**
 		 * Get newest items from each type
-		 * @static
-		 * @protected
+		 * @method getTopItems
 		 */
-		$http({
-			method: "GET",
-			url: SERVER.METHOD + SERVER.API + "/items/tops",
-			//url: "/dummy/fresh/items.json", // DUMMY
-			checkator: true
-		})
-		.success(function(data){
-			$scope.items = data.items;
-			$scope.highlighted = data.highlighted;
-		});
+		$scope.getTopItems = function(){
+			$http({
+				method: "GET",
+				url: SERVER.METHOD + SERVER.API + "/items/tops",
+				checkator: true
+			})
+			.success(function(data){
+				$scope.items = data.items;
+				$scope.highlighted = data.highlighted;
+			});
+		};
+
+
+		// Get content
+		$scope.getTopItems();
 
 	})

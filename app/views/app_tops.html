@@ -14,10 +14,10 @@
 					</p>
 					<h3 class="title">{{ highlighted.title }}</h3>
 					<p class="other_infos">
-						<span>{{ implode(highlighted.categories, 'name', ', ') }}</span>
-						<span>{{ implode(highlighted.editors, 'name', ', ') }}</span>
-						<span>{{ getYear(highlighted.edition_date)}}</span>
-						<span ng-bind-html="getRank(highlighted.rank)"></span>
+						<span>{{ highlighted.categories|implode:'name':', ' }}</span>
+						<span>{{ highlighted.editors|implode:'name':', ' }}</span>
+						<span>{{ highlighted.edition_date|toYear }}</span>
+						<span ng-bind-html="highlighted.rank|toStars"></span>
 					</p>
 					<p ng-bind-html="highlighted.synopsis.text|nl2br" class="synopsis">{{ highlighted.synopsis.text|nl2br }}</p>
 

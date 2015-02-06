@@ -6,33 +6,34 @@ angular
 
 	/**
 	 * Fresh items from every types
+	 *
 	 * @controller FreshCtrl
-	 * @param $scope - Controller scope
-	 * @param $http - Http request handler
-	 * @param $location - Route manager
-	 * @param $translate - Translation manager
-	 * @param SERVER - Server constant
+	 * @param {Object} $scope - Controller scope
+	 * @param {Object} $http - Http request handler
+	 * @param {Object} $location - Route manager
+	 * @param {Object} $translate - Translation manager
+	 * @param {Object} SERVER - Server constant
 	 */
 	.controller('FreshCtrl', function ($scope, $http, $location, $translate, SERVER) {
 
 
 		/**
 		 * Pass SERVER constant to view for images path
-		 * @attribute SERVER
+		 * @attribute {Object} SERVER
 		 */
 		$scope.SERVER = SERVER;
 
 
 		/**
 		 * Init home advertisement
-		 * @attribute advert
+		 * @attribute {Object} advert
 		 */
 		$scope.advert = {};
 
 
 		/**
 		 * Init items lists
-		 * @attribute items
+		 * @attribute {Object<Array>} items
 		 */
 		$scope.items = {
 			books:[],
@@ -44,23 +45,26 @@ angular
 
 		/**
 		 * Check current route for active links
-		 * @todo Move it to rootScope
+		 *
+		 * @deprecated
 		 * @method activeRoute
-		 * @param rt - Route you want to check
-		 * @return true if rt is the current route, false otherwise
+		 * @param {String} rt - Route you want to check
+		 * @return {boolean} - true if rt is the current route, false otherwise
 		 */
 		$scope.activeRoute = function(rt){
+			throw new Error("This method is deprecated. Please refer to $rootScope.getCurrentRoute() function");
 			return rt === $location.path();
 		};
 
 
 		/**
 		 * Change current language
+		 *
 		 * @todo Move it to rootScope
 		 * @method setLocale
-		 * @param name - Language name
-		 * @param code - Language ISO code (ex: French = fr_FR)
-		 * @param locale - Can't remember what is that shit
+		 * @param {String} name - Language name
+		 * @param {String} code - Language ISO code (ex: French = fr_FR)
+		 * @param {String} locale - Can't remember what is that shit
 		 */
 		$scope.setLocale = function(name, code, locale){
 			$translate.use(locale);
@@ -70,65 +74,73 @@ angular
 
 		/**
 		 * Get home advert
-		 * @static
+		 * @method getHomeAdvert
 		 */
-		$http({
-			method: "GET",
-			url: "/dummy/fresh/home_ad.json"
-		})
-		.success(function(data){
-			$scope.advert = data.advert;
-		});
+		$scope.getHomeAdvert = function(){
+			$http({
+				method: "GET",
+				url: "/dummy/fresh/home_ad.json"
+			})
+			.success(function(data){
+				$scope.advert = data.advert;
+			});
+		};
 
 
 		/**
 		 * Get newest items from each type
-		 * @static
-		 * @protected
+		 * @method getFreshItems
 		 */
-		$http({
-			method: "GET",
-			url: SERVER.METHOD + SERVER.API + "/items/fresh",
-			//url: "/dummy/fresh/items.json", // DUMMY
-			checkator: true
-		})
-		.success(function(data){
-			$scope.items = data.items;
-		});
+		$scope.getFreshItems = function(){
+			$http({
+				method: "GET",
+				url: SERVER.METHOD + SERVER.API + "/items/fresh",
+				checkator: true
+			})
+			.success(function(data){
+				$scope.items = data.items;
+			});
+		};
+
+
+		// Get content
+		$scope.getHomeAdvert();
+		$scope.getFreshItems();
 
 	})
 
 
 	/**
 	 * Fresh items for every wanted categories in a given type
+	 *
 	 * @controller FreshTypeCtrl
-	 * @param $scope - Controller scope
-	 * @param $http - Http request handler
-	 * @param $location - Route manager
-	 * @param $translate - Translations manager
-	 * @param SERVER - Server constant
-	 * @param $routeParams - Route parameters manager
+	 * @param {Object} $scope - Controller scope
+	 * @param {Object} $http - Http request handler
+	 * @param {Object} $location - Route manager
+	 * @param {Object} $translate - Translations manager
+	 * @param {Object} SERVER - Server constant
+	 * @param {Object} $routeParams - Route parameters manager
 	 */
 	.controller('FreshTypeCtrl', function ($scope, $http, $location, $translate, SERVER, $routeParams) {
 
 
 		/**
 		 * Get item UCFirst type
-		 * @attribute type
+		 * @attribute {String} type
 		 */
 		$scope.type = $routeParams.type.charAt(0).toUpperCase() + $routeParams.type.slice(1);
 
 
 		/**
 		 * Pass SERVER constant to view for image paths
-		 * @attribute SERVER
+		 * @attribute {Object} SERVER
 		 */
 		$scope.SERVER = SERVER;
 
 
 		/**
 		 * Item types with constant values
-		 * @attributes types
+		 * @attributes {Object<int>} types
 		 */
 		$scope.types = {
 			"books" : 0,
@@ -140,16 +152,22 @@ angular
 
 		/**
 		 * Get newest items for the given type
-		 * @static
-		 * @protected
+		 * @method getFreshItemsFromType
+		 * @param {String} type - 0 = books, ...
 		 */
-		$http({
-			method: "GET",
-			url: SERVER.METHOD + SERVER.API + "/items/fresh/"+$scope.types[$routeParams.type],
-			checkator: true
-		})
-		.success(function(data){
-			$scope.items = data.items;
-		});
+		$scope.getFreshItemsFromType = function(type){
+			$http({
+				method: "GET",
+				url: SERVER.METHOD + SERVER.API + "/items/fresh/" + type,
+				checkator: true
+			})
+			.success(function(data){
+				$scope.items = data.items;
+			});
+		};
+
+
+		// Get content
+		$scope.getFreshItemsFromType($scope.types[$routeParams.type]);
 
 	})

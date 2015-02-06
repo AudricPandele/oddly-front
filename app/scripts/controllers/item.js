@@ -3,132 +3,214 @@
 angular
 	.module('oddlyFrontApp')
 
-	//Single item controller
+
+	/**
+	 * Single item controller
+	 *
+	 * @controller ItemCtrl
+	 * @param {Object} $scope - Controller scope
+	 * @param {Object} $http - Http request handler
+	 * @param {Object} $location - Route manager
+	 * @param {Object} $translate - Translation manager
+	 * @param {Object} SERVER - Server constant
+	 * @param {Object} $routeParams - Route parameters object
+	 */
 	.controller('ItemCtrl', function ($scope, $http, $location, $translate, SERVER, $routeParams) {
 
-		//Set default model
+		/**
+		 * Init item default model
+		 * @attribute {Object} item
+		 */
 		$scope.item = { };
+
+
+		/**
+		 * Add SERVER constant to current scope
+		 * @attribute {Object} SERVER
+		 */
 		$scope.SERVER = SERVER;
+
+
+		/**
+		 * Whether you already added a book to your pending list
+		 * @attribute {boolean} addedToReadLater
+		 */
 		$scope.addedToReadLater = false;
+
+
+		/**
+		 * Whether you already added a book to your bookshelf
+		 * @attribute {boolean} addedToBookshelf
+		 */
 		$scope.addedToBookshelf = false;
 
-		//Get asked item
-		$http({
-			method: "GET",
-			url: SERVER.METHOD + SERVER.API + "/item/" + $routeParams.id, // PROD
-			//url: "/dummy/item/item.json", // DUMMY
-			checkator: true,
-		})
-		.success(function(data){
-			$scope.item = data.item;
-			$scope.addedToReadLater = data.item.to_read == "true";
-			$scope.addedToBookshelf = data.item.in_bookshelf == "true";
-		})
-		.error(function(data, status, headers, config){
-			console.log(status+" : "+data);
-		});
 
-		$scope.implode = function(arr, column, glue){
-			var res = [];
-			for(var i in arr) res.push(arr[i][column]);
-			return res.join(glue);
+		/**
+		 * Get asked item
+		 *
+		 * @method getItemInfos
+		 * @param {String} item_id - Your Item ID
+		 */
+		$scope.getItemInfos = function(item_id){
+			$http({
+				method: "GET",
+				url: SERVER.METHOD + SERVER.API + "/item/" + item_id,
+				checkator: true,
+			})
+			.success(function(data){
+				$scope.item = data.item;
+				$scope.addedToReadLater = data.item.to_read == "true";
+				$scope.addedToBookshelf = data.item.in_bookshelf == "true";
+			})
 		};
 
-		$scope.getYear = function(date){
-			var res = date.split("-");
-			return res[0];
-		};
 
-		$scope.getRank = function(rate){
-			rate = parseInt(rate);
-			rate = (rate > 5) ? 5 : ((rate < 0) ? 0 : rate);
-
-			var full_stars = rate;
-			var empty_stars = 5 - rate;
-
-			var res = "";
-			for(var i = 0; i < full_stars; i++) res+="<i class='fa fa-star'></i>";
-			for(var i = 0; i < empty_stars; i++) res+="<i class='fa fa-star-o'></i>";
-
-			return res;
-		};
-
+		/**
+		 * Add an item to your pending list
+		 *
+		 * @method readLater
+		 * @param {String} item_id - Your item ID
+		 * @return {boolean} - false if the book is already in your bookshelf
+		 */
 		$scope.readlater = function(id){
-			if($scope.addedToReadLater == true) return;
+			if($scope.addedToReadLater == true) return false;
 
 			$http({
 				method: "POST",
-				url: SERVER.METHOD + SERVER.API + "/user/readlater/" + id,
+				url: SERVER.METHOD + SERVER.API + "/user/readlater/" + item_id,
 				checkator: true,
 			})
 			.success(function(data){
 				$scope.addedToReadLater = true;
 			})
-			.error(function(data, status, headers, config){
-				console.log(status+" : "+data);
-			});
 		};
 
-		$scope.save = function(id){
+
+		/**
+		 * Save an item to your bookshelf. Pretty useful tho.
+		 *
+		 * @method save
+		 * @param {String} item_id - Your item ID
+		 */
+		$scope.save = function(item_id){
 			$http({
 				method: "POST",
-				url: SERVER.METHOD + SERVER.API + "/user/save/" + id,
+				url: SERVER.METHOD + SERVER.API + "/user/save/" + item_id,
 				checkator: true,
 			})
 			.success(function(data){
-				console.log(data);
 				$scope.addedToBookshelf = data.in_bookshelf == "true";
 			})
-			.error(function(data, status, headers, config){
-				console.log(status+" : "+data);
-			});
 		};
 
+
+		// Get content
+		$scope.getItemInfos($routeParams.id);
 	})
 
 
+	/**
+	 * The whole Book Player. Just the main function of Oddly. Nothing special.
+	 *
+	 * @controller PlayerCtrl
+	 * @param {Object} $scope - Current scope
+	 * @param {Object} $http - HTTP manager
+	 * @param {Object} $location - Route manager
+	 * @param {Object} $translate - Translation manager
+	 * @param {Object} SERVER - App server constant
+	 * @param {Object} $routeParams - Route parameters
+	 * @param {Object} Fullscreen - Fullscreen manager
+	 */
 	.controller('PlayerCtrl', function($scope, $http, $location, $translate, SERVER, $routeParams, Fullscreen, $lazyloading){
 
+
+		/**
+		 * Save the last time we saved our position in the current book
+		 * @attribute {Date} previousSave
+		 */
 		$scope.previousSave = new Date();
 
-		window.onkeyup = function(e) {
-			if(e.keyCode == 37) return $scope.getPage($scope.currentPage - 1);
-			else if(e.keyCode == 39) return $scope.getPage($scope.currentPage + 1);
-			else return false;
-		};
 
-		// Avoid right click
-		window.oncontextmenu = function(){
-			return false;
-		};
-
-		// Define scope
+		/**
+		 * Save the current page
+		 * @attribute {int} currentPage
+		 */
 		$scope.currentPage = 1;
+
+
+		/**
+		 * By default, set the previousPage to null
+		 * @attribute {Image} previousPage
+		 */
 		$scope.previousPage = null;
+
+
+		/**
+		 * Init item model
+		 * @attribute {Object} item
+		 */
 		$scope.item = {};
+
+
+		/**
+		 * Check fullscreen state, from time to time, when the grass is green
+		 * and your mom is my queen.
+		 * Wait... what ?
+		 * @attribute {boolean} is_fullscreen
+		 */
 		$scope.is_fullscreen = false;
 
-		$scope.getBookInfos = function(){
+
+		/**
+		 * Register input events to global scope
+		 * @method setInputActions
+		 */
+		$scope.setInputActions = function(){
+
+			// Add keyboard events
+			window.onkeyup = function(e) {
+				if(e.keyCode == 37) return $scope.getPage($scope.currentPage - 1);
+				else if(e.keyCode == 39) return $scope.getPage($scope.currentPage + 1);
+				else return false;
+			};
+
+			// Avoid mouse events
+			window.oncontextmenu = function(){
+				return false;
+			};
+
+		};
+
+
+		/**
+		 * As it says, get book infos, lol.
+		 * @method getItemInfos
+		 * @param {String} item_id - Your item ID
+		 */
+		$scope.getItemInfos = function(item_id){
 			$http({
 				method: "GET",
-				url: SERVER.METHOD + SERVER.API + "/item/" + $routeParams.id, // PROD
-				//url: "/dummy/item/item.json", // DUMMY
+				url: SERVER.METHOD + SERVER.API + "/item/" + item_id,
 				checkator: true,
 			})
 			.success(function(data){
 				$scope.item = data.item;
 				$scope.total_pages = data.item.total_pages;
-				$scope.getReadItem();
+				$scope.haveRead(item_id);
 			})
-			.error(function(data, status, headers, config){
-				console.log(status+" : "+data);
-			});
 		};
 
-		$scope.getReadItem = function(){
+
+		/**
+		 * Check if you already read that book
+		 * If you did, we open the book exactly where you stop. Isn't it super ?
+		 * @method haveRead
+		 * @param {String} item_id - Your item ID
+		 */
+		$scope.haveRead = function(item_id){
 			$http({
 				method: "GET",
-				url: SERVER.METHOD + SERVER.API + "/user/haveread/" + $routeParams.id,
+				url: SERVER.METHOD + SERVER.API + "/user/haveread/" + item_id,
 				checkator: true,
 			})
 			.success(function(data){
@@ -138,15 +220,20 @@ angular
 				$lazyloading.init($routeParams.id, $scope.total_pages, $scope.currentPage, "SD");
 				$scope.getPage($scope.currentPage);
 			})
-			.error(function(data, status, headers, config){
-				console.log(status+" : "+data);
-			});
 		};
 
+
+		/**
+		 * Get a book page using API & lazy-loading plugin made by Nicolas
+		 * @method getPage
+		 * @param {int} page - The wanted page
+		 */
 		$scope.getPage = function(page){
 
 			var tmp = new Date();
 			var diff = tmp.getTime() - $scope.previousSave.getTime();
+
+			// We save reader's current page every 5 seconds of interractions
 			if(diff >= 5000){
 				$scope.savePage($scope.item._id, $scope.currentPage);
 				$scope.previousSave = new Date();
@@ -158,37 +245,48 @@ angular
 			// If user quality setting = SD
 			$scope.previousPage = $lazyloading.stream(page);
 
+			// On page load, we draw it to a canvas to avoid image save
 			$scope.previousPage.onload = function() {
 				canvas.width = this.width;
 				canvas.height = this.height * (this.width / canvas.width);
 				ctx.drawImage(this, 0, 0);
 
 				$scope.currentPage = page;
+
+				// Browser polyfill when window height is not auto. updated
 				$(window).trigger('resize');
 				$('.app-player').scrollTop(0);
 			};
 
 		};
 
-		$scope.savePage = function(itemid, page){
+
+		/**
+		 * Tell the API to save the current book at a given page
+		 * @method savePage
+		 * @param {String} item_id - Your item ID
+		 * @param {int} page - The page you want to put a bookmark
+		 */
+		$scope.savePage = function(item_id, page){
 			$http({
 				method: "POST",
-				url: SERVER.METHOD + SERVER.API + "/user/read/" + itemid + "/" + page,
+				url: SERVER.METHOD + SERVER.API + "/user/read/" + item_id + "/" + page,
 				checkator: true,
-			})
-			.success(function(data){
-				console.log(data);
-			})
-			.error(function(e){
-				console.log(e);
 			})
 		};
 
+
+		/**
+		 * Toggle fullscreen mode
+		 * @method fullscreen
+		 */
 		$scope.fullscreen = function(){
 			Fullscreen.toggleAll();
 			$scope.is_fullscreen = (Fullscreen.isEnabled()) ? true : false;
 		};
 
-		$scope.getBookInfos();
+
+		// Read the book !
+		$scope.getItemInfos($routeParams.id);
 
 	})
