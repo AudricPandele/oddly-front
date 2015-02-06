@@ -1,12 +1,18 @@
 "use strict"
 
 angular
+
+
+	/**
+	 * Oddly Constants
+	 * @module oddlyAppConstants
+	 */
 	.module("oddlyAppConstants", [])
 
 
 	/**
-	 * Oddly SERVER constant
-	 * @static
+	 * SERVER constant
+	 * @static SERVER
 	 */
 	.constant("SERVER", {
 		METHOD: "http://",

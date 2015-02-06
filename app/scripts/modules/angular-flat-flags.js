@@ -3,8 +3,12 @@
 angular
 	.module("oddlyFlatFlags", [])
 
+
 	/**
-	 * Turns country ISO code to flag thumbnail
+	 * Oddly Flat Flags
+	 * Show mini-flags using simple directives and ISO codes
+	 * @author Ugo Stephant
+	 * @module oddlyFlatFlags
 	 * @directive flag
 	 */
 	.directive("flag", function() {
@@ -30,4 +34,4 @@ angular
 				});
 			}
 		};
-	});
+	})

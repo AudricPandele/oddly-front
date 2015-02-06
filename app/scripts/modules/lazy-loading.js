@@ -1,13 +1,13 @@
 "use strict";
 
 angular
-	.module("oddlyLazyLoading", [
-		"oddlyAppConstants"
-	])
+	.module("oddlyLazyLoading", ["oddlyAppConstants"])
 
 
 	/**
 	 * LazyLoading allows us to autoload books pages one after another
+	 * @author Nicolas Bellot
+	 * @module oddlyLazyLoading
 	 * @service $lazyloading
 	 * @param {Object} SERVER - Oddly server constant
 	 */

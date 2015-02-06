@@ -1,6 +1,12 @@
 "use strict";
 
 angular
+
+
+	/**
+	 * Oddly filters
+	 * @module oddlyAppFilters
+	 */
 	.module("oddlyAppFilters", [])
 
 
@@ -15,13 +21,14 @@ angular
 		}
 	})
 
+
 	/**
 	 * Check is object is empty
 	 * @filter isEmpty
-	 * @return {Bool}
+	 * @return {boolean} true is object is empty, false otherwise
 	 */
 	.filter('isEmpty', function () {
-        return function (obj) {
-            return Object.keys(obj).length == 0;
-        };
-    })
+		return function (obj) {
+			return Object.keys(obj).length == 0;
+		};
+	})

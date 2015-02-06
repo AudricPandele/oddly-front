@@ -5,7 +5,10 @@ angular
 
 
 	/**
-	 * Resize container the size of your screen (fucktard css2 can't do it properly)
+	 * Shitty polyphil to reproduce CSS3 viewport height behaviour everywhere
+	 * (http://www.w3.org/TR/css3-values/#viewport-relative-lengths)
+	 * @author Ugo Stephant
+	 * @module oddlyFullHeight
 	 * @directive resize
 	 * @param {Object} $window - Browser window
 	 */
