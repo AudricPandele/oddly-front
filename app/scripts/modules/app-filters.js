@@ -32,3 +32,26 @@ angular
 			return Object.keys(obj).length == 0;
 		};
 	})
+
+
+	/**
+	 * Transforms a float rate (from 0 to 5) to stars
+	 * @filter toStars
+	 * @param {float} rate - Artist rate from 0.0f to 5.0f
+	 * @return {String} - HTML containing the created stars
+	 */
+	.filter('toStars', function(){
+		return function (rate){
+			rate = parseInt(rate);
+			rate = (rate > 5) ? 5 : ((rate < 0) ? 0 : rate);
+
+			var full_stars = rate;
+			var empty_stars = 5 - rate;
+
+			var res = "";
+			for(var i = 0; i < full_stars; i++) res+="<i class='fa fa-star'></i>";
+			for(var i = 0; i < empty_stars; i++) res+="<i class='fa fa-star-o'></i>";
+
+			return res;
+		}
+	})
