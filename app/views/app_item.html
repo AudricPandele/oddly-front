@@ -19,7 +19,7 @@
 							<span>{{ implode(item.categories, 'name', ', ') }}</span>
 							<span>{{ implode(item.editors, 'name', ', ') }}</span>
 							<span>{{ getYear(item.edition_date)}}</span>
-							<span ng-bind-html="getRank(item.rank)"></span>
+							<span ng-bind-html="item.rank|toStars"></span>
 						</p>
 						<p ng-bind-html="item.synopsis.text|nl2br" class="synopsis">{{ item.synopsis.text|nl2br }}</p>
 

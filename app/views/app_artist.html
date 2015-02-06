@@ -9,7 +9,7 @@
 						<span class="artist-name">{{ artist.name }}</span>
 						<span class="artist-type">{{ types[artist.type] }}</span>
 					</h2>
-					<span class="artist-rating" ng-bind-html="getRank(artist.rank)"></span>
+					<span class="artist-rating" ng-bind-html="artist.rank|toStars"></span>
 				</div>
 			</div>
 		</div>
