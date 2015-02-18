@@ -2,7 +2,12 @@
 
 	<div class="player-header">
 		<div class="header-item" ng-click="back()"><i class="fa fa-arrow-circle-left"></i><span>Retour</span></div>
-		<span>{{ currentPage }} / {{ total_pages }}</span>
+		<div class="header-pages">
+			<span>{{ currentPage }} / {{ total_pages }}</span>
+			<div>
+				<input type="range" value="{{ currentPage }}" max="{{ total_pages }}" min="1" step="1">
+			</div>
+		</div>
 	</div>
 
 	<div class="player-menu">

@@ -44,10 +44,17 @@
 			}
 		}
 
-		span {
-			float: right;
-			font-size: @defaultTextMediumSize;
-			margin-right: 15px;
+		.header-pages {
+			display: inline;
+			position: relative;
+
+			span {
+				float: right;
+				font-size: @defaultTextMediumSize;
+				margin-right: 15px;
+
+				&:hover { cursor: pointer; color: @defaultTextColor; }
+			}
 		}
 	}
 
