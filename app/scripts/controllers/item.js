@@ -121,7 +121,7 @@ angular
 	 * @param {Object} $routeParams - Route parameters
 	 * @param {Object} Fullscreen - Fullscreen manager
 	 */
-	.controller('PlayerCtrl', function($scope, $http, $location, $translate, SERVER, $routeParams, Fullscreen, $lazyloading){
+	.controller('PlayerCtrl', function($scope, $http, $location, $translate, $interval, SERVER, $routeParams, Fullscreen, $lazyloading){
 
 
 		/**
@@ -159,6 +159,18 @@ angular
 		 * @attribute {boolean} is_fullscreen
 		 */
 		$scope.is_fullscreen = false;
+
+
+		/**
+		 * By default, page selected is the current page
+		 * @attribute {int} pageSelected
+		 */
+		$scope.pageSelected = $scope.currentPage;
+
+		/**
+		 * @todo
+		 */
+		$scope.choosingPage = false;
 
 
 		/**
@@ -214,13 +226,35 @@ angular
 				checkator: true,
 			})
 			.success(function(data){
-				if(data.item)
+				if(data.item) {
 					$scope.currentPage = parseInt(data.current_page);
+					$scope.pageSelected = $scope.currentPage;
+				}
 
 				$lazyloading.init($routeParams.id, $scope.total_pages, $scope.currentPage, "SD");
 				$scope.getPage($scope.currentPage);
 			})
 		};
+
+
+		/**
+		 * @todo
+		 */
+		$scope.getPageByRange = function(page) {
+			$scope.choosingPage = true;
+		}
+
+		/**
+		 * @todo
+		 */
+		function getPageByRange() {
+			$interval(function(){
+				if($scope.choosingPage) {
+					$scope.choosingPage = false;
+					$scope.getPage($scope.pageSelected);
+				}
+			}, 1000);
+		}
 
 
 		/**

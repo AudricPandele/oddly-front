@@ -5,7 +5,8 @@
 		<div class="header-pages">
 			<span>{{ currentPage }} / {{ total_pages }}</span>
 			<div>
-				<input type="range" value="{{ currentPage }}" max="{{ total_pages }}" min="1" step="1">
+				<input type="range" max="{{ total_pages }}" min="1" step="1" ng-model="pageSelected" ng-change="getPageByRange(pageSelected)">
+				<h1>{{ pageSelected }}</h1>
 			</div>
 		</div>
 	</div>
