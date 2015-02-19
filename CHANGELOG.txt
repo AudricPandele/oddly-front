@@ -1,0 +1,5 @@
+[1.0.1]
+- Fixed local serve multiple modrewrite issues
+
+[1.0.0]
+- Initial release
